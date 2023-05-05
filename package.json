@@ -1,24 +1,27 @@
 {
-  "name": "agnes97-portfolio",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "format": "rome format src/ --write",
-    "lint": "rome check src/ --apply-unsafe"
-  },
-  "dependencies": {
-    "@types/node": "20.0.0",
-    "@types/react": "18.2.5",
-    "@types/react-dom": "18.2.4",
-    "next": "13.4.1",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "typescript": "5.0.4"
-  },
-  "devDependencies": {
-    "rome": "12.0.0"
-  }
+	"name": "agnes97-portfolio",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start",
+		"format": "rome format src/ --write",
+		"lint": "rome check src/ --apply-unsafe"
+	},
+	"dependencies": {
+		"@types/node": "20.0.0",
+		"@types/react": "18.2.5",
+		"@types/react-dom": "18.2.4",
+		"next": "13.4.1",
+		"react": "18.2.0",
+		"react-dom": "18.2.0",
+		"react-is": "18.2.0",
+		"styled-components": "5.3.10",
+		"typescript": "5.0.4"
+	},
+	"devDependencies": {
+		"@types/styled-components": "5.1.26",
+		"rome": "12.0.0"
+	}
 }
