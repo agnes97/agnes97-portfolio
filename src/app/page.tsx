@@ -1,5 +1,6 @@
-import Button from "./components/Button/Button";
-import Rope from "./components/Rope/Rope";
+import Button from "./components/button/Button";
+import GalleryCard from "./components/gallery-card/GalleryCard";
+import Rope from "./components/rope/Rope";
 import { Content, Grating, Header, Main, Table } from "./styles/global.styled";
 
 export default function Home() {
@@ -17,6 +18,7 @@ export default function Home() {
 
       <Content>
         <Grating>
+          <GalleryCard />
           <h2>Agnes97</h2>
         </Grating>
         <Table>

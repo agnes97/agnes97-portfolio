@@ -1,7 +1,6 @@
 'use client'
 
 import styled, { createGlobalStyle, css } from 'styled-components'
-import { Palette } from './palette'
 
 export const GlobalStyle = createGlobalStyle`
   html, & * { box-sizing: border-box }
@@ -70,6 +69,7 @@ export const Header = styled.header`
 export const Grating = styled.section`
   ${FlexColumn};
   min-height: 15rem;
+  padding: 1rem 0;
 `
 
 export const Content = styled.div`
