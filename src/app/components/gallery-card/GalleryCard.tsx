@@ -1,12 +1,15 @@
 "use client";
 
-import React, { FC, MouseEvent, useRef, useState } from "react";
+import React, { FC, MouseEvent, useEffect, useRef, useState } from "react";
 import { BackgroundImage, Card, Content, Shadow } from "./GalleryCard.styled";
+import { css } from "styled-components";
 
 type MousePosition = {
   x: number;
   y: number;
 };
+
+const maxRotationAngle = 0.5; // in rads
 
 const GalleryCard: FC = () => {
   const initialMousePosition = { x: 0, y: 0 };
@@ -14,7 +17,7 @@ const GalleryCard: FC = () => {
     useState<MousePosition>(initialMousePosition);
 
   const cardRef = useRef<HTMLDivElement>(null);
-  const angle = 5; // in rads
+  const card = cardRef.current;
 
   const lerp = (start: number, end: number, amount: number) => {
     return (1 - amount) * start + amount * end;
@@ -29,19 +32,20 @@ const GalleryCard: FC = () => {
     const card = cardRef.current;
     if (!card) return;
 
+    // Count center:
     const rect = card.getBoundingClientRect();
     const centerX = (rect.left + rect.right) / 2;
     const centerY = (rect.top + rect.bottom) / 2;
     const posX = event.pageX - centerX;
     const posY = event.pageY - centerY;
-    const x = remap(posX, rect.width / 2, angle);
-    const y = remap(posY, rect.height / 2, angle);
-    card.dataset.rotateX = x.toLocaleString();
-    card.dataset.rotateY = (-y).toLocaleString();
+
+    setMousePosition({
+      x: remap(posX, rect.width / 2, maxRotationAngle),
+      y: -remap(posY, rect.height / 2, maxRotationAngle),
+    });
   };
 
-  const update = () => {
-    const card = cardRef.current;
+  useEffect(() => {
     if (!card) return;
 
     let currentX = parseFloat(
@@ -52,37 +56,53 @@ const GalleryCard: FC = () => {
     );
     if (isNaN(currentX)) currentX = 0;
     if (isNaN(currentY)) currentY = 0;
-    const x = lerp(currentX, Number(card.dataset.rotateX), 0.05);
-    const y = lerp(currentY, Number(card.dataset.rotateY), 0.05);
-    setMousePosition({ x, y });
-  };
 
-  setInterval(update, 1000 / 60);
+    const x = lerp(currentX, mousePosition.x, 0.05);
+    const y = lerp(currentY, mousePosition.y, 0.05);
+
+    setMousePosition({ x, y });
+  }, []);
+
+  const pseudoElementsStyles = `
+    color: blue;
+
+    &::after,
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 1.5rem;
+      border: 0.5rem solid;
+      border-image-slice: 1;
+      border-width: 0.5rem;
+      border-image-source: linear-gradient(to right, red, blue);
+    }
+  `;
 
   return (
     <Card
       ref={cardRef}
       onMouseOut={() => {
         setMousePosition(initialMousePosition);
-        console.log("mouse out");
       }}
       onMouseMove={(event) => handleMouseMove(event)}
+      data-rotate-x={mousePosition.y}
+      data-rotate-y={mousePosition.x}
     >
-      <Shadow rotatex={mousePosition.y} rotatey={mousePosition.x} />
+      <Shadow data-rotate-x={mousePosition.y} data-rotate-y={mousePosition.x} />
       <BackgroundImage
-        type="background"
-        rotatex={mousePosition.y}
-        rotatey={mousePosition.x}
+        data-type="background"
+        data-rotate-x={mousePosition.y}
+        data-rotate-y={mousePosition.x}
       />
       <BackgroundImage
-        type="cutout"
-        rotatex={mousePosition.y}
-        rotatey={mousePosition.x}
+        data-type="cutout"
+        data-rotate-x={mousePosition.y}
+        data-rotate-y={mousePosition.x}
       />
       <Content
-        rotatex={mousePosition.y}
-        rotatey={mousePosition.x}
-        borderColor={["#dd7db7", "#87c8fd"]}
+        data-rotate-x={mousePosition.y}
+        data-rotate-y={mousePosition.x}
+        borderColors={["#dd7db7", "#87c8fd"]}
       />
     </Card>
   );
