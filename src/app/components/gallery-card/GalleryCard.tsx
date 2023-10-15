@@ -29,8 +29,8 @@ const GalleryCard: FC = () => {
     const rect = card.getBoundingClientRect();
     const centerX = (rect.left + rect.right) / 2;
     const centerY = (rect.top + rect.bottom) / 2;
-    const positionY = event.pageX - centerX;
-    const positionX = event.pageY - centerY;
+    const positionY = event.clientX - centerX;
+    const positionX = event.clientY - centerY;
 
     setMousePosition({
       y: remap(positionY, rect.width / 2, maxRotationAngle),
