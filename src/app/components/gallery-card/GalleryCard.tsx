@@ -71,6 +71,8 @@ const GalleryCard: FC = () => {
       onMouseMove={(event) => handleMouseMove(event)}
       data-rotate-x={mousePosition.y}
       data-rotate-y={mousePosition.x}
+      borderColors={["#dd7db7", "#87c8fd"]}
+      transparentBorderSides={["left"]}
     >
       <Shadow data-rotate-x={mousePosition.y} data-rotate-y={mousePosition.x} />
       <BackgroundImage
@@ -86,7 +88,6 @@ const GalleryCard: FC = () => {
       <Content
         data-rotate-x={mousePosition.y}
         data-rotate-y={mousePosition.x}
-        borderColors={["#dd7db7", "#87c8fd"]}
       />
     </Card>
   );
