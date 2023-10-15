@@ -16,6 +16,8 @@ type CardProps = CardDatasets & {
     transparentBorderSides: BorderSides[];
 }
 
+const smoothTransition = `transition: all 500ms linear;`
+
 export const Card = styled.div.attrs<CardProps>((datasets: CardDatasets, props: CardProps) => ({
     props: props,
     style: {
@@ -31,6 +33,7 @@ export const Card = styled.div.attrs<CardProps>((datasets: CardDatasets, props: 
     height: 100%;
 	aspect-ratio: 5 / 7;
 	perspective: 50rem;
+    ${smoothTransition};
 
     &::after,
 	&::before {
@@ -68,6 +71,7 @@ export const Shadow = styled.div.attrs((props: CardDatasets) => ({
     background-position: center;
     opacity: 0.8;
     filter: blur(2rem) saturate(0.9);
+    ${smoothTransition};
 `
 
 type BackgroundImageProps = CardDatasets & {
@@ -105,6 +109,7 @@ export const BackgroundImage = styled.div.attrs((props: BackgroundImageProps) =>
     background-position: center;
     mask-size: cover;
     mask-position: center;
+    ${smoothTransition};
 `
 
 export const Content = styled.div.attrs((datasets: CardDatasets) => ({
@@ -119,4 +124,5 @@ export const Content = styled.div.attrs((datasets: CardDatasets) => ({
     position: absolute;
     inset: 0;
     z-index: 4;
+    ${smoothTransition};
 `
