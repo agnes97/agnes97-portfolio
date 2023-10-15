@@ -2,7 +2,6 @@
 
 import React, { FC, MouseEvent, useEffect, useRef, useState } from "react";
 import { BackgroundImage, Card, Content, Shadow } from "./GalleryCard.styled";
-import { css } from "styled-components";
 
 type MousePosition = {
   x: number;
@@ -62,21 +61,6 @@ const GalleryCard: FC = () => {
 
     setMousePosition({ x, y });
   }, []);
-
-  const pseudoElementsStyles = `
-    color: blue;
-
-    &::after,
-    &::before {
-      content: "";
-      position: absolute;
-      inset: 1.5rem;
-      border: 0.5rem solid;
-      border-image-slice: 1;
-      border-width: 0.5rem;
-      border-image-source: linear-gradient(to right, red, blue);
-    }
-  `;
 
   return (
     <Card
