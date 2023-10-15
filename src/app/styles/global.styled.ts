@@ -75,6 +75,10 @@ export const Grating = styled.section`
 export const Content = styled.div`
   width: 80%;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem 0;
 `
 
 export const Table = styled.section`
@@ -105,4 +109,29 @@ export const Table = styled.section`
     border-top-left-radius: 5rem 20rem;
     z-index: 0;
   }
+`
+
+export const AboutMe = styled.section`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 0;
+  
+  & > * { 
+    flex: 1; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+`
+
+export const Footer = styled.footer`
+  width: 100vw;
+  min-height: 5rem;
+  padding: 2rem;
+  ${GlassEffect};
+  ${FlexRow};
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
 `
