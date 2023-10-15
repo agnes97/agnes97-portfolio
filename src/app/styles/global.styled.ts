@@ -68,8 +68,22 @@ export const Header = styled.header`
 
 export const Grating = styled.section`
   ${FlexColumn};
-  min-height: 15rem;
-  padding: 1rem 0;
+  position: relative;
+  width: 50%;
+  margin: 0 auto;
+  padding: 2rem 0;
+
+  & h2 {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 7rem;
+    font-family: "Sacramento";
+    text-shadow: 0 0 5px rgb(192 166 248), 0 0 15px rgb(255 255 255), 0 0 20px rgb(192 166 248), 0 0 40px rgba(143,114,205,1), 0 0 60px rgb(0 0 0), 0 0 10px rgb(255 255 255), 0 0 98px rgba(143,114,205,1);
+    color: rgb(255 255 255);
+  }
 `
 
 export const Content = styled.div`

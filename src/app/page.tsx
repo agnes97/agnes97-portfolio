@@ -1,5 +1,6 @@
 import Button from "./components/button/Button";
 import GalleryCard from "./components/gallery-card/GalleryCard";
+import Lines from "./components/lines/Lines";
 import Rope from "./components/rope/Rope";
 import {
   AboutMe,
@@ -26,7 +27,15 @@ export default function Home() {
 
       <Content>
         <Grating>
-          <h2>Agnes97</h2>
+          <Lines numberOfLines={5} lengthAction="increases" />
+          <Lines numberOfLines={5} lengthAction="decreases" />
+          <Lines
+            numberOfLines={13}
+            lengthAction="increases"
+            alignment="vertical"
+          />
+
+          <h2>&#123; Agnes97 &#125;</h2>
         </Grating>
         <Table>
           <p>Table</p>
