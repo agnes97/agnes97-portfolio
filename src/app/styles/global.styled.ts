@@ -1,6 +1,7 @@
-'use client'
+"use client";
 
-import styled, { createGlobalStyle, css } from 'styled-components'
+import styled, { createGlobalStyle, css, withTheme } from 'styled-components'
+import { useTheme } from '../providers/styled-components-provider';
 
 export const GlobalStyle = createGlobalStyle`
   html, & * { box-sizing: border-box }
@@ -12,9 +13,15 @@ export const GlobalStyle = createGlobalStyle`
 `
 
 export const GlassEffect = css`
-    background: rgba(255, 255, 255, 0.3);
+     ${() => {
+      const { currentThemeVariant } = useTheme();
+
+      return `
+        background: ${currentThemeVariant === 'dark' ? "rgba(255, 255, 255, 0.1)" : "rgba(255, 255, 255, 0.3)"};
+        border: 1px solid rgba(255, 255, 255, ${currentThemeVariant === 'dark' ? 0.3 : 0.6});
+     `
+    }};
     backdrop-filter: blur(10%);
-    border: 1px solid rgba(255, 255, 255, 0.6);
     `
 
 export const FlexColumn = css`
@@ -34,36 +41,12 @@ export const Main = styled.main`
   width: 100%;
   min-height: 100vh;
   ${FlexColumn}
-  background: rgb(238,174,198);
-  background: linear-gradient(90deg, 
-    rgba(238,174,198,1) 0%, 
-    rgba(143,114,205,1) 20%, 
-    rgba(143,114,205,1) 80%, 
-    rgba(238,174,198,1) 100%
-  );
-  /* background: rgb(56,85,110);
-  background: linear-gradient(
-    90deg, rgba(56,85,110,1) 0%, 
-    rgba(39,40,44,1) 25%, 
-    rgba(39,40,44,1) 75%, 
-    rgba(56,85,110,1) 100%
-  ); */
+  background: ${({ theme }) => theme.color.backgroundGradient};
 `
 
-export const Header = styled.header`
-  width: 100vw;
-  min-height: 5rem;
-  padding: 2rem;
-  ${GlassEffect};
-  ${FlexRow};
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  justify-content: space-between;
-
-  & > h1 {
-    margin-block: 0;
-  }
+export const Divider = styled.hr`
+  width: 100%;
+  border: 1px solid ${({ theme }) => theme.color.line_light};
 `
 
 export const Grating = styled.section`
@@ -81,8 +64,18 @@ export const Grating = styled.section`
     justify-content: center;
     font-size: 7rem;
     font-family: "Sacramento";
-    text-shadow: 0 0 5px rgb(192 166 248), 0 0 15px rgb(255 255 255), 0 0 20px rgb(192 166 248), 0 0 40px rgba(143,114,205,1), 0 0 60px rgb(0 0 0), 0 0 10px rgb(255 255 255), 0 0 98px rgba(143,114,205,1);
-    color: rgb(255 255 255);
+    color: white;
+
+  ${({ theme }) => css`
+    text-shadow: 
+      0 0 5px ${theme.color.accent_light},     
+      0 0 15px white,                          
+      0 0 20px ${theme.color.accent_light},    
+      0 0 40px ${theme.color.accent_dark},     
+      0 0 60px #000000,                        
+      0 0 10px white,                          
+      0 0 98px ${theme.color.accent_dark};     
+  `}
   }
 `
 
@@ -137,15 +130,11 @@ export const AboutMe = styled.section`
     justify-content: center;
     align-items: center;
   }
-`
 
-export const Footer = styled.footer`
-  width: 100vw;
-  min-height: 5rem;
-  padding: 2rem;
-  ${GlassEffect};
-  ${FlexRow};
-  border-bottom: none;
-  border-left: none;
-  border-right: none;
+  & p::first-letter {
+    font-weight: bold;
+    font-size: 200%;
+    padding: 0.25rem;
+    color: ${({ theme }) => theme.color.text_link};
+  }
 `
