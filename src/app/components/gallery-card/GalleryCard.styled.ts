@@ -1,7 +1,4 @@
 import styled from 'styled-components';
-import agnesCutout from '../../assets/agnes-cutout.png';
-import agnesBg from '../../assets/agnes-bg.jpg';
-import agnesBlur from '../../assets/agnes-blur.jpg';
 
 const cardWidth = '15rem';
 
@@ -59,14 +56,18 @@ export const Card = styled.div.attrs<CardProps>((datasets: CardDatasets, props: 
     }
 `
 
-export const Shadow = styled.div.attrs((props: CardDatasets) => ({
+type ShadowProps = CardDatasets & {
+    blurSrc: string;
+}
+
+export const Shadow = styled.div.attrs<ShadowProps>((datasets: CardDatasets, props: ShadowProps) => ({
     style: {
-        transform: `rotateX(${props['data-rotate-x']}rad) rotateY(${props['data-rotate-y']}rad) translate3d(0, 2rem, -2rem)`
+        transform: `rotateX(${datasets['data-rotate-x']}rad) rotateY(${datasets['data-rotate-y']}rad) translate3d(0, 2rem, -2rem)`
     }
 }))`
     position: absolute;
     inset: 0;
-    background: url(${agnesBlur.src});
+    background: url(${(props: ShadowProps) => props.blurSrc});
     background-size: cover;
     background-position: center;
     opacity: 0.8;
@@ -76,16 +77,18 @@ export const Shadow = styled.div.attrs((props: CardDatasets) => ({
 
 type BackgroundImageProps = CardDatasets & {
     ['data-type']: 'background' | 'cutout';
+    ['data-cutout-src']: string;
+    ['data-blur-src']: string;
 }
 
 export const BackgroundImage = styled.div.attrs((props: BackgroundImageProps) => ({
     style: {
         backgroundImage: props['data-type'] === 'background' 
-                ? `linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent 40%), url(${agnesBlur.src})` 
-                : `url(${agnesCutout.src})`,
+                ? `linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent 40%), url(${props['data-blur-src']})` 
+                : `url(${props['data-cutout-src']})`,
         maskImage: props['data-type'] === 'background' 
-                ? `url(${agnesBlur.src})` 
-                : `url(${agnesCutout.src})`,
+                ? `url(${props['data-blur-src']})` 
+                : `url(${props['data-cutout-src']})`,
         ...(props['data-type'] === 'background') ? { 
                 transform: `
                     rotateX(${props['data-rotate-x']}rad) 

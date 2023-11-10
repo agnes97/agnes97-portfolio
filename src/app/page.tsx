@@ -1,54 +1,68 @@
+import { useTheme } from "styled-components";
 import Button from "./components/button/Button";
 import GalleryCard from "./components/gallery-card/GalleryCard";
+import Header from "./components/header/Header";
 import Lines from "./components/lines/Lines";
-import Rope from "./components/rope/Rope";
 import {
   AboutMe,
   Content,
-  Footer,
+  Divider,
   Grating,
-  Header,
   Main,
   Table,
 } from "./styles/global.styled";
+import Footer from "./components/footer/Footer";
 
 export default function Home() {
   return (
     <Main>
-      <Header>
-        <div>
-          <div>buttons</div>
-          <div>buttons</div>
-        </div>
-        <h1>Jana Mácová</h1>
-
-        <Rope />
-      </Header>
+      <Header />
 
       <Content>
         <Grating>
-          <Lines numberOfLines={5} lengthAction="increases" />
-          <Lines numberOfLines={5} lengthAction="decreases" />
+          <Lines numberOfLines={5} lengthAction="increases" id="1" />
+          <Lines numberOfLines={5} lengthAction="decreases" id="2" />
           <Lines
             numberOfLines={13}
             lengthAction="increases"
             alignment="vertical"
+            id="3"
           />
 
           <h2>&#123; Agnes97 &#125;</h2>
         </Grating>
-        <Table>
+
+        {/* <Table>
           <p>Table</p>
-        </Table>
+        </Table> */}
+
+        <Divider />
 
         <AboutMe>
-          <div>Content</div>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              color: "white",
+              alignItems: "end",
+              gap: "3rem",
+            }}
+          >
+            <p style={{ width: "35rem" }}>
+              In the ever-evolving tech realm, finding a proficient programmer
+              who can breathe life into your ideas is crucial. I am committed to
+              crafting user-friendly, captivating interfaces by transforming
+              your vision into a pixel-perfect reality that drives results.
+              Together, let's convert your project into a market-ready product.
+            </p>
+            <Button size={"L"}>VIEW CV</Button>
+          </div>
           <div>
             <GalleryCard />
           </div>
         </AboutMe>
 
-        <hr style={{ width: "100%" }} />
+        <Divider />
 
         <div
           style={{
@@ -61,7 +75,7 @@ export default function Home() {
           Empty Section
         </div>
 
-        <hr style={{ width: "100%" }} />
+        <Divider />
 
         <div
           style={{
@@ -71,11 +85,13 @@ export default function Home() {
             height: "30rem",
           }}
         >
-          <Button size="L">Button</Button>
+          <Button size="L" shape="hexagon">
+            Contact me
+          </Button>
         </div>
       </Content>
 
-      <Footer>Footer</Footer>
+      <Footer />
     </Main>
   );
 }
