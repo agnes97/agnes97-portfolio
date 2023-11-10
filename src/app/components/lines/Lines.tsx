@@ -4,6 +4,7 @@ import React, { FC } from "react";
 import { Container, Line } from "./Lines.styled";
 
 export type LinesProps = {
+  id: string;
   numberOfLines: number;
   lengthAction: "decreases" | "increases";
   alignment?: "vertical" | "horizontal";
@@ -11,7 +12,12 @@ export type LinesProps = {
 
 const percentualSizeIncrement = 5;
 
-const Lines: FC<LinesProps> = ({ alignment, numberOfLines, lengthAction }) => {
+const Lines: FC<LinesProps> = ({
+  id,
+  alignment,
+  numberOfLines,
+  lengthAction,
+}) => {
   const linesArray = new Array(numberOfLines).fill(null);
 
   return (
@@ -27,10 +33,13 @@ const Lines: FC<LinesProps> = ({ alignment, numberOfLines, lengthAction }) => {
             : lineLengthDecreasing;
 
         return alignment === "vertical" ? (
-          <Line key={index} alignment={alignment ?? "horizontal"} />
+          <Line
+            key={`${id}-vertical-${index}`}
+            alignment={alignment ?? "horizontal"}
+          />
         ) : (
           <Line
-            key={index}
+            key={`${id}-horizontal-${index}`}
             alignment={alignment ?? "horizontal"}
             style={{ width: `${lineLength}%` }}
           />

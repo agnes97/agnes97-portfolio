@@ -1,3 +1,5 @@
+"use client";
+
 import styled from 'styled-components';
 import { LinesProps } from './Lines';
 import { FlexColumn, FlexRow } from '@/app/styles/global.styled';
@@ -27,7 +29,7 @@ type LineProps = {
 }
 
 export const Line = styled.hr<LineProps>`
-    opacity: 0.5;
+    border: 1px solid ${({ theme }) => theme.color.line_dark};
     ${props => props.alignment === 'vertical' && `
         height: 18rem;
     `}
