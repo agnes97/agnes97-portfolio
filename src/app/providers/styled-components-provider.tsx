@@ -8,10 +8,12 @@ import {
   useMemo,
   useState,
 } from "react";
-import { GlobalStyle } from "../styles/global.styled";
+import { Content, GlobalStyle, Main } from "../styles/global.styled";
 import { ThemeProvider } from "styled-components";
 import StyledComponentsRegistry from "@/lib/styled-component-registry";
 import { Palette, darkTheme, lightTheme } from "../styles/theme.styled";
+import Footer from "../components/footer/Footer";
+import Header from "../components/header/Header";
 
 const COLOR_THEME_OPTIONS = ["light", "dark"] as const;
 export type ColorTheme = (typeof COLOR_THEME_OPTIONS)[number];
@@ -64,7 +66,13 @@ const StyledComponentsProvider: FC<PropsWithChildren> = ({ children }) => {
       <ThemeProvider theme={theme as CurrentTheme}>
         <StyledComponentsRegistry>
           <GlobalStyle />
-          <body>{children}</body>
+          <body>
+            <Main>
+              <Header />
+              <Content>{children}</Content>
+              <Footer />
+            </Main>
+          </body>
         </StyledComponentsRegistry>
       </ThemeProvider>
     </ThemeContext.Provider>

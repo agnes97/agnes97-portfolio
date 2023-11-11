@@ -10,6 +10,11 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
     font-family: Open-Sans, Helvetica, Sans-Serif;
   }
+
+  a {
+    all: unset;
+    cursor: pointer;
+  }
 `
 
 export const GlassEffect = css`
@@ -81,11 +86,11 @@ export const Grating = styled.section`
 
 export const Content = styled.div`
   width: 80%;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   gap: 2rem;
   padding: 2rem 0;
+  flex-grow: 1;
 `
 
 export const Table = styled.section`
