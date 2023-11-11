@@ -12,7 +12,7 @@ import { GlobalStyle } from "../styles/global.styled";
 import { ThemeProvider } from "styled-components";
 import StyledComponentsRegistry from "@/lib/styled-component-registry";
 import { Palette, darkTheme, lightTheme } from "../styles/theme.styled";
-import PageLayout from "./page-layout";
+import PageLayout from "../styles/page-layout";
 
 const COLOR_THEME_OPTIONS = ["light", "dark"] as const;
 export type ColorTheme = (typeof COLOR_THEME_OPTIONS)[number];

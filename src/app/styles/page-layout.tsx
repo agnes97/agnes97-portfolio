@@ -3,7 +3,7 @@
 import React, { FC, PropsWithChildren } from "react";
 import Footer from "../components/footer/Footer";
 import Header from "../components/header/Header";
-import { Content, Main } from "../styles/global.styled";
+import { Content, Main } from "./global.styled";
 
 const PageLayout: FC<PropsWithChildren> = ({ children }) => {
   return (

@@ -16,7 +16,9 @@ export default function Cv() {
       >
         Header
       </div>
+
       <Divider />
+
       <div
         style={{
           flexGrow: 1,
@@ -28,7 +30,9 @@ export default function Cv() {
       >
         Secret Info
       </div>
+
       <Divider />
+
       <div
         style={{
           display: "flex",
