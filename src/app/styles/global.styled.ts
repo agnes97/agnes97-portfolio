@@ -58,19 +58,36 @@ export const Divider = styled.hr`
 export const Grating = styled.section`
   ${FlexColumn};
   position: relative;
-  width: 50%;
+  width: 100%;
   margin: 0 auto;
   padding: 2rem 0;
 
+  @media (min-width: 740px) {
+    width: 80%;
+  }
+
+  @media (min-width: 1440px) {
+    width: 50%;
+  }
+
   & h2 {
+    white-space: nowrap;
     position: absolute;
     inset: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 7rem;
     font-family: "Sacramento";
-    color: white;
+    
+    font-size: 3.5rem;
+
+    @media (min-width: 740px) {
+      font-size: 5.5rem;
+    }
+
+    @media (min-width: 1440px) {
+      font-size: 7rem;
+    }
 
   ${({ theme }) => css`
     text-shadow: 

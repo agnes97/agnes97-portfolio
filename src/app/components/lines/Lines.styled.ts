@@ -20,8 +20,13 @@ export const Container = styled.div<ContainerProps>`
         ${FlexColumn};
         width: 100%;
     `};
-    gap: 0.5rem;
-    padding: 0.25rem 0;
+    gap: 0;
+    padding: 0;
+
+    @media (min-width: 740px) {
+        gap: 0.5rem;
+        padding: 0.25rem 0;
+    }
 `
 
 type LineProps = {
@@ -30,7 +35,18 @@ type LineProps = {
 
 export const Line = styled.hr<LineProps>`
     border: 1px solid ${({ theme }) => theme.color.line_dark};
+    margin-block: 0.25rem;
+
+    @media (min-width: 740px) {
+            margin-block: 0.5rem;
+          }
+
     ${props => props.alignment === 'vertical' && `
-        height: 18rem;
+        height: 8rem;
+        
+
+        @media (min-width: 740px) {
+            height: 18rem;
+          }
     `}
 `
