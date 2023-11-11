@@ -123,6 +123,7 @@ export const AboutMe = styled.section`
   justify-content: center;
   align-items: center;
   padding: 3rem 0;
+  gap: 2rem;
   
   & > * { 
     flex: 1; 

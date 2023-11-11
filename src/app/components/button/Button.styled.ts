@@ -4,6 +4,7 @@ export type ButtonProps = {
     hasBorder?: boolean;
     borderColor?: string;
     size: "L" | "M" | "S";
+    shape: "hexagon" | "rectangle";
 }
 
 const getButtonSize = (size: ButtonProps['size']) => {
@@ -18,48 +19,64 @@ const getButtonSize = (size: ButtonProps['size']) => {
 export const StyledButton = styled.button<ButtonProps>`
     all: unset;
     position: relative;
-    cursor: pointer;
-
-    ${props => `
+    cursor: pointer;    
+    color: ${props => props.theme.color.text_primary};
+    
+    ${props => props.shape === "hexagon" && `
+        box-shadow: 0 0 50px ${props.theme.color.accent_light};
         width: calc(3 / 4 * ${getButtonSize(props.size)});
         height: ${getButtonSize(props.size)};
+        margin: 0 2rem;
+        border-radius: 50%;
     `}
-    margin: 0 2rem;
 
-    border-radius: 50%;
-    box-shadow: 0 0 50px ${({ theme }) => theme.color.accent_light};
+    ${(props) => props.shape === "rectangle" && `
+        border: 2px solid ${props.theme.color.line_dark};
+        padding: 1rem 1.5rem;
+        min-width: ${getButtonSize(props.size)};
+        background: ${props.theme.color.line_dark};
+
+        letter-spacing: 0.1rem;
+        transition: all 400ms linear;
+
+        &:hover {
+            letter-spacing: 0.25rem;
+            color: ${props.theme.color.text_link}
+        }
+    `}
 `
 
-export const ButtonText = styled.span`
-    z-index: 2;
-    position: absolute;
-    inset: 0;
-    top: 0.5rem;
-    left: -0.5rem;
+type ButtonTextProps = {
+    shape: ButtonProps["shape"];
+};
+
+export const ButtonText = styled.span<ButtonTextProps>`
+    ${props => props.shape === "hexagon" && `
+        z-index: 2;
+        position: absolute;
+        inset: 0;
+        top: 0.5rem;
+        left: -0.5rem;
+    `}
+
     display: flex;
     justify-content: center;
     align-items: center;
     text-transform: uppercase;
     text-align: center;
     font-weight: bold;
-    color: white;
     line-height: 130%;
 `
 
 export const Hexagon = styled.div<ButtonProps>`
+    background-color: ${props => props.borderColor};
+    backdrop-filter: blur(10%);
+
     display: block;
     position: absolute;
     inset: 0;
     
     border-radius: 15px;
-    background-color: ${props => props.borderColor};
-    backdrop-filter: blur(10%);
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-transform: uppercase;
-    text-align: center;
 
     ${props => `
         width: calc(3 / 4.5 * ${getButtonSize(props.size)});

@@ -1,5 +1,4 @@
 import { useTheme } from "styled-components";
-import Button from "./components/button/Button";
 import GalleryCard from "./components/gallery-card/GalleryCard";
 import Header from "./components/header/Header";
 import Lines from "./components/lines/Lines";
@@ -12,6 +11,7 @@ import {
   Table,
 } from "./styles/global.styled";
 import Footer from "./components/footer/Footer";
+import Button from "./components/button/Button";
 
 export default function Home() {
   return (
@@ -48,14 +48,16 @@ export default function Home() {
               gap: "3rem",
             }}
           >
-            <p style={{ width: "35rem" }}>
+            <p style={{ maxWidth: "35rem" }}>
               In the ever-evolving tech realm, finding a proficient programmer
               who can breathe life into your ideas is crucial. I am committed to
               crafting user-friendly, captivating interfaces by transforming
               your vision into a pixel-perfect reality that drives results.
               Together, let's convert your project into a market-ready product.
             </p>
-            <Button size={"L"}>VIEW CV</Button>
+            <Button shape="rectangle" size="L">
+              VIEW CV
+            </Button>
           </div>
           <div>
             <GalleryCard />
