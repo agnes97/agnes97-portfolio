@@ -47,6 +47,7 @@ export const Main = styled.main`
   min-height: 100vh;
   ${FlexColumn}
   background: ${({ theme }) => theme.color.backgroundGradient};
+  color: ${({ theme }) => theme.color.text_primary};
 `
 
 export const Divider = styled.hr`
