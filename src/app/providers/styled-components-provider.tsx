@@ -64,8 +64,8 @@ const StyledComponentsProvider: FC<PropsWithChildren> = ({ children }) => {
     >
       <ThemeProvider theme={theme as CurrentTheme}>
         <StyledComponentsRegistry>
-          <GlobalStyle />
           <body>
+            <GlobalStyle />
             <PageLayout>{children}</PageLayout>
           </body>
         </StyledComponentsRegistry>
