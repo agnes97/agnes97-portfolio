@@ -5,6 +5,7 @@ import data from "./data.json";
 import {
   AbsoluteContainer,
   Card,
+  CountryFlag,
   FilterBar,
   FilterButton,
   Filters,
@@ -49,6 +50,12 @@ const lastUpdated = "5. 12. 2023";
 
 type Country = "czech" | "polish";
 
+const countryFlag: { [key: string]: string } = {
+  cz: "🇨🇿",
+  pl: "🇵🇱",
+  sk: "🇸🇰",
+};
+
 type Word = "parrot" | "sheep" | "hourglass" | "slytherin";
 
 type Brand = "skincare" | "rituals" | "parfume";
@@ -75,8 +82,13 @@ const getCountryCategories = ({ user: { country_code } }: Item) => {
   switch (country_code) {
     case "CZ":
       categories.push("czech");
+      break;
+    case "SK":
+      categories.push("czech");
+      break;
     case "PL":
       categories.push("polish");
+      break;
   }
 
   return categories;
@@ -245,6 +257,9 @@ export default function ShoppingMall() {
 
             <footer>
               <span>No. {index + 1}</span>
+              <CountryFlag>
+                {countryFlag[item.user.country_code.toLowerCase()]}
+              </CountryFlag>
             </footer>
           </Card>
         ))}

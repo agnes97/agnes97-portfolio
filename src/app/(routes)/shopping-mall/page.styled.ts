@@ -32,6 +32,13 @@ export const Card = styled.a`
         display: flex;
         flex-direction: column;
     }
+
+    & > footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: -0.5rem;
+    }
 `
 
 export const Title = styled.span`
@@ -93,4 +100,8 @@ export const FilterButton = styled.button<FilterButtonProps>`
         font-size: 1.25rem;
         padding: 0.25rem;
     }
+`
+
+export const CountryFlag = styled.span`
+    font-size: 1.5rem;
 `
