@@ -46,7 +46,7 @@ type Item = {
 
 const shoppingMallItems: Item[] = data.items;
 const totalOfItems = shoppingMallItems.length;
-const lastUpdated = "5. 12. 2023";
+const lastUpdated = "7. 12. 2023";
 
 type Country = "czech" | "polish";
 
@@ -56,7 +56,14 @@ const countryFlag: { [key: string]: string } = {
   sk: "🇸🇰",
 };
 
-type Word = "parrot" | "sheep" | "hourglass" | "slytherin";
+type Word =
+  | "parrot"
+  | "sheep"
+  | "hourglass"
+  | "slytherin"
+  | "fox"
+  | "sunflower"
+  | "puzzle";
 
 type Brand = "skincare" | "rituals" | "parfume";
 
@@ -74,6 +81,9 @@ const categoryEmojis = new Map<keyof Categories, string>([
   ["rituals", "⛩️"],
   ["parfume", "💕"],
   ["slytherin", "🐍"],
+  ["fox", "🦊"],
+  ["sunflower", "🌻"],
+  ["puzzle", "🧩"],
 ]);
 
 const getCountryCategories = ({ user: { country_code } }: Item) => {
@@ -95,10 +105,13 @@ const getCountryCategories = ({ user: { country_code } }: Item) => {
 };
 
 const words: Map<Word, string[]> = new Map([
-  ["parrot", ["parrot", "papoušek", "papoušci", "papuga", "papugi"]],
+  ["parrot", ["parrot", "papoušek", "papoušci", "papuga", "papugi", "ptáků"]],
   ["sheep", ["sheep", "ovce", "ovečka", "owieczka", "owieczki"]],
   ["hourglass", ["klepsydra", "přesýpací"]],
   ["slytherin", ["slytherin", "zmijozel", "harry", "potter", "wąż"]],
+  ["fox", ["liška", "fox", "lišky", "liski"]],
+  ["sunflower", ["sunflower", "slunečnice", "słoneczniki"]],
+  ["puzzle", ["puzzle"]],
 ]);
 
 const places = ["title", "description"] as const;
@@ -166,6 +179,9 @@ const categories = shoppingMallItems.reduce<Categories>(
     rituals: [],
     parfume: [],
     slytherin: [],
+    fox: [],
+    sunflower: [],
+    puzzle: [],
   }
 );
 
