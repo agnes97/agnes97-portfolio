@@ -1,4 +1,4 @@
-import { ReactNode, createContext, useMemo } from "react";
+import { ReactNode, createContext, useContext, useMemo } from "react";
 import { Item } from "../types";
 import data from "../data.json";
 import { Brand, getBrandCategories } from "./get-brand-categories";
@@ -55,7 +55,7 @@ const categories = shoppingMallItems.reduce<Categories>((categories, item) => {
 
 type Props = { children: ReactNode };
 
-function CategoryProvider({ children }: Props) {
+export function CategoryProvider({ children }: Props) {
   const memoizedValue = useMemo(
     () => ({
       shoppingMallItems,
@@ -73,4 +73,4 @@ function CategoryProvider({ children }: Props) {
   );
 }
 
-export { CategoryProvider, CategoryContext };
+export const useCategories = () => useContext(CategoryContext);

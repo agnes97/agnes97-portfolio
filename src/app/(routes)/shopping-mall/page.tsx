@@ -7,17 +7,15 @@ import Footer from "./components/footer/Footer";
 import ProductImage from "./components/product-image/ProductImage";
 import {
   Categories,
-  CategoryContext,
   CategoryProvider,
+  useCategories,
 } from "./context/category-context";
-import { useContext } from "react";
 
 export default function ShoppingMall() {
   const searchParams = useSearchParams()!;
   const activeFilter = searchParams.get("category") ?? "all";
 
-  const { shoppingMallItems, categories, totalOfItems } =
-    useContext(CategoryContext);
+  const { shoppingMallItems, categories, totalOfItems } = useCategories();
 
   return (
     <CategoryProvider>
