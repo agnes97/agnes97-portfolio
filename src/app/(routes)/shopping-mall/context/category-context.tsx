@@ -24,8 +24,7 @@ export const initialCategories: Categories = {
   puzzle: [],
 };
 
-// @ts-ignore
-const shoppingMallItems: Item[] = data.items;
+const shoppingMallItems = (data as { items: Item[] }).items;
 export const totalOfItems = shoppingMallItems.length;
 const lastUpdated = "7. 12. 2023";
 
