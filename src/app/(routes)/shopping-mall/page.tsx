@@ -13,7 +13,9 @@ import {
 
 export default function ShoppingMall() {
   const searchParams = useSearchParams()!;
-  const activeFilter = searchParams.get("category") ?? "all";
+  const activeFilter = (searchParams.get("category") ?? "all") as
+    | keyof Categories
+    | "all";
 
   const { shoppingMallItems, categories, totalOfItems } = useCategories();
 
@@ -29,7 +31,7 @@ export default function ShoppingMall() {
         <Gallery>
           {(activeFilter === "all"
             ? shoppingMallItems
-            : categories[activeFilter as keyof Categories]
+            : categories[activeFilter]
           ).map((item, index) => (
             <Card key={item.id} href={item.url} target="_blank">
               <header>

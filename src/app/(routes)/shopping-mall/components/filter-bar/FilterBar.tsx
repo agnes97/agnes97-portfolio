@@ -7,7 +7,7 @@ import { categoryEmojis } from "../../utils/get-emojis";
 import { Categories } from "../../context/category-context";
 
 type Props = {
-  activeFilter: string;
+  activeFilter: keyof Categories | "all";
   categories: Categories;
   totalOfItems: number;
 };
@@ -39,29 +39,31 @@ const FilterBar: FC<Props> = ({ activeFilter, categories, totalOfItems }) => {
           ♾️
         </FilterButton>
 
-        {Object.keys(categories).map((category) => (
-          <FilterButton
-            isActive={activeFilter === category}
-            key={category}
-            type="button"
-            onClick={() => {
-              router.push(
-                `/shopping-mall?${createQueryString("category", category)}`
-              );
-            }}
-          >
-            {categoryEmojis.get(category as keyof Categories)
-              ? categoryEmojis.get(category as keyof Categories)
-              : category}
-          </FilterButton>
-        ))}
+        {(Object.keys(categories) as Array<keyof Categories>).map(
+          (category) => (
+            <FilterButton
+              isActive={activeFilter === category}
+              key={category}
+              type="button"
+              onClick={() => {
+                router.push(
+                  `/shopping-mall?${createQueryString("category", category)}`
+                );
+              }}
+            >
+              {categoryEmojis.get(category)
+                ? categoryEmojis.get(category)
+                : category}
+            </FilterButton>
+          )
+        )}
       </Filters>
 
       {activeFilter !== "all" ? (
         <Total>
           <Span>&#123;</Span> inCategory:{" "}
-          <Span>{categories[activeFilter as keyof Categories].length}</Span>,
-          total: <Span>{totalOfItems} &#125;</Span>
+          <Span>{categories[activeFilter].length}</Span>, total:{" "}
+          <Span>{totalOfItems} &#125;</Span>
         </Total>
       ) : (
         <Total>
