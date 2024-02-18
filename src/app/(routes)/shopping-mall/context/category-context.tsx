@@ -26,7 +26,7 @@ export const initialCategories: Categories = {
 
 const shoppingMallItems = (data as { items: Item[] }).items;
 export const totalOfItems = shoppingMallItems.length;
-const lastUpdated = "7. 12. 2023";
+const lastUpdated = "18. 02. 2024";
 
 type Context = {
   shoppingMallItems: Item[];
