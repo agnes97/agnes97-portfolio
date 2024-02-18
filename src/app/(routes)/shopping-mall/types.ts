@@ -22,4 +22,6 @@ export type Item = {
   currency: string;
   url: string;
   brand: string;
+  item_closing_action: "sold" | null;
+  is_reserved: 0 | 1;
 };

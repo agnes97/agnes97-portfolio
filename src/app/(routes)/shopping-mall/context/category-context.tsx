@@ -24,9 +24,14 @@ export const initialCategories: Categories = {
   puzzle: [],
 };
 
-const shoppingMallItems = (data as { items: Item[] }).items;
-export const totalOfItems = shoppingMallItems.length;
+const allItems = (data as { items: Item[] }).items;
 const lastUpdated = "18. 02. 2024";
+
+const unsoldItems = allItems.filter(
+  (item) => item.item_closing_action !== "sold" && item.is_reserved !== 1
+);
+
+export const totalOfItems = unsoldItems.length;
 
 type Context = {
   shoppingMallItems: Item[];
@@ -36,13 +41,13 @@ type Context = {
 };
 
 const CategoryContext = createContext<Context>({
-  shoppingMallItems: shoppingMallItems,
+  shoppingMallItems: unsoldItems,
   categories: initialCategories,
   totalOfItems: totalOfItems,
   lastUpdated: "",
 });
 
-const categories = shoppingMallItems.reduce<Categories>((categories, item) => {
+const categories = unsoldItems.reduce<Categories>((categories, item) => {
   [
     ...getCountryCategories(item),
     ...getWordCategories(item),
@@ -57,7 +62,7 @@ type Props = { children: ReactNode };
 export function CategoryProvider({ children }: Props) {
   const memoizedValue = useMemo(
     () => ({
-      shoppingMallItems,
+      shoppingMallItems: unsoldItems,
       categories,
       totalOfItems,
       lastUpdated,
