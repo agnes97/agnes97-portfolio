@@ -1,7 +1,7 @@
 "use client";
 
-import styled, { createGlobalStyle, css, withTheme } from 'styled-components'
-import { useTheme } from '../providers/styled-components-provider';
+import styled, { createGlobalStyle, css, withTheme } from "styled-components";
+import { useTheme } from "../providers/styled-components-provider";
 
 export const GlobalStyle = createGlobalStyle`
   html, & * { box-sizing: border-box }
@@ -15,32 +15,38 @@ export const GlobalStyle = createGlobalStyle`
     all: unset;
     cursor: pointer;
   }
-`
+`;
 
 export const GlassEffect = css`
-     ${() => {
-      const { currentThemeVariant } = useTheme();
+  ${() => {
+    const { currentThemeVariant } = useTheme();
 
-      return `
-        background: ${currentThemeVariant === 'dark' ? "rgba(255, 255, 255, 0.1)" : "rgba(255, 255, 255, 0.3)"};
-        border: 1px solid rgba(255, 255, 255, ${currentThemeVariant === 'dark' ? 0.3 : 0.6});
-     `
-    }};
-    backdrop-filter: blur(10%);
-    `
+    return `
+        background: ${
+          currentThemeVariant === "dark"
+            ? "rgba(255, 255, 255, 0.1)"
+            : "rgba(255, 255, 255, 0.3)"
+        };
+        border: 1px solid rgba(255, 255, 255, ${
+          currentThemeVariant === "dark" ? 0.3 : 0.6
+        });
+     `;
+  }};
+  backdrop-filter: blur(10%);
+`;
 
 export const FlexColumn = css`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-`
+`;
 
 export const FlexRow = css`
   display: flex;
   justify-content: center;
   align-items: center;
-`
+`;
 
 export const Main = styled.main`
   width: 100%;
@@ -48,12 +54,12 @@ export const Main = styled.main`
   ${FlexColumn}
   background: ${({ theme }) => theme.color.backgroundGradient};
   color: ${({ theme }) => theme.color.text_primary};
-`
+`;
 
 export const Divider = styled.hr`
   width: 100%;
   border: 1px solid ${({ theme }) => theme.color.line_light};
-`
+`;
 
 export const Grating = styled.section`
   ${FlexColumn};
@@ -78,7 +84,7 @@ export const Grating = styled.section`
     align-items: center;
     justify-content: center;
     font-family: "Sacramento";
-    
+
     font-size: 3.5rem;
 
     @media (min-width: 740px) {
@@ -89,18 +95,14 @@ export const Grating = styled.section`
       font-size: 7rem;
     }
 
-  ${({ theme }) => css`
-    text-shadow: 
-      0 0 5px ${theme.color.accent_light},     
-      0 0 15px white,                          
-      0 0 20px ${theme.color.accent_light},    
-      0 0 40px ${theme.color.accent_dark},     
-      0 0 60px #000000,                        
-      0 0 10px white,                          
-      0 0 98px ${theme.color.accent_dark};     
-  `}
+    ${({ theme }) => css`
+      text-shadow: 0 0 5px ${theme.color.accent_light}, 0 0 15px white,
+        0 0 20px ${theme.color.accent_light},
+        0 0 40px ${theme.color.accent_dark}, 0 0 60px #000000, 0 0 10px white,
+        0 0 98px ${theme.color.accent_dark};
+    `}
   }
-`
+`;
 
 export const Content = styled.div`
   width: 80%;
@@ -109,7 +111,11 @@ export const Content = styled.div`
   gap: 2rem;
   padding: 2rem 0;
   flex-grow: 1;
-`
+
+  @media (max-width: 740px) {
+    width: 100%;
+  }
+`;
 
 export const Table = styled.section`
   width: calc(100% + 10rem);
@@ -131,7 +137,7 @@ export const Table = styled.section`
   }
 
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     inset: 0;
     ${GlassEffect};
@@ -139,7 +145,7 @@ export const Table = styled.section`
     border-top-left-radius: 5rem 20rem;
     z-index: 0;
   }
-`
+`;
 
 export const AboutMe = styled.section`
   display: flex;
@@ -147,9 +153,9 @@ export const AboutMe = styled.section`
   align-items: center;
   padding: 3rem 0;
   gap: 2rem;
-  
-  & > * { 
-    flex: 1; 
+
+  & > * {
+    flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -161,4 +167,4 @@ export const AboutMe = styled.section`
     padding: 0.25rem;
     color: ${({ theme }) => theme.color.text_link};
   }
-`
+`;
