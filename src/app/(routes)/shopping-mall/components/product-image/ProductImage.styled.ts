@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const RelativeContainer = styled.div`
   position: relative;
@@ -13,13 +13,13 @@ export const AbsoluteContainer = styled.div`
 `;
 
 type RedFlagProps = {
-  severity: "two-weeks" | "one-month";
+  severity: 'two-weeks' | 'one-month';
 };
 
 export const RedFlag = styled.div<RedFlagProps>`
   position: absolute;
   background-color: ${({ severity, theme }) =>
-    severity === "two-weeks" ? theme.color.error : theme.color.error};
+    severity === 'two-weeks' ? theme.color.error : theme.color.error};
   padding: 0.25rem 1rem;
   top: 0.75rem;
   display: flex;

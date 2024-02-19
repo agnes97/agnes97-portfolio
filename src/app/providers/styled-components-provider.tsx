@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import {
   FC,
@@ -7,16 +7,16 @@ import {
   useContext,
   useMemo,
   useState,
-} from "react";
-import { GlobalStyle } from "../styles/global.styled";
-import { ThemeProvider } from "styled-components";
-import StyledComponentsRegistry from "@/lib/styled-component-registry";
-import { Palette, darkTheme, lightTheme } from "../styles/theme.styled";
-import PageLayout from "../styles/page-layout";
+} from 'react';
+import { GlobalStyle } from '../styles/global.styled';
+import { ThemeProvider } from 'styled-components';
+import StyledComponentsRegistry from '@/lib/styled-component-registry';
+import { Palette, darkTheme, lightTheme } from '../styles/theme.styled';
+import PageLayout from '../styles/page-layout';
 
-const COLOR_THEME_OPTIONS = ["light", "dark"] as const;
+const COLOR_THEME_OPTIONS = ['light', 'dark'] as const;
 export type ColorTheme = (typeof COLOR_THEME_OPTIONS)[number];
-const defaultTheme: ColorTheme = "light";
+const defaultTheme: ColorTheme = 'light';
 
 export const themes: {
   [key in ColorTheme]: {
@@ -50,7 +50,7 @@ const StyledComponentsProvider: FC<PropsWithChildren> = ({ children }) => {
   const [currentTheme, setCurrentTheme] = useState<ColorTheme>(defaultTheme);
 
   const updateTheme = () =>
-    setCurrentTheme(currentTheme === "light" ? "dark" : "light");
+    setCurrentTheme(currentTheme === 'light' ? 'dark' : 'light');
 
   const theme = useMemo(() => themes[currentTheme], [currentTheme]);
 

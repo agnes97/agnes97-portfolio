@@ -1,9 +1,9 @@
-import { ReactNode, createContext, useContext, useMemo } from "react";
-import { Item } from "../types";
-import data from "../data.json";
-import { Brand, getBrandCategories } from "./get-brand-categories";
-import { Country, getCountryCategories } from "./get-country-categories";
-import { Word, getWordCategories } from "./get-word-categories";
+import { ReactNode, createContext, useContext, useMemo } from 'react';
+import { Item } from '../types';
+import data from '../data.json';
+import { Brand, getBrandCategories } from './get-brand-categories';
+import { Country, getCountryCategories } from './get-country-categories';
+import { Word, getWordCategories } from './get-word-categories';
 
 export type Categories = Record<Country, Item[]> &
   Record<Word, Item[]> &
@@ -25,10 +25,10 @@ export const initialCategories: Categories = {
 };
 
 const allItems = (data as { items: Item[] }).items;
-const lastUpdated = "18. 02. 2024";
+const lastUpdated = '18. 02. 2024';
 
 const unsoldItems = allItems.filter(
-  (item) => item.item_closing_action !== "sold" && item.is_reserved !== 1
+  (item) => item.item_closing_action !== 'sold' && item.is_reserved !== 1
 );
 
 export const totalOfItems = unsoldItems.length;
@@ -44,7 +44,7 @@ const CategoryContext = createContext<Context>({
   shoppingMallItems: unsoldItems,
   categories: initialCategories,
   totalOfItems: totalOfItems,
-  lastUpdated: "",
+  lastUpdated: '',
 });
 
 const categories = unsoldItems.reduce<Categories>((categories, item) => {

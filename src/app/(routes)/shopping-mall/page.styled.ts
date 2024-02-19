@@ -1,5 +1,5 @@
-import { GlassEffect } from "@/app/styles/global.styled";
-import styled from "styled-components";
+import { GlassEffect } from '@/app/styles/global.styled';
+import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   display: flex;

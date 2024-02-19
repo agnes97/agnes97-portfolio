@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import React from "react";
-import { StyledFooter } from "./Footer.styled";
+import React from 'react';
+import { StyledFooter } from './Footer.styled';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();

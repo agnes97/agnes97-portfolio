@@ -1,17 +1,17 @@
-"use client";
+'use client';
 
-import { Divider } from "@/app/styles/global.styled";
-import React from "react";
+import { Divider } from '@/app/styles/global.styled';
+import React from 'react';
 
 export default function Cv() {
   return (
     <>
       <div
         style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          height: "10rem",
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          height: '10rem',
         }}
       >
         Header
@@ -22,10 +22,10 @@ export default function Cv() {
       <div
         style={{
           flexGrow: 1,
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          height: "10rem",
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          height: '10rem',
         }}
       >
         Secret Info
@@ -35,10 +35,10 @@ export default function Cv() {
 
       <div
         style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          height: "10rem",
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          height: '10rem',
         }}
       >
         Footer

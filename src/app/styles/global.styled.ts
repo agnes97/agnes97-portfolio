@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import styled, { createGlobalStyle, css, withTheme } from "styled-components";
-import { useTheme } from "../providers/styled-components-provider";
+import styled, { createGlobalStyle, css, withTheme } from 'styled-components';
+import { useTheme } from '../providers/styled-components-provider';
 
 export const GlobalStyle = createGlobalStyle`
   html, & * { box-sizing: border-box }
@@ -23,12 +23,12 @@ export const GlassEffect = css`
 
     return `
         background: ${
-          currentThemeVariant === "dark"
-            ? "rgba(255, 255, 255, 0.1)"
-            : "rgba(255, 255, 255, 0.3)"
+          currentThemeVariant === 'dark'
+            ? 'rgba(255, 255, 255, 0.1)'
+            : 'rgba(255, 255, 255, 0.3)'
         };
         border: 1px solid rgba(255, 255, 255, ${
-          currentThemeVariant === "dark" ? 0.3 : 0.6
+          currentThemeVariant === 'dark' ? 0.3 : 0.6
         });
      `;
   }};
@@ -83,7 +83,7 @@ export const Grating = styled.section`
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: "Sacramento";
+    font-family: 'Sacramento';
 
     font-size: 3.5rem;
 
@@ -96,9 +96,13 @@ export const Grating = styled.section`
     }
 
     ${({ theme }) => css`
-      text-shadow: 0 0 5px ${theme.color.accent_light}, 0 0 15px white,
+      text-shadow:
+        0 0 5px ${theme.color.accent_light},
+        0 0 15px white,
         0 0 20px ${theme.color.accent_light},
-        0 0 40px ${theme.color.accent_dark}, 0 0 60px #000000, 0 0 10px white,
+        0 0 40px ${theme.color.accent_dark},
+        0 0 60px #000000,
+        0 0 10px white,
         0 0 98px ${theme.color.accent_dark};
     `}
   }
@@ -137,7 +141,7 @@ export const Table = styled.section`
   }
 
   &::after {
-    content: "";
+    content: '';
     position: absolute;
     inset: 0;
     ${GlassEffect};

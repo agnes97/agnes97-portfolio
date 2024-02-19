@@ -1,13 +1,13 @@
-"use client";
+'use client';
 
-import { CurrentTheme } from "@/app/providers/styled-components-provider";
-import { useServerInsertedHTML } from "next/navigation";
-import React, { useState } from "react";
-import { ServerStyleSheet, StyleSheetManager } from "styled-components";
-import "styled-components";
+import { CurrentTheme } from '@/app/providers/styled-components-provider';
+import { useServerInsertedHTML } from 'next/navigation';
+import React, { useState } from 'react';
+import { ServerStyleSheet, StyleSheetManager } from 'styled-components';
+import 'styled-components';
 
 // Declare types for custom theme
-declare module "styled-components" {
+declare module 'styled-components' {
   export interface DefaultTheme extends CurrentTheme {}
 }
 
@@ -27,7 +27,7 @@ export default function StyledComponentsRegistry({
     return <>{styles}</>;
   });
 
-  if (typeof window !== "undefined") return <>{children}</>;
+  if (typeof window !== 'undefined') return <>{children}</>;
 
   return (
     <StyleSheetManager sheet={styledComponentsStyleSheet.instance}>

@@ -1,5 +1,5 @@
-import type Paper from "paper/dist/paper-core";
-import Rope from "./Rope";
+import type Paper from 'paper/dist/paper-core';
+import Rope from './Rope';
 
 declare var paper: typeof Paper;
 
@@ -33,9 +33,9 @@ function setDistance(
 }
 
 function onFrame(
-    rope: paper.Path,
-    ropeOld: paper.Path,
-    ball: paper.Path.Circle,
+  rope: paper.Path,
+  ropeOld: paper.Path,
+  ball: paper.Path.Circle
 ) {
   // Define helpers based on Paper
   const { Point } = paper;
@@ -89,31 +89,31 @@ function onFrame(
     ball.position = rope.segments[points - 1].point;
 
     // Give the rope its buttery smoothness
-    rope.smooth({ type: "continuous" });
+    rope.smooth({ type: 'continuous' });
 
     // Define helpers based on Paper
-    const { Tool, Path, Color  } = paper;
+    const { Tool, Path, Color } = paper;
 
     const tool = new Tool();
 
     tool.fixedDistance = 20;
 
-    tool.onMouseDrag = function(event: paper.ToolEvent) {
-        ball.remove()
-        rope.add(event.point)
-      }
+    tool.onMouseDrag = function (event: paper.ToolEvent) {
+      ball.remove();
+      rope.add(event.point);
+    };
 
-    tool.onMouseDown = function(event: paper.ToolEvent) {
+    tool.onMouseDown = function (event: paper.ToolEvent) {
       rope.fullySelected = true;
-    }
+    };
 
-    tool.onMouseUp = function(event: paper.ToolEvent) {
+    tool.onMouseUp = function (event: paper.ToolEvent) {
       const ball = new Path.Circle(event.point, 5);
       ball.strokeWidth = 10;
       ball.strokeColor = new Color(0, 0, 0);
 
       rope.fullySelected = false;
-    }
+    };
   };
 }
 
@@ -126,9 +126,9 @@ export function drawRopeOnCanvas(canvas: HTMLCanvasElement): void {
 
   // The rope (and its previous positions)
   const rope = new Path({
-    strokeColor: "red",
+    strokeColor: 'red',
     strokeWidth: 5,
-    strokeCap: "round",
+    strokeCap: 'round',
   });
   const ropeOld = new Path();
 

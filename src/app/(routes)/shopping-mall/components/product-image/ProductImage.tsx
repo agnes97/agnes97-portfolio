@@ -1,10 +1,10 @@
-import React, { FC } from "react";
+import React, { FC } from 'react';
 import {
   AbsoluteContainer,
   RedFlag,
   RelativeContainer,
-} from "./ProductImage.styled";
-import PriceTag from "../price-tag/PriceTag";
+} from './ProductImage.styled';
+import PriceTag from '../price-tag/PriceTag';
 
 type Props = {
   price: number;
@@ -33,7 +33,7 @@ const ProductImage: FC<Props> = ({
     <RelativeContainer>
       {(wasLastOnlineTwoWeeksAgo || wasLastOnlineMonthAgo) && (
         <RedFlag
-          severity={wasLastOnlineTwoWeeksAgo ? "two-weeks" : "one-month"}
+          severity={wasLastOnlineTwoWeeksAgo ? 'two-weeks' : 'one-month'}
         >
           <span>Last online:</span>
           <span>{lastOnlineDate.toLocaleDateString()}</span>

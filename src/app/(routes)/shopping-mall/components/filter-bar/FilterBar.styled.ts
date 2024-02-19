@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Bar = styled.nav`
   display: flex;
@@ -39,17 +39,17 @@ export const FilterButton = styled.button<FilterButtonProps>`
   align-items: center;
 
   &::before {
-    content: "{";
+    content: '{';
     color: ${({ isActive, theme }) =>
-      isActive ? theme.color.text_primary : "transparent"};
+      isActive ? theme.color.text_primary : 'transparent'};
     font-size: 1.25rem;
     padding: 0.25rem;
   }
 
   &::after {
-    content: "}";
+    content: '}';
     color: ${({ isActive, theme }) =>
-      isActive ? theme.color.text_primary : "transparent"};
+      isActive ? theme.color.text_primary : 'transparent'};
     font-size: 1.25rem;
     padding: 0.25rem;
   }

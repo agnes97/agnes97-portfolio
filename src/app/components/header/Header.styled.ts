@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import { FlexRow, GlassEffect } from '@/app/styles/global.styled';
 import styled from 'styled-components';
@@ -17,10 +17,10 @@ export const StyledHeader = styled.header`
   & > h1 {
     margin-block: 0;
   }
-  `
+`;
 
 export const ThemeButton = styled.button`
   all: unset;
   color: ${({ theme }) => theme.color.text_link};
   cursor: pointer;
-`
+`;
