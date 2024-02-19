@@ -9,7 +9,7 @@ export const Bar = styled.nav`
   gap: 1rem;
   padding: 0 1rem;
 
-  @media (max-width: 900px) {
+  @media (width <= 900px) {
     justify-content: end;
   }
 `;

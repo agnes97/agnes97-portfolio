@@ -1,14 +1,15 @@
 'use client';
 
-import styled, { createGlobalStyle, css, withTheme } from 'styled-components';
+import styled, { createGlobalStyle, css } from 'styled-components';
 import { useTheme } from '../providers/styled-components-provider';
 
 export const GlobalStyle = createGlobalStyle`
   html, & * { box-sizing: border-box }
+
   body {
     margin: 0;
     padding: 0;
-    font-family: Open-Sans, Helvetica, Sans-Serif;
+    font-family: Open-Sans, Helvetica, sans-serif;
   }
 
   a {
@@ -68,11 +69,11 @@ export const Grating = styled.section`
   margin: 0 auto;
   padding: 2rem 0;
 
-  @media (min-width: 740px) {
+  @media (width >= 740px) {
     width: 80%;
   }
 
-  @media (min-width: 1440px) {
+  @media (width >= 1440px) {
     width: 50%;
   }
 
@@ -83,15 +84,14 @@ export const Grating = styled.section`
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: 'Sacramento';
-
+    font-family: Sacramento, serif;
     font-size: 3.5rem;
 
-    @media (min-width: 740px) {
+    @media (width >= 740px) {
       font-size: 5.5rem;
     }
 
-    @media (min-width: 1440px) {
+    @media (width >= 1440px) {
       font-size: 7rem;
     }
 
@@ -101,7 +101,7 @@ export const Grating = styled.section`
         0 0 15px white,
         0 0 20px ${theme.color.accent_light},
         0 0 40px ${theme.color.accent_dark},
-        0 0 60px #000000,
+        0 0 60px black,
         0 0 10px white,
         0 0 98px ${theme.color.accent_dark};
     `}
@@ -116,7 +116,7 @@ export const Content = styled.div`
   padding: 2rem 0;
   flex-grow: 1;
 
-  @media (max-width: 740px) {
+  @media (width <= 740px) {
     width: 100%;
   }
 `;

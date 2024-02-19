@@ -50,7 +50,7 @@ export const Card = styled.div.attrs<CardProps>(
 
   &::before {
     ${(props) =>
-      props.transparentBorderSides && props.transparentBorderSides.length === 1
+      props.transparentBorderSides.length === 1
         ? `
             border-${props.transparentBorderSides[0]}: transparent;
         `
@@ -58,7 +58,6 @@ export const Card = styled.div.attrs<CardProps>(
             (_, index) =>
               `border-${props.transparentBorderSides[index]}: transparent;`
           )}
-
     z-index: 4;
   }
 `;
@@ -68,7 +67,7 @@ type ShadowProps = CardDatasets & {
 };
 
 export const Shadow = styled.div.attrs<ShadowProps>(
-  (datasets: CardDatasets, props: ShadowProps) => ({
+  (datasets: CardDatasets) => ({
     style: {
       transform: `rotateX(${datasets['data-rotate-x']}rad) rotateY(${datasets['data-rotate-y']}rad) translate3d(0, 2rem, -2rem)`,
     },

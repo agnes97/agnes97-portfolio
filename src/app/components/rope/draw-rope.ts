@@ -1,7 +1,7 @@
 import type Paper from 'paper/dist/paper-core';
-import Rope from './Rope';
+// import Rope from './Rope';
 
-declare var paper: typeof Paper;
+declare const paper: typeof Paper;
 
 // The number of points in the rope:
 const points = 10;
@@ -103,7 +103,7 @@ function onFrame(
       rope.add(event.point);
     };
 
-    tool.onMouseDown = function (event: paper.ToolEvent) {
+    tool.onMouseDown = function () {
       rope.fullySelected = true;
     };
 

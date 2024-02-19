@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 export type ButtonProps = {
   hasBorder?: boolean;
@@ -81,20 +81,17 @@ export const ButtonText = styled.span<ButtonTextProps>`
 export const Hexagon = styled.div<ButtonProps>`
   background-color: ${(props) => props.borderColor};
   backdrop-filter: blur(10%);
-
   display: block;
   position: absolute;
   inset: 0;
-
   border-radius: 15px;
+  color: black;
+  z-index: 1;
 
   ${(props) => `
         width: calc(3 / 4.5 * ${getButtonSize(props.size)});
         height: ${getButtonSize(props.size)};
     `}
-
-  color: black;
-  z-index: 1;
 
   ${(props) =>
     props.hasBorder &&

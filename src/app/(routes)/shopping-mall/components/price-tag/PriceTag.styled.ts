@@ -4,19 +4,15 @@ export const Tag = styled.div`
   display: inline-block;
   width: auto;
   height: 2rem;
-
   background-color: ${({ theme }) => theme.color.background_primary};
-
   border-left: 1px solid ${({ theme }) => theme.color.background_primary};
 
   /* This makes room for the triangle */
   margin-left: 1.5rem;
-
   position: relative;
-
   color: ${({ theme }) => theme.color.text_primary};
   line-height: 2rem;
-  padding: 0 0.75rem 0 0.75rem;
+  padding: 0 0.75rem;
 
   /* Makes the triangle */
   &::before {

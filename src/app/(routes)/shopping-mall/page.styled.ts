@@ -7,7 +7,7 @@ export const Wrapper = styled.div`
   gap: 2rem;
   justify-content: center;
 
-  @media (max-width: 400px) {
+  @media (width <= 400px) {
     padding: 0 1rem;
   }
 `;
@@ -18,9 +18,8 @@ export const Gallery = styled.section`
   gap: 1rem;
   justify-content: center;
 
-  @media (max-width: 400px) {
-    flex-direction: column;
-    flex-wrap: nowrap;
+  @media (width <= 400px) {
+    flex-flow: column nowrap;
     width: 100%;
   }
 `;
@@ -33,7 +32,7 @@ export const Card = styled.a`
   ${GlassEffect}
   border: 1px solid ${({ theme }) => theme.color.line_light};
 
-  @media (max-width: 400px) {
+  @media (width <= 400px) {
     width: 100%;
 
     & > div {
