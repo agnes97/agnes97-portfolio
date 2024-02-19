@@ -67,10 +67,11 @@ export const Grating = styled.section`
   position: relative;
   width: 100%;
   margin: 0 auto;
-  padding: 2rem 0;
+  padding: 2rem;
 
   @media (width >= 740px) {
     width: 80%;
+    padding: 2rem 0;
   }
 
   @media (width >= 1440px) {
@@ -113,7 +114,7 @@ export const Content = styled.div`
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  padding: 2rem 0;
+  padding: 2rem;
   flex-grow: 1;
 
   @media (width <= 740px) {
@@ -157,6 +158,10 @@ export const AboutMe = styled.section`
   align-items: center;
   padding: 3rem 0;
   gap: 2rem;
+
+  @media (width <= 740px) {
+    flex-direction: column-reverse;
+  }
 
   & > * {
     flex: 1;

@@ -17,6 +17,10 @@ export const StyledHeader = styled.header`
   & > h1 {
     margin-block: 0;
   }
+
+  @media (width <= 740px) {
+    flex-direction: column-reverse;
+  }
 `;
 
 export const ThemeButton = styled.button`
