@@ -1,8 +1,5 @@
-import { Inter } from 'next/font/google';
 import React, { ReactNode } from 'react';
 import StyledComponentsProvider from './providers/styled-components-provider';
-
-const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
   title: 'Agnes97',

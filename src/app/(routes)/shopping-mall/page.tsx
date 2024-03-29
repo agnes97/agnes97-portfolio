@@ -48,7 +48,7 @@ export default function ShoppingMall() {
                   thumbnailSrc={
                     item.photos[0].thumbnails.find(
                       (thumbnail) => thumbnail.type === 'thumb310x430'
-                    )!.url
+                    )?.url ?? ''
                   }
                 />
 

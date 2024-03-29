@@ -2,7 +2,6 @@
 
 import { useTheme } from '@/app/providers/styled-components-provider';
 import React, { FC } from 'react';
-import Rope from '../rope/Rope';
 import { StyledHeader, ThemeButton } from './Header.styled';
 import Link from 'next/link';
 
@@ -12,7 +11,13 @@ const Header: FC = () => {
   return (
     <StyledHeader>
       <div>
-        <ThemeButton onClick={() => updateTheme()}>change theme</ThemeButton>
+        <ThemeButton
+          onClick={() => {
+            updateTheme();
+          }}
+        >
+          change theme
+        </ThemeButton>
         <div>buttons</div>
       </div>
       <Link href='/'>

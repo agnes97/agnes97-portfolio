@@ -35,6 +35,7 @@ const Lines: FC<LinesProps> = ({
         return alignment === 'vertical' ? (
           <Line
             key={`${id}-vertical-${index}`}
+            // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
             alignment={alignment ?? 'horizontal'}
           />
         ) : (

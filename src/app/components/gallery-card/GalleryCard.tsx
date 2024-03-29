@@ -56,7 +56,9 @@ const GalleryCard: FC = () => {
       onMouseOut={() => {
         setMousePosition(initialMousePosition);
       }}
-      onMouseMove={(event) => handleMouseMove(event)}
+      onMouseMove={(event: React.MouseEvent<HTMLDivElement>) => {
+        handleMouseMove(event);
+      }}
       data-rotate-x={mousePosition.x}
       data-rotate-y={mousePosition.y}
       borderColors={

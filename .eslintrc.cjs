@@ -13,7 +13,7 @@ module.exports = {
     },
     overrides: [
       {
-        files: ['**/*.ts'],
+        files: ['**/*.ts', '**/*.tsx'],
         plugins: ['@typescript-eslint'],
         extends: [
           'eslint:recommended',

@@ -1,3 +1,5 @@
+'use client';
+
 import { GlassEffect } from '@/app/styles/global.styled';
 import styled from 'styled-components';
 

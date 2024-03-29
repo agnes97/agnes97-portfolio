@@ -11,6 +11,8 @@ export type Palette = {
   background_primary: string;
   background_secondary: string;
   backgroundGradient: string;
+  glass_effect_background: string;
+  glass_effect_border: string;
 };
 
 export const darkTheme: Palette = {
@@ -27,6 +29,8 @@ export const darkTheme: Palette = {
   background_secondary: 'rgba(34, 72, 48,1)',
   backgroundGradient:
     'linear-gradient(90deg, rgba(34, 72, 48,1) 0%, rgba(39,40,44,1) 20%, rgba(39,40,44,1) 80%, rgba(34, 72, 48,1) 100%)',
+  glass_effect_background: 'rgba(255, 255, 255, 0.1)',
+  glass_effect_border: 'rgba(255, 255, 255, 0.6)',
 };
 
 export const lightTheme: Palette = {
@@ -43,4 +47,6 @@ export const lightTheme: Palette = {
   background_secondary: 'rgba(238,174,198,1)',
   backgroundGradient:
     'linear-gradient(90deg, rgba(238,174,198,1) 0%, rgba(143,114,205,1) 20%, rgba(143,114,205,1) 80%, rgba(238,174,198,1) 100%)',
+  glass_effect_background: 'rgba(255, 255, 255, 0.3)',
+  glass_effect_border: 'rgba(255, 255, 255, 0.3)',
 };

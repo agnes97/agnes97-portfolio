@@ -1,7 +1,6 @@
 'use client';
 
 import styled, { createGlobalStyle, css } from 'styled-components';
-import { useTheme } from '../providers/styled-components-provider';
 
 export const GlobalStyle = createGlobalStyle`
   html, & * { box-sizing: border-box }
@@ -19,20 +18,8 @@ export const GlobalStyle = createGlobalStyle`
 `;
 
 export const GlassEffect = css`
-  ${() => {
-    const { currentThemeVariant } = useTheme();
-
-    return `
-        background: ${
-          currentThemeVariant === 'dark'
-            ? 'rgba(255, 255, 255, 0.1)'
-            : 'rgba(255, 255, 255, 0.3)'
-        };
-        border: 1px solid rgba(255, 255, 255, ${
-          currentThemeVariant === 'dark' ? 0.3 : 0.6
-        });
-     `;
-  }};
+  background: ${({ theme }) => theme.color.glass_effect_background};
+  border: 1px solid ${({ theme }) => theme.color.glass_effect_border};
   backdrop-filter: blur(10%);
 `;
 

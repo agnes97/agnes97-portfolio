@@ -22,7 +22,7 @@ export default function StyledComponentsRegistry({
 
   useServerInsertedHTML(() => {
     const styles = styledComponentsStyleSheet.getStyleElement();
-    // @ts-ignore clearTag() isn't exposed on the API
+
     styledComponentsStyleSheet.instance.clearTag();
     return <>{styles}</>;
   });

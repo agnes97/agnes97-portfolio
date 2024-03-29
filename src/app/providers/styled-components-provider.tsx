@@ -49,8 +49,9 @@ export const useTheme = () => useContext(ThemeContext);
 const StyledComponentsProvider: FC<PropsWithChildren> = ({ children }) => {
   const [currentTheme, setCurrentTheme] = useState<ColorTheme>(defaultTheme);
 
-  const updateTheme = () =>
+  const updateTheme = () => {
     setCurrentTheme(currentTheme === 'light' ? 'dark' : 'light');
+  };
 
   const theme = useMemo(() => themes[currentTheme], [currentTheme]);
 
@@ -62,7 +63,7 @@ const StyledComponentsProvider: FC<PropsWithChildren> = ({ children }) => {
         updateTheme,
       }}
     >
-      <ThemeProvider theme={theme as CurrentTheme}>
+      <ThemeProvider theme={theme}>
         <StyledComponentsRegistry>
           <body>
             <GlobalStyle />

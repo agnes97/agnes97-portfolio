@@ -14,7 +14,7 @@ type Props = {
 
 const FilterBar: FC<Props> = ({ activeFilter, categories, totalOfItems }) => {
   const router = useRouter();
-  const searchParams = useSearchParams()!;
+  const searchParams = useSearchParams();
 
   const createQueryString = useCallback(
     (name: string, value: string) => {
