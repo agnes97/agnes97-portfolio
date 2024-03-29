@@ -13,27 +13,27 @@
     "lint:fix": "eslint --fix ."
   },
   "dependencies": {
-    "next": "14.0.2",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "react-is": "18.2.0",
-    "styled-components": "5.3.10"
+    "next": "~14.0.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-is": "^18.2.0",
+    "styled-components": "^5.3.11"
   },
   "devDependencies": {
     "@strv/eslint-config-react": "^5.0.0",
     "@strv/eslint-config-typescript": "^5.0.0",
-    "@types/node": "20.0.0",
-    "@types/react": "18.2.5",
-    "@types/react-dom": "18.2.4",
-    "@types/styled-components": "5.1.26",
-    "@typescript-eslint/eslint-plugin": "^6.20.0",
-    "@typescript-eslint/parser": "^6.20.0",
-    "eslint": "^8.56.0",
+    "@types/node": "^20.11.30",
+    "@types/react": "^18.2.73",
+    "@types/react-dom": "^18.2.23",
+    "@types/styled-components": "^5.1.34",
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@typescript-eslint/parser": "^6.21.0",
+    "eslint": "^8.57.0",
     "paper": "^0.12.17",
     "postcss-styled-syntax": "^0.6.4",
-    "prettier": "3.2.5",
-    "stylelint": "^16.2.1",
+    "prettier": "^3.2.5",
+    "stylelint": "^16.3.1",
     "stylelint-config-standard": "^36.0.0",
-    "typescript": "5.0.4"
+    "typescript": "~5.3.3"
   }
 }
