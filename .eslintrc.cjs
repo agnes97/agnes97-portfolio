@@ -18,9 +18,9 @@ module.exports = {
         extends: [
           'eslint:recommended',
           'plugin:@typescript-eslint/strict-type-checked',
-          '@strv/react',
-          '@strv/react/optional',
-          '@strv/typescript',
+          // '@strv/react',
+          // '@strv/react/optional',
+          // '@strv/typescript',
         ],
         parser: '@typescript-eslint/parser',
         parserOptions: {
