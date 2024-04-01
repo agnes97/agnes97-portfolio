@@ -1,6 +1,6 @@
 'use client';
 
-import React, { FC, PropsWithChildren } from 'react';
+import React, { ButtonHTMLAttributes, FC, PropsWithChildren } from 'react';
 import {
   ButtonProps,
   ButtonText,
@@ -9,7 +9,7 @@ import {
 } from './Button.styled';
 import { useTheme } from '@/app/providers/styled-components-provider';
 
-type Props = {
+type Props = ButtonHTMLAttributes<HTMLButtonElement> & {
   size: ButtonProps['size'];
   shape: ButtonProps['shape'];
 };
