@@ -2,24 +2,39 @@
 
 import { useTheme } from '@/app/providers/styled-components-provider';
 import React, { FC } from 'react';
-import { StyledHeader, ThemeButton } from './Header.styled';
+import { StyledHeader, HeaderButton, ButtonContainer } from './Header.styled';
 import Link from 'next/link';
+import { Key, Moon, Sun } from 'lucide-react';
+
+const iconSize = 32;
 
 const Header: FC = () => {
-  const { updateTheme } = useTheme();
+  const { updateTheme, currentThemeVariant } = useTheme();
 
   return (
     <StyledHeader>
-      <div>
-        <ThemeButton
+      <ButtonContainer>
+        <HeaderButton
+          color='link'
+          style={{ gridColumn: 1, gridRow: 1 }}
           onClick={() => {
             updateTheme();
           }}
         >
-          change theme
-        </ThemeButton>
-        <div>buttons</div>
-      </div>
+          {currentThemeVariant === 'light' ? (
+            <Moon size={iconSize} />
+          ) : (
+            <Sun size={iconSize} />
+          )}
+        </HeaderButton>
+
+        <Link href='/locked' passHref style={{ gridColumn: 2, gridRow: 2 }}>
+          <HeaderButton color='white'>
+            <Key size={iconSize} />
+          </HeaderButton>
+        </Link>
+      </ButtonContainer>
+
       <Link href='/'>
         <h1>Jana Mácová</h1>
       </Link>
