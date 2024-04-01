@@ -1,7 +1,7 @@
 import { Field, Form } from 'houseform';
 import React, { FC } from 'react';
 import { ZodString } from 'zod';
-import { StyledForm } from './Form.styled';
+import { ErrorContainer, StyledForm } from './Form.styled';
 import Button from '../button/Button';
 import { useTheme } from '@/app/providers/styled-components-provider';
 
@@ -20,16 +20,12 @@ const HouseForm: FC<FormProps> = ({ formValues }) => {
 
   return (
     <Form>
-      {({ isValid }) => (
+      {({ isValid, errors, errorsMap }) => (
         <StyledForm currentTheme={currentThemeVariant}>
           {formValues.map((field) => (
-            <fieldset>
-              <Field
-                key={field.name}
-                name={field.name}
-                onChangeValidate={field.validation}
-              >
-                {({ value, setValue, onBlur, errors }) => (
+            <fieldset key={field.name}>
+              <Field name={field.name} onChangeValidate={field.validation}>
+                {({ value, setValue, onBlur }) => (
                   <div>
                     <input
                       // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
@@ -40,14 +36,33 @@ const HouseForm: FC<FormProps> = ({ formValues }) => {
                       }}
                       placeholder={field.placeholder}
                     />
-                    {errors.map((error) => (
-                      <p key={error}>{error}</p>
-                    ))}
                   </div>
                 )}
               </Field>
             </fieldset>
           ))}
+
+          {errors.length > 0 && (
+            <>
+              <div style={{ height: '2rem' }}></div>
+              <ErrorContainer>
+                {Object.entries(errorsMap).map(
+                  ([key, value]) =>
+                    value.length > 0 && (
+                      <div>
+                        <span>
+                          {formValues.find(
+                            (formValue) => key === formValue.name
+                          )?.placeholder ?? key}
+                        </span>
+                        <span>&#8594;</span>
+                        <span>{value}</span>
+                      </div>
+                    )
+                )}
+              </ErrorContainer>
+            </>
+          )}
 
           <div style={{ height: '2rem' }}></div>
 

@@ -22,6 +22,18 @@ export const StyledForm = styled.form<StyledFormProps>`
     align-items: center;
     width: 100%;
 
+    & > div {
+      width: 100%;
+
+      @media (width >= 740px) {
+        width: 70%;
+      }
+
+      @media (width >= 1440px) {
+        width: 40%;
+      }
+    }
+
     /* STARS FOCUS ANIMATION */
     &:focus-within::before,
     &:focus-within::after {
@@ -67,7 +79,25 @@ export const StyledForm = styled.form<StyledFormProps>`
     }
 
     &:focus {
-      outline: 1px solid ${({ theme }) => theme.color.accent_dark};
+      outline: none;
+      border: 1px solid
+        ${({ theme, currentTheme }) =>
+          currentTheme === 'light'
+            ? theme.color.background_secondary
+            : theme.color.accent_dark};
     }
+  }
+`;
+
+export const ErrorContainer = styled.div`
+  border: 2px solid ${({ theme }) => theme.color.glass_effect_border};
+  background-color: ${({ theme }) => theme.color.error};
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+
+  & > div {
+    display: inline-flex;
+    gap: 1rem;
   }
 `;
