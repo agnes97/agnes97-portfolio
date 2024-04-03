@@ -20,11 +20,7 @@ export default function Home() {
         <h2>&#123; Agnes97 &#125;</h2>
       </Grating>
 
-      {/* <Table>
-          <p>Table</p>
-        </Table> */}
-
-      <Divider />
+      <Divider hideOnMobile />
 
       <AboutMe>
         <div

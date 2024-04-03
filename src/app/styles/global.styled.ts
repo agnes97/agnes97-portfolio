@@ -40,13 +40,28 @@ export const Main = styled.main`
   width: 100%;
   min-height: 100vh;
   ${FlexColumn}
-  background: ${({ theme }) => theme.color.backgroundGradient};
+  background: ${({ theme }) => theme.color.background_primary};
   color: ${({ theme }) => theme.color.text_primary};
+
+  @media (width >= 740px) {
+    background: ${({ theme }) => theme.color.backgroundGradient};
+  }
 `;
 
-export const Divider = styled.hr`
+type DividerProps = {
+  hideOnMobile?: boolean;
+};
+
+export const Divider = styled.hr<DividerProps>`
   width: 100%;
   border: 1px solid ${({ theme }) => theme.color.line_light};
+  ${({ hideOnMobile }) =>
+    hideOnMobile &&
+    `
+    @media (width <= 740px) {
+     display: none;
+    }
+  `}
 `;
 
 export const Grating = styled.section`
@@ -63,6 +78,13 @@ export const Grating = styled.section`
 
   @media (width >= 1440px) {
     width: 50%;
+  }
+
+  /* Hide lines on smaller screens */
+  & hr {
+    @media (width <= 740px) {
+      display: none;
+    }
   }
 
   & h2 {

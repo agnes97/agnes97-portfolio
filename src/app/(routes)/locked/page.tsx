@@ -2,7 +2,8 @@
 
 import { Divider } from '@/app/styles/global.styled';
 import React from 'react';
-import LoginForm from './components/LoginForm';
+import LoginForm from './components/login-form/LoginForm';
+import SecretContent from './components/secret-content/SecretContent';
 
 export default function Locked() {
   return (
@@ -11,16 +12,7 @@ export default function Locked() {
 
       <Divider />
 
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          height: '10rem',
-        }}
-      >
-        Secret content
-      </div>
+      <SecretContent />
     </>
   );
 }
