@@ -1,8 +1,8 @@
-import GalleryCard from './components/gallery-card/GalleryCard';
 import Lines from './components/lines/Lines';
-import { AboutMe, Divider, Grating } from './styles/global.styled';
+import { Divider, Grating } from './styles/global.styled';
 import Button from './components/button/Button';
-import Link from 'next/link';
+import AboutMe from './components/about-me/AboutMe';
+import PetProjects from './components/pet-projects/PetProjects';
 
 export default function Home() {
   return (
@@ -17,51 +17,16 @@ export default function Home() {
           id='3'
         />
 
-        <h2>&#123; Agnes97 &#125;</h2>
+        <h1>&#123; Agnes97 &#125;</h1>
       </Grating>
 
       <Divider hideOnMobile />
 
-      <AboutMe>
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            color: 'white',
-            alignItems: 'end',
-            gap: '3rem',
-          }}
-        >
-          <p style={{ maxWidth: '35rem' }}>
-            In the ever-evolving tech realm, finding a proficient programmer who
-            can breathe life into your ideas is crucial. I am committed to
-            crafting user-friendly, captivating interfaces by transforming your
-            vision into a pixel-perfect reality that drives results. Together,
-            let's convert your project into a market-ready product.
-          </p>
-          <Link href='/cv' passHref>
-            <Button shape='rectangle' size='L'>
-              VIEW CV
-            </Button>
-          </Link>
-        </div>
-        <div>
-          <GalleryCard />
-        </div>
-      </AboutMe>
+      <AboutMe />
 
       <Divider />
 
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          height: '30rem',
-        }}
-      >
-        Empty Section
-      </div>
+      <PetProjects />
 
       <Divider />
 

@@ -46,7 +46,7 @@ const Header: FC = () => {
       </ButtonContainer>
 
       <Link href='/'>
-        <h1>Jana Mácová</h1>
+        <h2>Jana Mácová</h2>
       </Link>
 
       {/* <Rope /> */}

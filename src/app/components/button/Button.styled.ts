@@ -76,6 +76,7 @@ export const ButtonText = styled.span<ButtonTextProps>`
   text-align: center;
   font-weight: bold;
   line-height: 130%;
+  margin-bottom: -3px;
 `;
 
 export const Hexagon = styled.div<ButtonProps>`

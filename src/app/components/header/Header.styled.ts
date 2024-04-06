@@ -13,10 +13,7 @@ export const StyledHeader = styled.header`
   border-left: none;
   border-right: none;
   justify-content: space-between;
-
-  & > h1 {
-    margin-block: 0;
-  }
+  gap: 2rem;
 
   @media (width <= 740px) {
     flex-direction: column-reverse;

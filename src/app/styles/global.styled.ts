@@ -15,6 +15,31 @@ export const GlobalStyle = createGlobalStyle`
     all: unset;
     cursor: pointer;
   }
+
+  h1, h2 {
+    font-family: Sacramento, serif;
+    margin-block: 0;
+  }
+
+  h1 {
+    font-size: 3.5rem;
+
+    @media (width >= 740px) {
+      font-size: 5.5rem;
+    }
+
+    @media (width >= 1440px) {
+      font-size: 7rem;
+    }
+  }
+
+  h2 {
+    font-size: 2rem;
+
+    @media (width >= 740px) {
+      font-size: 2.5rem;
+    }
+  }
 `;
 
 export const GlassEffect = css`
@@ -69,7 +94,7 @@ export const Grating = styled.section`
   position: relative;
   width: 100%;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 4rem 2rem;
 
   @media (width >= 740px) {
     width: 80%;
@@ -87,23 +112,13 @@ export const Grating = styled.section`
     }
   }
 
-  & h2 {
+  & h1 {
     white-space: nowrap;
     position: absolute;
     inset: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: Sacramento, serif;
-    font-size: 3.5rem;
-
-    @media (width >= 740px) {
-      font-size: 5.5rem;
-    }
-
-    @media (width >= 1440px) {
-      font-size: 7rem;
-    }
 
     ${({ theme }) => css`
       text-shadow:
@@ -158,31 +173,5 @@ export const Table = styled.section`
     border-top-right-radius: 5rem 20rem;
     border-top-left-radius: 5rem 20rem;
     z-index: 0;
-  }
-`;
-
-export const AboutMe = styled.section`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 3rem 0;
-  gap: 2rem;
-
-  @media (width <= 740px) {
-    flex-direction: column-reverse;
-  }
-
-  & > * {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  & p::first-letter {
-    font-weight: bold;
-    font-size: 200%;
-    padding: 0.25rem;
-    color: ${({ theme }) => theme.color.text_link};
   }
 `;

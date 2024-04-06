@@ -84,7 +84,7 @@ export const StyledForm = styled.form<StyledFormProps>`
         ${({ theme, currentTheme }) =>
           currentTheme === 'light'
             ? theme.color.background_secondary
-            : theme.color.accent_dark};
+            : theme.color.text_link};
     }
   }
 `;
