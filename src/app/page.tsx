@@ -3,6 +3,7 @@ import { Divider, Grating } from './styles/global.styled';
 import Button from './components/button/Button';
 import AboutMe from './components/about-me/AboutMe';
 import PetProjects from './components/pet-projects/PetProjects';
+import GithubContributions from './components/github-contributions/GithubContributions';
 
 export default function Home() {
   return (
@@ -23,6 +24,10 @@ export default function Home() {
       <Divider hideOnMobile />
 
       <AboutMe />
+
+      <Divider />
+
+      <GithubContributions />
 
       <Divider />
 

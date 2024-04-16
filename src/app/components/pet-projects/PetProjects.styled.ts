@@ -15,7 +15,7 @@ export const Container = styled.section`
   align-items: center;
   gap: 2rem;
   min-height: 30rem;
-  padding-top: 5rem;
+  padding: 5rem 0;
 `;
 
 type AnimatedHeadingProps = {

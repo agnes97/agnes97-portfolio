@@ -11,7 +11,7 @@ export const AboutMeContainer = styled.section<AboutMeProps>`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 3rem 0;
+  padding: 5rem 0;
   gap: 2rem;
 
   @media (width <= 740px) {

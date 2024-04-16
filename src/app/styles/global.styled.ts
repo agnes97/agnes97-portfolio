@@ -98,7 +98,7 @@ export const Grating = styled.section`
 
   @media (width >= 740px) {
     width: 80%;
-    padding: 2rem 0;
+    padding: 5rem 0;
   }
 
   @media (width >= 1440px) {
