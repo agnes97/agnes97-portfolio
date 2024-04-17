@@ -1,3 +1,4 @@
+import { BREAKPOINTS } from '@/app/styles/breakpoints';
 import styled from 'styled-components';
 
 export const Bar = styled.nav`
@@ -9,7 +10,7 @@ export const Bar = styled.nav`
   gap: 1rem;
   padding: 0 1rem;
 
-  @media (width <= 900px) {
+  @media (width <= ${BREAKPOINTS.ipad}) {
     justify-content: end;
   }
 `;

@@ -28,11 +28,11 @@ export default function Home() {
 
       <Divider />
 
-      <GithubContributions />
+      <PetProjects />
 
       <Divider />
 
-      <PetProjects />
+      <GithubContributions />
 
       <Divider />
 

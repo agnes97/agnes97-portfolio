@@ -1,5 +1,6 @@
 'use client';
 
+import { BREAKPOINTS } from '@/app/styles/breakpoints';
 import { FlexRow, GlassEffect } from '@/app/styles/global.styled';
 import styled from 'styled-components';
 
@@ -15,7 +16,7 @@ export const StyledHeader = styled.header`
   justify-content: space-between;
   gap: 2rem;
 
-  @media (width <= 740px) {
+  @media (width <= ${BREAKPOINTS.ipad}) {
     flex-direction: column-reverse;
   }
 `;

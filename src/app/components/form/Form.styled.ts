@@ -1,4 +1,5 @@
 import { ColorTheme } from '@/app/providers/styled-components-provider';
+import { BREAKPOINTS } from '@/app/styles/breakpoints';
 import styled, { keyframes } from 'styled-components';
 
 const rotatingStars = keyframes`
@@ -25,11 +26,11 @@ export const StyledForm = styled.form<StyledFormProps>`
     & > div {
       width: 100%;
 
-      @media (width >= 740px) {
+      @media (width >= ${BREAKPOINTS.ipad}) {
         width: 70%;
       }
 
-      @media (width >= 1440px) {
+      @media (width >= ${BREAKPOINTS.desktop}) {
         width: 40%;
       }
     }

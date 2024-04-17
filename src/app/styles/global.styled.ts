@@ -1,6 +1,7 @@
 'use client';
 
 import styled, { createGlobalStyle, css } from 'styled-components';
+import { BREAKPOINTS } from './breakpoints';
 
 export const GlobalStyle = createGlobalStyle`
   html, & * { box-sizing: border-box }
@@ -24,11 +25,11 @@ export const GlobalStyle = createGlobalStyle`
   h1 {
     font-size: 3.5rem;
 
-    @media (width >= 740px) {
+    @media (width >= ${BREAKPOINTS.ipad}) {
       font-size: 5.5rem;
     }
 
-    @media (width >= 1440px) {
+    @media (width >= ${BREAKPOINTS.desktop}) {
       font-size: 7rem;
     }
   }
@@ -36,7 +37,7 @@ export const GlobalStyle = createGlobalStyle`
   h2 {
     font-size: 2rem;
 
-    @media (width >= 740px) {
+    @media (width >= ${BREAKPOINTS.ipad}) {
       font-size: 2.5rem;
     }
   }
@@ -68,7 +69,7 @@ export const Main = styled.main`
   background: ${({ theme }) => theme.color.background_primary};
   color: ${({ theme }) => theme.color.text_primary};
 
-  @media (width >= 740px) {
+  @media (width >= ${BREAKPOINTS.ipad}) {
     background: ${({ theme }) => theme.color.backgroundGradient};
   }
 `;
@@ -83,7 +84,7 @@ export const Divider = styled.hr<DividerProps>`
   ${({ hideOnMobile }) =>
     hideOnMobile &&
     `
-    @media (width <= 740px) {
+    @media (width <= ${BREAKPOINTS.ipad}) {
      display: none;
     }
   `}
@@ -96,18 +97,18 @@ export const Grating = styled.section`
   margin: 0 auto;
   padding: 4rem 2rem;
 
-  @media (width >= 740px) {
+  @media (width >= ${BREAKPOINTS.ipad}) {
     width: 80%;
     padding: 5rem 0;
   }
 
-  @media (width >= 1440px) {
+  @media (width >= ${BREAKPOINTS.desktop}) {
     width: 50%;
   }
 
   /* Hide lines on smaller screens */
   & hr {
-    @media (width <= 740px) {
+    @media (width <= ${BREAKPOINTS.ipad}) {
       display: none;
     }
   }
@@ -161,4 +162,9 @@ export const Table = styled.section`
     border-top-left-radius: 5rem 20rem;
     z-index: 0;
   }
+`;
+
+export const ExternalLink = styled.a`
+  font-size: smaller;
+  color: ${({ theme }) => theme.color.accent_light};
 `;

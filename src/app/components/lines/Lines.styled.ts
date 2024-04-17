@@ -3,6 +3,7 @@
 import styled, { css } from 'styled-components';
 import { LinesProps } from './Lines';
 import { FlexColumn, FlexRow } from '@/app/styles/global.styled';
+import { BREAKPOINTS } from '@/app/styles/breakpoints';
 
 type ContainerProps = {
   alignment: LinesProps['alignment'];
@@ -25,7 +26,7 @@ export const Container = styled.div<ContainerProps>`
   gap: 0;
   padding: 0;
 
-  @media (width >= 740px) {
+  @media (width >= ${BREAKPOINTS.ipad}) {
     gap: 0.5rem;
     padding: 0.25rem 0;
   }
@@ -39,7 +40,7 @@ export const Line = styled.hr<LineProps>`
   border: 1px solid ${({ theme }) => theme.color.line_dark};
   margin-block: 0.25rem;
 
-  @media (width >= 740px) {
+  @media (width >= ${BREAKPOINTS.ipad}) {
     margin-block: 0.5rem;
   }
 

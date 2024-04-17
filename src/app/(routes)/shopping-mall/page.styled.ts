@@ -1,5 +1,6 @@
 'use client';
 
+import { BREAKPOINTS } from '@/app/styles/breakpoints';
 import { GlassEffect } from '@/app/styles/global.styled';
 import styled from 'styled-components';
 
@@ -9,7 +10,7 @@ export const Wrapper = styled.div`
   gap: 2rem;
   justify-content: center;
 
-  @media (width <= 400px) {
+  @media (width <= ${BREAKPOINTS.mobile}) {
     padding: 0 1rem;
   }
 `;
@@ -20,7 +21,7 @@ export const Gallery = styled.section`
   gap: 1rem;
   justify-content: center;
 
-  @media (width <= 400px) {
+  @media (width <= ${BREAKPOINTS.mobile}) {
     flex-flow: column nowrap;
     width: 100%;
   }
@@ -34,7 +35,7 @@ export const Card = styled.a`
   ${GlassEffect}
   border: 1px solid ${({ theme }) => theme.color.line_light};
 
-  @media (width <= 400px) {
+  @media (width <= ${BREAKPOINTS.mobile}) {
     width: 100%;
 
     & > div {

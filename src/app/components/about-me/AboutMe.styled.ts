@@ -1,6 +1,7 @@
 'use client';
 
 import { ColorTheme } from '@/app/providers/styled-components-provider';
+import { BREAKPOINTS } from '@/app/styles/breakpoints';
 import styled from 'styled-components';
 
 type AboutMeProps = {
@@ -14,7 +15,7 @@ export const AboutMeContainer = styled.section<AboutMeProps>`
   padding: 5rem 0;
   gap: 2rem;
 
-  @media (width <= 740px) {
+  @media (width <= ${BREAKPOINTS.ipad}) {
     flex-direction: column-reverse;
   }
 

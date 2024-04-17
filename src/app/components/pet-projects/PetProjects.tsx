@@ -8,8 +8,6 @@ import Flex from '../flex/Flex';
 const PetProjects: FC = () => {
   const [hasAnimation, setHasAnimation] = useState(true);
 
-  console.log(hasAnimation);
-
   useEffect(() => {
     const timeout = setTimeout(
       () => {

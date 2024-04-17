@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components';
 import { FlexProps } from './Flex';
+import { BREAKPOINTS } from '@/app/styles/breakpoints';
 
 export const Box = styled.div<Partial<FlexProps>>`
   display: flex;
@@ -48,7 +49,7 @@ export const Box = styled.div<Partial<FlexProps>>`
   ${({ ipad }) =>
     ipad &&
     css`
-      @media (width >= 740px) {
+      @media (width >= ${BREAKPOINTS.ipad}) {
         ${ipad.alignItems && `align-items: ${ipad.alignItems};`}
         ${ipad.justifyContent && `justify-content: ${ipad.justifyContent};`}
         ${ipad.flexDirection && `flex-direction: ${ipad.flexDirection};`}
@@ -71,7 +72,7 @@ export const Box = styled.div<Partial<FlexProps>>`
   ${({ desktop }) =>
     desktop &&
     css`
-      @media (width >= 1440px) {
+      @media (width >= ${BREAKPOINTS.desktop}) {
         ${desktop.alignItems && `align-items: ${desktop.alignItems};`}
         ${desktop.justifyContent &&
         `justify-content: ${desktop.justifyContent};`}
