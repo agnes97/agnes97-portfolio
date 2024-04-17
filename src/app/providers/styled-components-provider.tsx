@@ -13,10 +13,14 @@ import { ThemeProvider } from 'styled-components';
 import StyledComponentsRegistry from '@/lib/styled-component-registry';
 import { Palette, darkTheme, lightTheme } from '../styles/theme.styled';
 import PageLayout from '../styles/page-layout';
+import { useCookies } from 'next-client-cookies';
 
 const COLOR_THEME_OPTIONS = ['light', 'dark'] as const;
 export type ColorTheme = (typeof COLOR_THEME_OPTIONS)[number];
+
 const defaultTheme: ColorTheme = 'light';
+const isValidTheme = (theme: unknown): theme is ColorTheme =>
+  COLOR_THEME_OPTIONS.includes(theme as ColorTheme);
 
 export const themes: {
   [key in ColorTheme]: {
@@ -47,10 +51,19 @@ const ThemeContext = createContext<ThemeContext>({
 export const useTheme = () => useContext(ThemeContext);
 
 const StyledComponentsProvider: FC<PropsWithChildren> = ({ children }) => {
-  const [currentTheme, setCurrentTheme] = useState<ColorTheme>(defaultTheme);
+  const cookies = useCookies();
+
+  const [currentTheme, setCurrentTheme] = useState<ColorTheme>(
+    isValidTheme(cookies.get('currentTheme'))
+      ? (cookies.get('currentTheme') as ColorTheme)
+      : defaultTheme
+  );
 
   const updateTheme = () => {
-    setCurrentTheme(currentTheme === 'light' ? 'dark' : 'light');
+    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+
+    setCurrentTheme(newTheme);
+    cookies.set('currentTheme', newTheme);
   };
 
   const theme = useMemo(() => themes[currentTheme], [currentTheme]);
