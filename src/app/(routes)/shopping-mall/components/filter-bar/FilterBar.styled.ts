@@ -14,11 +14,6 @@ export const Bar = styled.nav`
   }
 `;
 
-export const Filters = styled.section`
-  display: flex;
-  flex-wrap: wrap;
-`;
-
 export const Total = styled.div`
   color: ${({ theme }) => theme.color.line_light};
 `;

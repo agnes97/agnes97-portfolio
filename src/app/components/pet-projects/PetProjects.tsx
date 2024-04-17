@@ -1,8 +1,9 @@
 'use client';
 
 import React, { FC, useEffect, useState } from 'react';
-import { AnimatedHeading, Container } from './PetProjects.styled';
+import { AnimatedHeading } from './PetProjects.styled';
 import { PawPrint } from 'lucide-react';
+import Flex from '../flex/Flex';
 
 const PetProjects: FC = () => {
   const [hasAnimation, setHasAnimation] = useState(true);
@@ -23,7 +24,14 @@ const PetProjects: FC = () => {
   }, [hasAnimation]);
 
   return (
-    <Container>
+    <Flex
+      flexDirection='column'
+      justifyContent='start'
+      alignItems='center'
+      gap='2rem'
+      minHeight='30rem'
+      padding='5rem 0'
+    >
       <AnimatedHeading hasAnimation={hasAnimation}>
         <PawPrint size={48} />
         <PawPrint size={48} />
@@ -33,7 +41,7 @@ const PetProjects: FC = () => {
       </AnimatedHeading>
 
       <p>...</p>
-    </Container>
+    </Flex>
   );
 };
 

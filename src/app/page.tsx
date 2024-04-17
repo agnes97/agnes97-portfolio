@@ -4,6 +4,7 @@ import Button from './components/button/Button';
 import AboutMe from './components/about-me/AboutMe';
 import PetProjects from './components/pet-projects/PetProjects';
 import GithubContributions from './components/github-contributions/GithubContributions';
+import Flex from './components/flex/Flex';
 
 export default function Home() {
   return (
@@ -35,18 +36,11 @@ export default function Home() {
 
       <Divider />
 
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          height: '30rem',
-        }}
-      >
+      <Flex justifyContent='center' alignItems='center' minHeight='30rem'>
         <Button size='L' shape='hexagon'>
           Contact me
         </Button>
-      </div>
+      </Flex>
     </>
   );
 }

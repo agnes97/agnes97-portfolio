@@ -1,10 +1,11 @@
 'use client';
 
 import React, { FC, useCallback } from 'react';
-import { Bar, FilterButton, Filters, Span, Total } from './FilterBar.styled';
+import { Bar, FilterButton, Span, Total } from './FilterBar.styled';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { categoryEmojis } from '../../utils/get-emojis';
 import { Categories } from '../../context/category-context';
+import Flex from '@/app/components/flex/Flex';
 
 type Props = {
   activeFilter: keyof Categories | 'all';
@@ -28,7 +29,7 @@ const FilterBar: FC<Props> = ({ activeFilter, categories, totalOfItems }) => {
 
   return (
     <Bar>
-      <Filters>
+      <Flex flexWrap='wrap'>
         <FilterButton
           isActive={activeFilter === 'all'}
           type='button'
@@ -57,7 +58,7 @@ const FilterBar: FC<Props> = ({ activeFilter, categories, totalOfItems }) => {
             </FilterButton>
           )
         )}
-      </Filters>
+      </Flex>
 
       {activeFilter !== 'all' ? (
         <Total>

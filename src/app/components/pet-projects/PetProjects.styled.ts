@@ -8,16 +8,6 @@ const walkingPaws = keyframes`
     }
 `;
 
-export const Container = styled.section`
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  align-items: center;
-  gap: 2rem;
-  min-height: 30rem;
-  padding: 5rem 0;
-`;
-
 type AnimatedHeadingProps = {
   hasAnimation: boolean;
 };

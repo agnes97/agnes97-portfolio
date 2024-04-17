@@ -1,48 +1,32 @@
 'use client';
 
+import Flex from '@/app/components/flex/Flex';
 import { Divider } from '@/app/styles/global.styled';
 import React from 'react';
 
 export default function Cv() {
   return (
     <>
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          height: '10rem',
-        }}
-      >
+      <Flex justifyContent='center' alignItems='center' minHeight='10rem'>
         Header
-      </div>
+      </Flex>
 
       <Divider />
 
-      <div
-        style={{
-          flexGrow: 1,
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          height: '10rem',
-        }}
+      <Flex
+        justifyContent='center'
+        alignItems='center'
+        minHeight='10rem'
+        flexGrow={1}
       >
         Secret Info
-      </div>
+      </Flex>
 
       <Divider />
 
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          height: '10rem',
-        }}
-      >
+      <Flex justifyContent='center' alignItems='center' minHeight='10rem'>
         Footer
-      </div>
+      </Flex>
     </>
   );
 }

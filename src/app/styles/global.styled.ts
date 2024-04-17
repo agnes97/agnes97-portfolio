@@ -133,19 +133,6 @@ export const Grating = styled.section`
   }
 `;
 
-export const Content = styled.div`
-  width: 80%;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  padding: 2rem;
-  flex-grow: 1;
-
-  @media (width <= 740px) {
-    width: 100%;
-  }
-`;
-
 export const Table = styled.section`
   width: calc(100% + 10rem);
   margin: 0 -5rem;

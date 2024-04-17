@@ -1,10 +1,10 @@
 import React, { FC } from 'react';
-import { SecretContentWrapper } from './SecretContent.styled';
 import Button from '@/app/components/button/Button';
+import Flex from '@/app/components/flex/Flex';
 
 const SecretContent: FC = () => {
   return (
-    <SecretContentWrapper>
+    <Flex justifyContent='center' alignItems='center'>
       <Button size='L' shape={'hexagon'}>
         Secret content
       </Button>
@@ -14,7 +14,7 @@ const SecretContent: FC = () => {
       <Button size='L' shape={'hexagon'}>
         Secret content
       </Button>
-    </SecretContentWrapper>
+    </Flex>
   );
 };
 
