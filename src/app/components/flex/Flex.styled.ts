@@ -5,6 +5,14 @@ import { BREAKPOINTS } from '@/app/styles/breakpoints';
 export const Box = styled.div<Partial<FlexProps>>`
   display: flex;
 
+  ${({ areAllChildrenEqual }) =>
+    areAllChildrenEqual &&
+    css`
+      & > * {
+        flex: 1;
+      }
+    `};
+
   ${({ alignItems }) => alignItems && `align-items: ${alignItems};`};
   ${({ justifyContent }) =>
     justifyContent && `justify-content: ${justifyContent};`};

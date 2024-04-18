@@ -29,6 +29,7 @@ type DisplayFlex = {
 
 export type FlexProps = HTMLAttributes<HTMLDivElement> &
   DisplayFlex & {
+    areAllChildrenEqual?: boolean;
     mobile?: DisplayFlex;
     ipad?: DisplayFlex;
     desktop?: DisplayFlex;
