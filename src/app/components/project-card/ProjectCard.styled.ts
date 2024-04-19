@@ -1,4 +1,19 @@
-import styled, { css } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
+
+const flipCardToFront = keyframes`
+  to {
+    transform: rotateY(180deg);
+  }
+`;
+
+const flipCardToBack = keyframes`
+  from {
+    transform: rotateY(180deg);
+  }
+  to {
+    transform: rotateY(0);
+  }
+`;
 
 export const Content = styled.div`
   position: relative;
@@ -12,13 +27,31 @@ export const Content = styled.div`
   background-color: ${(props) => props.theme.color.background_primary};
 `;
 
-export const Card = styled.div`
+type CardProps = {
+  hasAnimation: boolean;
+  isBeforeFirstAnimationRun: boolean;
+};
+
+export const Card = styled.div<CardProps>`
   height: 300px;
   perspective: 1000px;
 
-  ${Content}:hover {
-    transform: rotateY(180deg);
-  }
+  ${({ hasAnimation }) =>
+    hasAnimation &&
+    css`
+      ${Content} {
+        animation: ${flipCardToFront} 2s forwards;
+      }
+    `};
+
+  ${({ hasAnimation, isBeforeFirstAnimationRun }) =>
+    !hasAnimation &&
+    !isBeforeFirstAnimationRun &&
+    css`
+      ${Content} {
+        animation: ${flipCardToBack} 2s forwards;
+      }
+    `};
 
   & p,
   & h3 {

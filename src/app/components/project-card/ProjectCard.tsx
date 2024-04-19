@@ -1,18 +1,22 @@
 'use client';
 
-import React, { CSSProperties, FC } from 'react';
+import React, { CSSProperties, FC, useState } from 'react';
 import Flex from '../flex/Flex';
 import { Back, Card, Content, Front, Thumbnail } from './ProjectCard.styled';
+import { MousePointerClick } from 'lucide-react';
+import { useTheme } from '@/app/providers/styled-components-provider';
 
 export type Project = {
   id: string;
   title: string;
   description: string;
   thumbnailSrc: string;
+  videoSrc?: string;
 };
 
 type ProjectCardProps = Project & {
   order: number;
+  isCardFlippable?: boolean;
   style?: CSSProperties;
 };
 
@@ -21,10 +25,33 @@ const ProjectCard: FC<ProjectCardProps> = ({
   order,
   description,
   thumbnailSrc,
+  isCardFlippable,
   style,
 }) => {
+  const { currentTheme } = useTheme();
+  const [hasAnimation, setHasAnimation] = useState(false);
+  const [isBeforeFirstAnimationRun, setIsBeforeFirstAnimationRun] =
+    useState(true);
+
+  const handleFlipCard = () => {
+    if (isBeforeFirstAnimationRun) {
+      setIsBeforeFirstAnimationRun(false);
+    }
+
+    setHasAnimation((prev) => !prev);
+  };
+
   return (
-    <Card style={{ ...style }}>
+    <Card
+      hasAnimation={hasAnimation}
+      isBeforeFirstAnimationRun={isBeforeFirstAnimationRun}
+      {...(isCardFlippable && { onClick: handleFlipCard })}
+      style={{
+        ...style,
+        cursor: isCardFlippable ? 'pointer' : 'default',
+        zIndex: isCardFlippable ? 1 : 0,
+      }}
+    >
       <Content>
         <Front>
           <Flex
@@ -42,9 +69,19 @@ const ProjectCard: FC<ProjectCardProps> = ({
               flexGrow={1}
               style={{ order }}
               alignItems={order === 0 ? 'start' : 'end'}
+              justifyContent='space-between'
             >
-              <h3>{title}</h3>
-              <p>{description}</p>
+              <div>
+                <h3>{title}</h3>
+                <p>{description}</p>
+              </div>
+
+              {isCardFlippable && (
+                <p style={{ alignSelf: 'end' }}>
+                  Click to flip!{' '}
+                  <MousePointerClick color={currentTheme.color.warning} />
+                </p>
+              )}
             </Flex>
           </Flex>
         </Front>
