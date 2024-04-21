@@ -1,6 +1,10 @@
 'use client';
 
-import React, { ButtonHTMLAttributes, FC, PropsWithChildren } from 'react';
+import React, {
+  ButtonHTMLAttributes,
+  PropsWithChildren,
+  forwardRef,
+} from 'react';
 import {
   ButtonProps,
   ButtonText,
@@ -14,38 +18,44 @@ type Props = ButtonHTMLAttributes<HTMLButtonElement> & {
   shape: ButtonProps['shape'];
 };
 
-const Button: FC<PropsWithChildren<Props>> = ({ children, size, shape }) => {
-  const { currentTheme } = useTheme();
+const Button = forwardRef<HTMLButtonElement, PropsWithChildren<Props>>(
+  (props, ref) => {
+    const { children, size, shape, ...rest } = props;
 
-  return (
-    <StyledButton
-      size={size}
-      shape={shape}
-      borderColor={currentTheme.color.accent_light}
-    >
-      <ButtonText shape={shape}>{children}</ButtonText>
+    const { currentTheme } = useTheme();
 
-      {shape === 'hexagon' && (
-        <>
-          <Hexagon
-            shape='hexagon'
-            size={size}
-            borderColor={currentTheme.color.accent_light}
-          />
-          <Hexagon
-            hasBorder
-            borderColor={currentTheme.color.accent_light}
-            shape='hexagon'
-            size={size}
-            style={{
-              background: currentTheme.color.background_primary,
-              opacity: 0.6,
-            }}
-          />
-        </>
-      )}
-    </StyledButton>
-  );
-};
+    return (
+      <StyledButton
+        ref={ref}
+        size={size}
+        shape={shape}
+        {...rest}
+        borderColor={currentTheme.color.accent_light}
+      >
+        <ButtonText shape={shape}>{children}</ButtonText>
+
+        {shape === 'hexagon' && (
+          <>
+            <Hexagon
+              shape='hexagon'
+              size={size}
+              borderColor={currentTheme.color.accent_light}
+            />
+            <Hexagon
+              hasBorder
+              borderColor={currentTheme.color.accent_light}
+              shape='hexagon'
+              size={size}
+              style={{
+                background: currentTheme.color.background_primary,
+                opacity: 0.6,
+              }}
+            />
+          </>
+        )}
+      </StyledButton>
+    );
+  }
+);
 
 export default Button;
