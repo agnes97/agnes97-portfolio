@@ -1,7 +1,7 @@
-import { Field, Form } from 'houseform';
-import React, { FC } from 'react';
+import { Field, Form as HouseForm } from 'houseform';
+import React from 'react';
 import { ZodString } from 'zod';
-import { ErrorContainer, StyledForm } from './Form.styled';
+import { ErrorContainer, ErrorIcon, StyledForm } from './Form.styled';
 import Button from '../button/Button';
 import { useTheme } from '@/app/providers/styled-components-provider';
 
@@ -11,17 +11,29 @@ type FormField = {
   validation: ZodString;
 };
 
-type FormProps = {
+type FormProps<T> = {
   formValues: FormField[];
+  onSubmit: (body: T) => void | Promise<void>;
 };
 
-const HouseForm: FC<FormProps> = ({ formValues }) => {
+function Form<T>({ formValues, onSubmit }: FormProps<T>) {
   const { currentThemeVariant } = useTheme();
 
   return (
-    <Form>
-      {({ isValid, errors, errorsMap }) => (
-        <StyledForm currentTheme={currentThemeVariant}>
+    <HouseForm
+      onSubmit={(values) => {
+        void onSubmit(values as T);
+      }}
+    >
+      {({ isValid, errors, errorsMap, submit }) => (
+        <StyledForm
+          currentTheme={currentThemeVariant}
+          // eslint-disable-next-line @typescript-eslint/no-misused-promises
+          onSubmit={async (event) => {
+            event.preventDefault();
+            await submit();
+          }}
+        >
           {formValues.map((field) => (
             <fieldset key={field.name}>
               <Field name={field.name} onChangeValidate={field.validation}>
@@ -49,13 +61,13 @@ const HouseForm: FC<FormProps> = ({ formValues }) => {
                 {Object.entries(errorsMap).map(
                   ([key, value]) =>
                     value.length > 0 && (
-                      <div>
+                      <div key={key}>
                         <span>
                           {formValues.find(
                             (formValue) => key === formValue.name
                           )?.placeholder ?? key}
                         </span>
-                        <span>&#8594;</span>
+                        <ErrorIcon>&#8594;</ErrorIcon>
                         <span>{value}</span>
                       </div>
                     )
@@ -71,8 +83,8 @@ const HouseForm: FC<FormProps> = ({ formValues }) => {
           </Button>
         </StyledForm>
       )}
-    </Form>
+    </HouseForm>
   );
-};
+}
 
-export default HouseForm;
+export default Form;
