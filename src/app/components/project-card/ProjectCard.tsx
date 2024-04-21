@@ -5,13 +5,14 @@ import Flex from '../flex/Flex';
 import { Back, Card, Content, Front, Thumbnail } from './ProjectCard.styled';
 import { MousePointerClick } from 'lucide-react';
 import { useTheme } from '@/app/providers/styled-components-provider';
+import Vimeo from '@u-wave/react-vimeo';
 
 export type Project = {
   id: string;
   title: string;
   description: string;
   thumbnailSrc: string;
-  videoSrc?: string;
+  vimeoVideoId?: string;
 };
 
 type ProjectCardProps = Project & {
@@ -25,6 +26,7 @@ const ProjectCard: FC<ProjectCardProps> = ({
   order,
   description,
   thumbnailSrc,
+  vimeoVideoId,
   isCardFlippable,
   style,
 }) => {
@@ -86,7 +88,11 @@ const ProjectCard: FC<ProjectCardProps> = ({
           </Flex>
         </Front>
 
-        <Back>Back</Back>
+        {vimeoVideoId && (
+          <Back>
+            <Vimeo video={vimeoVideoId} autoplay muted loop controls={false} />
+          </Back>
+        )}
       </Content>
     </Card>
   );

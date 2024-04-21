@@ -8,6 +8,7 @@ export const projects: Project[] = [
     title: 'Birthday Boi',
     description: 'Popis',
     thumbnailSrc: agnes_light_cutout.src,
+    vimeoVideoId: '936767946',
   },
   {
     id: 'wedding',

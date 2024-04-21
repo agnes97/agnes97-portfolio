@@ -34,6 +34,7 @@ type CardProps = {
 
 export const Card = styled.div<CardProps>`
   height: 300px;
+  width: 100%;
   perspective: 1000px;
 
   ${({ hasAnimation }) =>
@@ -73,6 +74,19 @@ export const Front = styled.div`
 export const Back = styled.div`
   ${bothSidesStyles};
   transform: rotateY(180deg);
+  height: 100%;
+  width: 100%;
+  position: relative;
+
+  & iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: none;
+    pointer-events: none;
+  }
 `;
 
 export const Thumbnail = styled.div`
