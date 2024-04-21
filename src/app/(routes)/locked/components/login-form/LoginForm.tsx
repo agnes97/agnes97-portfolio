@@ -1,4 +1,11 @@
-import HouseForm from '@/app/components/form/Form';
+'use client';
+
+import Form from '@/app/components/form/Form';
+import {
+  AccessTokenBody,
+  useGetAccessToken,
+} from '@/app/hooks/use-get-access-token';
+import { useAuth } from '@/app/providers/auth-provider';
 import React, { FC } from 'react';
 import { z } from 'zod';
 
@@ -16,7 +23,14 @@ const loginForm = [
 ];
 
 const LoginForm: FC = () => {
-  return <HouseForm formValues={loginForm} />;
+  const { mutateAsync: getAccessToken } = useGetAccessToken();
+  const { login } = useAuth();
+
+  const handleSubmit = async (loginBody: AccessTokenBody) => {
+    await getAccessToken(loginBody).then(login);
+  };
+
+  return <Form onSubmit={handleSubmit} formValues={loginForm} />;
 };
 
 export default LoginForm;
