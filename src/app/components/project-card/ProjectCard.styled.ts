@@ -1,4 +1,9 @@
+'use client';
+
+import { ColorTheme } from '@/app/providers/styled-components-provider';
 import styled, { css, keyframes } from 'styled-components';
+import Flex from '../flex/Flex';
+import { BREAKPOINTS } from '@/app/styles/breakpoints';
 
 const flipCardToFront = keyframes`
   to {
@@ -33,7 +38,7 @@ type CardProps = {
 };
 
 export const Card = styled.div<CardProps>`
-  height: 300px;
+  height: 350px;
   width: 100%;
   perspective: 1000px;
 
@@ -69,14 +74,31 @@ export const bothSidesStyles = css`
 
 export const Front = styled.div`
   ${bothSidesStyles};
+
+  & svg:hover {
+    color: ${({ theme }) => theme.color.line_dark};
+  }
+
+  & svg:hover + span {
+    color: ${({ theme }) => theme.color.line_dark};
+  }
+
+  &:hover img {
+    filter: grayscale(0%);
+  }
 `;
 
-export const Back = styled.div`
+type BackProps = {
+  backgroundColor: string;
+};
+
+export const Back = styled.div<BackProps>`
   ${bothSidesStyles};
   transform: rotateY(180deg);
   height: 100%;
   width: 100%;
   position: relative;
+  background-color: ${(props) => props.backgroundColor};
 
   & iframe {
     position: absolute;
@@ -89,12 +111,100 @@ export const Back = styled.div`
   }
 `;
 
-export const Thumbnail = styled.div`
-  width: calc(100% / 3);
+type ThumbnailProps = {
+  isThumbnailTransparent: boolean;
+};
+
+export const Thumbnail = styled.div<ThumbnailProps>`
+  width: calc(100% / 2);
+  flex-shrink: 0;
 
   & > img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    opacity: 0.75;
+    filter: grayscale(100%);
+    object-fit: ${({ isThumbnailTransparent }) =>
+      isThumbnailTransparent ? 'scale-down' : 'cover'};
+    aspect-ratio: 1 / 1;
+    transition: filter 0.75s;
+
+    ${({ isThumbnailTransparent }) =>
+      isThumbnailTransparent &&
+      css`
+        padding: 1.5rem 0 1.5rem 1rem;
+      `}
+  }
+`;
+
+type ProjectLinkProps = {
+  currentTheme: ColorTheme;
+};
+
+export const ProjectLinkSpan = styled.span<ProjectLinkProps>`
+  font-size: smaller;
+  color: ${({ theme, currentTheme }) =>
+    currentTheme === 'dark'
+      ? theme.color.accent_light
+      : theme.color.background_secondary};
+`;
+
+export const ClickToFlip = styled.p`
+  color: ${({ theme }) => theme.color.warning};
+`;
+
+type CardTitleProps = {
+  currentTheme: ColorTheme;
+};
+
+export const CardTitle = styled.h3<CardTitleProps>`
+  color: ${({ theme, currentTheme }) =>
+    currentTheme === 'dark'
+      ? theme.color.accent_light
+      : theme.color.background_secondary};
+`;
+
+type ThisProjectProps = {
+  currentTheme: ColorTheme;
+};
+
+export const ThisProject = styled(Flex)<ThisProjectProps>`
+  flex-direction: column;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+
+  & > span,
+  & > svg {
+    font-size: smaller;
+    color: ${({ theme, currentTheme }) =>
+      currentTheme === 'dark'
+        ? theme.color.accent_light
+        : theme.color.background_secondary};
+  }
+`;
+
+type CardInfoProps = {
+  isThumbnailTransparent: boolean;
+  border: 'left' | 'right';
+};
+
+export const CardInfo = styled(Flex)<CardInfoProps>`
+  ${({ isThumbnailTransparent, theme, border }) =>
+    !isThumbnailTransparent &&
+    `border-${border}: 0.25rem solid ${theme.color.line_dark};`}
+`;
+
+export const CardDescription = styled.p`
+  max-height: 150px;
+  overflow: scroll;
+
+  @media (width > ${BREAKPOINTS.ipad}) {
+    max-height: 200px;
+  }
+
+  @media (width > ${BREAKPOINTS.ipad}) {
+    max-height: 175px;
   }
 `;

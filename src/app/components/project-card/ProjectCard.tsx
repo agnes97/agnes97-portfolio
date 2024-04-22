@@ -2,17 +2,33 @@
 
 import React, { CSSProperties, FC, useState } from 'react';
 import Flex from '../flex/Flex';
-import { Back, Card, Content, Front, Thumbnail } from './ProjectCard.styled';
-import { MousePointerClick } from 'lucide-react';
-import { useTheme } from '@/app/providers/styled-components-provider';
+import {
+  Back,
+  Card,
+  CardDescription,
+  CardInfo,
+  CardTitle,
+  ClickToFlip,
+  Content,
+  Front,
+  ProjectLinkSpan,
+  ThisProject,
+  Thumbnail,
+} from './ProjectCard.styled';
+import { Code, Link, MapPin, MousePointerClick } from 'lucide-react';
 import Vimeo from '@u-wave/react-vimeo';
+import { useTheme } from '@/app/providers/styled-components-provider';
 
 export type Project = {
   id: string;
   title: string;
   description: string;
+  url?: string;
+  githubRepoUrl: string;
   thumbnailSrc: string;
+  isThumbnailTransparent?: boolean;
   vimeoVideoId?: string;
+  backBackgroundColor?: string;
 };
 
 type ProjectCardProps = Project & {
@@ -25,12 +41,16 @@ const ProjectCard: FC<ProjectCardProps> = ({
   title,
   order,
   description,
+  url,
+  githubRepoUrl,
   thumbnailSrc,
+  isThumbnailTransparent,
   vimeoVideoId,
+  backBackgroundColor,
   isCardFlippable,
   style,
 }) => {
-  const { currentTheme } = useTheme();
+  const { currentThemeVariant } = useTheme();
   const [hasAnimation, setHasAnimation] = useState(false);
   const [isBeforeFirstAnimationRun, setIsBeforeFirstAnimationRun] =
     useState(true);
@@ -42,6 +62,8 @@ const ProjectCard: FC<ProjectCardProps> = ({
 
     setHasAnimation((prev) => !prev);
   };
+
+  const alignBasedOnOrder = order === 0 ? 'start' : 'end';
 
   return (
     <Card
@@ -57,39 +79,90 @@ const ProjectCard: FC<ProjectCardProps> = ({
       <Content>
         <Front>
           <Flex
-            justifyContent={order === 0 ? 'start' : 'end'}
+            justifyContent={alignBasedOnOrder}
             style={{ height: 'inherit' }}
           >
-            <Thumbnail>
+            <Thumbnail isThumbnailTransparent={Boolean(isThumbnailTransparent)}>
               <img src={thumbnailSrc} alt={title} />
             </Thumbnail>
 
-            <Flex
+            <CardInfo
               flexDirection='column'
-              padding='2rem'
               gap='0.75rem'
               flexGrow={1}
               style={{ order }}
-              alignItems={order === 0 ? 'start' : 'end'}
+              alignItems='center'
               justifyContent='space-between'
+              isThumbnailTransparent={Boolean(isThumbnailTransparent)}
+              border={order === 0 ? 'left' : 'right'}
+              mobile={{ padding: '1rem' }}
+              ipad={{ padding: '1.75rem' }}
             >
-              <div>
-                <h3>{title}</h3>
-                <p>{description}</p>
-              </div>
+              <Flex flexDirection='column' gap='0.5rem'>
+                <CardTitle currentTheme={currentThemeVariant}>
+                  {title}
+                </CardTitle>
+                <CardDescription>{description}</CardDescription>
+              </Flex>
 
-              {isCardFlippable && (
-                <p style={{ alignSelf: 'end' }}>
-                  Click to flip!{' '}
-                  <MousePointerClick color={currentTheme.color.warning} />
-                </p>
-              )}
-            </Flex>
+              <Flex
+                width='100%'
+                justifyContent={
+                  isCardFlippable ? 'space-between' : alignBasedOnOrder
+                }
+                alignItems='end'
+                mobile={{ flexDirection: 'column', gap: '1rem' }}
+                ipad={{ flexDirection: 'row', gap: '0.25rem' }}
+              >
+                {isCardFlippable && (
+                  <ClickToFlip>
+                    Click to flip! <MousePointerClick />
+                  </ClickToFlip>
+                )}
+
+                <Flex gap='1rem'>
+                  {url ? (
+                    <a href={url} target='_blank'>
+                      <Flex
+                        flexDirection='column'
+                        gap='0.5rem'
+                        justifyContent='center'
+                        alignItems='center'
+                      >
+                        <Link />
+                        <ProjectLinkSpan currentTheme={currentThemeVariant}>
+                          LINK
+                        </ProjectLinkSpan>
+                      </Flex>
+                    </a>
+                  ) : (
+                    <ThisProject currentTheme={currentThemeVariant}>
+                      <MapPin />
+                      <span>HERE</span>
+                    </ThisProject>
+                  )}
+
+                  <a href={githubRepoUrl} target='_blank'>
+                    <Flex
+                      flexDirection='column'
+                      gap='0.5rem'
+                      justifyContent='center'
+                      alignItems='center'
+                    >
+                      <Code />
+                      <ProjectLinkSpan currentTheme={currentThemeVariant}>
+                        CODE
+                      </ProjectLinkSpan>
+                    </Flex>
+                  </a>
+                </Flex>
+              </Flex>
+            </CardInfo>
           </Flex>
         </Front>
 
         {vimeoVideoId && (
-          <Back>
+          <Back backgroundColor={backBackgroundColor ?? 'transparent'}>
             <Vimeo video={vimeoVideoId} autoplay muted loop controls={false} />
           </Back>
         )}
