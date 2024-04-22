@@ -164,7 +164,11 @@ export const Table = styled.section`
   }
 `;
 
-export const ExternalLink = styled.a`
+export const externalLinkStyles = css`
   font-size: smaller;
   color: ${({ theme }) => theme.color.accent_light};
+`;
+
+export const ExternalLink = styled.a`
+  ${externalLinkStyles};
 `;
