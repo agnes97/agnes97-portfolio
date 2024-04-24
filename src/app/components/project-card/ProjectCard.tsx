@@ -18,11 +18,13 @@ import {
 import { Code, Link, MapPin, MousePointerClick } from 'lucide-react';
 import Vimeo from '@u-wave/react-vimeo';
 import { useTheme } from '@/app/providers/styled-components-provider';
+import TechStack from './components/tech-stack/TechStack';
 
 export type Project = {
   id: string;
   title: string;
   description: string;
+  techStack: string[];
   url?: string;
   githubRepoUrl: string;
   thumbnailSrc: string;
@@ -41,6 +43,7 @@ const ProjectCard: FC<ProjectCardProps> = ({
   title,
   order,
   description,
+  techStack,
   url,
   githubRepoUrl,
   thumbnailSrc,
@@ -81,6 +84,10 @@ const ProjectCard: FC<ProjectCardProps> = ({
           <Flex
             justifyContent={alignBasedOnOrder}
             style={{ height: 'inherit' }}
+            mobile={{
+              flexDirection: order === 0 ? 'column' : 'column-reverse',
+            }}
+            ipad={{ flexDirection: 'row' }}
           >
             <Thumbnail isThumbnailTransparent={Boolean(isThumbnailTransparent)}>
               <img src={thumbnailSrc} alt={title} />
@@ -98,10 +105,15 @@ const ProjectCard: FC<ProjectCardProps> = ({
               mobile={{ padding: '1rem' }}
               ipad={{ padding: '1.75rem' }}
             >
-              <Flex flexDirection='column' gap='0.5rem'>
-                <CardTitle currentTheme={currentThemeVariant}>
-                  {title}
-                </CardTitle>
+              <Flex flexDirection='column' gap='1rem'>
+                <Flex flexDirection='column' gap='0.5rem'>
+                  <CardTitle currentTheme={currentThemeVariant}>
+                    {title}
+                  </CardTitle>
+
+                  {techStack.length > 0 && <TechStack techStack={techStack} />}
+                </Flex>
+
                 <CardDescription>{description}</CardDescription>
               </Flex>
 

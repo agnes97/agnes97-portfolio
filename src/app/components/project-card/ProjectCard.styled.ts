@@ -38,7 +38,7 @@ type CardProps = {
 };
 
 export const Card = styled.div<CardProps>`
-  height: 350px;
+  height: 100%;
   width: 100%;
   perspective: 1000px;
 
@@ -116,10 +116,27 @@ type ThumbnailProps = {
 };
 
 export const Thumbnail = styled.div<ThumbnailProps>`
-  width: calc(100% / 2);
+  width: 100%;
   flex-shrink: 0;
+  padding: 2rem 0 1rem;
+
+  @media (width >= ${BREAKPOINTS.ipad}) {
+    padding: 0;
+    width: calc(100% / 2);
+  }
 
   & > img {
+    @media (width <= ${BREAKPOINTS.mobile}) {
+      border-radius: 50%;
+      width: 50%;
+    }
+
+    @media (width <= ${BREAKPOINTS.ipad}) {
+      border-radius: 50%;
+      width: 35%;
+    }
+
+    border-radius: none;
     width: 100%;
     height: 100%;
     opacity: 0.75;
@@ -191,20 +208,24 @@ type CardInfoProps = {
 };
 
 export const CardInfo = styled(Flex)<CardInfoProps>`
-  ${({ isThumbnailTransparent, theme, border }) =>
-    !isThumbnailTransparent &&
-    `border-${border}: 0.25rem solid ${theme.color.line_dark};`}
+  @media (width >= ${BREAKPOINTS.ipad}) {
+    ${({ isThumbnailTransparent, theme, border }) =>
+      !isThumbnailTransparent &&
+      `border-${border}: 0.25rem solid ${theme.color.line_dark};`}
+  }
 `;
 
 export const CardDescription = styled.p`
   max-height: 150px;
   overflow: scroll;
+  padding: 0 1rem;
 
-  @media (width > ${BREAKPOINTS.ipad}) {
-    max-height: 200px;
+  @media (width > ${BREAKPOINTS.mobile}) {
+    padding: 0 4rem;
   }
 
-  @media (width > ${BREAKPOINTS.ipad}) {
+  @media (width >= ${BREAKPOINTS.ipad}) {
     max-height: 175px;
+    padding: 0;
   }
 `;

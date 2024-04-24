@@ -1,9 +1,11 @@
 'use client';
 
 import React, { FC, useEffect, useState } from 'react';
-import { AnimatedHeading } from './PetProjects.styled';
+import { AnimatedHeading, PetProjectsGrid } from './PetProjects.styled';
 import { PawPrint } from 'lucide-react';
 import Flex from '../flex/Flex';
+import ProjectCard from '../project-card/ProjectCard';
+import { projects } from './projects';
 
 const PetProjects: FC = () => {
   const [hasAnimation, setHasAnimation] = useState(true);
@@ -26,8 +28,7 @@ const PetProjects: FC = () => {
       flexDirection='column'
       justifyContent='start'
       alignItems='center'
-      gap='2rem'
-      minHeight='30rem'
+      gap='4rem'
       padding='5rem 0'
     >
       <AnimatedHeading hasAnimation={hasAnimation}>
@@ -38,7 +39,16 @@ const PetProjects: FC = () => {
         <PawPrint size={48} />
       </AnimatedHeading>
 
-      <p>...</p>
+      <PetProjectsGrid>
+        {projects.map((project, index) => (
+          <ProjectCard
+            isCardFlippable={Boolean(project.vimeoVideoId)}
+            key={project.id}
+            order={index % 2 ? -1 : 0}
+            {...project}
+          />
+        ))}
+      </PetProjectsGrid>
     </Flex>
   );
 };
