@@ -13,6 +13,7 @@
     "lint:fix": "eslint --fix ."
   },
   "dependencies": {
+    "@icons-pack/react-simple-icons": "^9.4.1",
     "@u-wave/react-vimeo": "^0.9.10",
     "houseform": "^1.13.0",
     "lucide-react": "^0.364.0",
