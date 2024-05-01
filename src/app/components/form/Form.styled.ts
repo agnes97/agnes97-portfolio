@@ -15,6 +15,7 @@ export const StyledForm = styled.form<StyledFormProps>`
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
+  width: 100%;
 
   & > fieldset {
     all: unset;

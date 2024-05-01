@@ -3,6 +3,7 @@
 import Flex from '@/app/components/flex/Flex';
 import { Divider } from '@/app/styles/global.styled';
 import React from 'react';
+import AccessForm from './components/access-form/AccessForm';
 
 export default function Cv() {
   return (
@@ -13,14 +14,7 @@ export default function Cv() {
 
       <Divider />
 
-      <Flex
-        justifyContent='center'
-        alignItems='center'
-        minHeight='10rem'
-        flexGrow={1}
-      >
-        Secret Info
-      </Flex>
+      <AccessForm />
 
       <Divider />
 
