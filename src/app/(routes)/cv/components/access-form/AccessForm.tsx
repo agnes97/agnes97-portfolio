@@ -32,10 +32,7 @@ const AccessForm: FC = () => {
       flexGrow={1}
       width='100%'
     >
-      <p>
-        You can contact me to receive your access code for unlocking this
-        section.
-      </p>
+      <h2>Experiences</h2>
 
       {hasValidAccessCode?.access_allowed ? (
         <p>Access Granted</p>

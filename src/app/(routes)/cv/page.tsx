@@ -1,16 +1,15 @@
 'use client';
 
-import Flex from '@/app/components/flex/Flex';
 import { Divider } from '@/app/styles/global.styled';
 import React from 'react';
 import AccessForm from './components/access-form/AccessForm';
+import CVHeader from './components/cv-header/CVHeader';
+import ContactMe from '@/app/components/contact-me/ContactMe';
 
 export default function Cv() {
   return (
     <>
-      <Flex justifyContent='center' alignItems='center' minHeight='10rem'>
-        Header
-      </Flex>
+      <CVHeader />
 
       <Divider />
 
@@ -18,9 +17,7 @@ export default function Cv() {
 
       <Divider />
 
-      <Flex justifyContent='center' alignItems='center' minHeight='10rem'>
-        Footer
-      </Flex>
+      <ContactMe />
     </>
   );
 }
