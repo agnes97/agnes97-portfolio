@@ -7,7 +7,7 @@ type CardDatasets = {
   ['data-rotate-y']?: number;
 };
 
-type BorderSides = 'top' | 'bottom' | 'left' | 'right';
+export type BorderSides = 'top' | 'bottom' | 'left' | 'right';
 type CardProps = CardDatasets & {
   borderColors: string[];
   transparentBorderSides: BorderSides[];

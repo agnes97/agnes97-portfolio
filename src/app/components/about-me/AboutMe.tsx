@@ -7,8 +7,24 @@ import Link from 'next/link';
 import Button from '../button/Button';
 import GalleryCard from '../gallery-card/GalleryCard';
 
+import agnes_light_cutout from '../../assets/agnes-light-cutout.png';
+import agnes_light_blur from '../../assets/agnes-light-blur.jpg';
+import agnes_dark_cutout from '../../assets/agnes-dark-cutout.png';
+import agnes_dark_blur from '../../assets/agnes-dark-blur.jpg';
+
 const AboutMe: FC = () => {
   const { currentThemeVariant } = useTheme();
+
+  const agnesCutout =
+    currentThemeVariant === 'dark' ? agnes_dark_cutout : agnes_light_cutout;
+  const agnesBlur =
+    currentThemeVariant === 'dark' ? agnes_dark_blur : agnes_light_blur;
+
+  const borderColors =
+    currentThemeVariant === 'light'
+      ? ['#dd7db7', '#87c8fd']
+      : ['#27282c', '#22462f'];
+
   return (
     <AboutMeContainer currentTheme={currentThemeVariant}>
       <div>
@@ -28,7 +44,12 @@ const AboutMe: FC = () => {
       </div>
 
       <div>
-        <GalleryCard />
+        <GalleryCard
+          cuttoutImageSrc={agnesCutout.src}
+          blurImageSrc={agnesBlur.src}
+          borderColors={borderColors}
+          transparentBorderSides={['left', 'top']}
+        />
       </div>
     </AboutMeContainer>
   );
