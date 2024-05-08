@@ -11,6 +11,7 @@ const walkingPaws = keyframes`
 
 type AnimatedHeadingProps = {
   hasAnimation: boolean;
+  isAnimationBW?: boolean;
 };
 
 export const AnimatedHeading = styled.div<AnimatedHeadingProps>`
@@ -24,7 +25,10 @@ export const AnimatedHeading = styled.div<AnimatedHeadingProps>`
 
   & svg {
     opacity: 0;
-    stroke: ${({ theme }) => theme.color.accent_light};
+    stroke: ${({ theme, isAnimationBW }) =>
+      isAnimationBW
+        ? theme.color.glass_effect_background
+        : theme.color.accent_light};
   }
 
   & svg:nth-of-type(1) {

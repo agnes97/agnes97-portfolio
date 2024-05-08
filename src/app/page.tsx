@@ -1,10 +1,9 @@
 import Lines from './components/lines/Lines';
 import { Divider, Grating } from './styles/global.styled';
-import Button from './components/button/Button';
 import AboutMe from './components/about-me/AboutMe';
 import PetProjects from './components/pet-projects/PetProjects';
 import GithubContributions from './components/github-contributions/GithubContributions';
-import Flex from './components/flex/Flex';
+import ContactMe from './components/contact-me/ContactMe';
 
 export default function Home() {
   return (
@@ -36,11 +35,7 @@ export default function Home() {
 
       <Divider />
 
-      <Flex justifyContent='center' alignItems='center' minHeight='30rem'>
-        <Button size='L' shape='hexagon'>
-          Contact me
-        </Button>
-      </Flex>
+      <ContactMe />
     </>
   );
 }

@@ -36,6 +36,7 @@ export const GlobalStyle = createGlobalStyle`
 
   h2 {
     font-size: 2rem;
+    text-align: center;
 
     @media (width >= ${BREAKPOINTS.ipad}) {
       font-size: 2.5rem;
@@ -88,6 +89,11 @@ export const Divider = styled.hr<DividerProps>`
      display: none;
     }
   `}
+
+  @media (width <= ${BREAKPOINTS.mobile}) {
+    width: 150%;
+    margin: 0 -25%;
+  }
 `;
 
 export const Grating = styled.section`
