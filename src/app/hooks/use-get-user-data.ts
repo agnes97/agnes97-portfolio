@@ -1,12 +1,12 @@
 'use client';
 
-import { useQuery } from 'react-query';
+import { useQuery } from '@tanstack/react-query';
 import { User } from '../providers/auth-provider';
 
 export const useGetUserData = (accessToken: string) => {
-  return useQuery<User>(
-    ['user'],
-    async () => {
+  return useQuery<User>({
+    queryKey: ['user'],
+    queryFn: async () => {
       const response = await fetch('https://prismify.macovi.space/auth/me', {
         headers: {
           Authorization: `Bearer ${accessToken}`,
@@ -15,8 +15,6 @@ export const useGetUserData = (accessToken: string) => {
 
       return response.json();
     },
-    {
-      enabled: !!accessToken,
-    }
-  );
+    enabled: !!accessToken,
+  });
 };

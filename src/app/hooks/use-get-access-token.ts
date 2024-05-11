@@ -1,4 +1,4 @@
-import { QueryClient, useMutation } from 'react-query';
+import { QueryClient, useMutation } from '@tanstack/react-query';
 
 export type AccessTokenBody = {
   email: string;
@@ -12,9 +12,9 @@ type AccessTokenResponse = {
 export const useGetAccessToken = () => {
   const queryClient = new QueryClient();
 
-  return useMutation<AccessTokenResponse, Error, AccessTokenBody>(
-    'get-access-token',
-    async (body) => {
+  return useMutation<AccessTokenResponse, Error, AccessTokenBody>({
+    mutationKey: ['get-access-token'],
+    mutationFn: async (body) => {
       const response = await fetch('https://prismify.macovi.space/auth/login', {
         method: 'POST',
         headers: {
@@ -25,11 +25,9 @@ export const useGetAccessToken = () => {
 
       return response.json();
     },
-    {
-      onSuccess: async (data) => {
-        await queryClient.invalidateQueries({ queryKey: ['user'] });
-        localStorage.setItem('accessToken', data.accessToken);
-      },
-    }
-  );
+    onSuccess: async (data) => {
+      await queryClient.invalidateQueries({ queryKey: ['user'] });
+      localStorage.setItem('accessToken', data.accessToken);
+    },
+  });
 };
