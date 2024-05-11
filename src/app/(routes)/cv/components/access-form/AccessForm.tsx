@@ -2,25 +2,24 @@
 
 import Flex from '@/app/components/flex/Flex';
 import Form from '@/app/components/form/Form';
-import React, { FC, useState } from 'react';
+import React, { FC } from 'react';
 import { z } from 'zod';
-import { useGetAccessCode } from '../../hooks/use-get-access-code';
 
 const accessForm = [
   {
-    name: 'access_code',
+    name: 'accessCode',
     placeholder: 'Access Code',
     validation: z.string(),
   },
 ];
 
-const AccessForm: FC = () => {
-  const [accessCode, setAccessCode] = useState<string>();
+type AccessFormProps = {
+  accessCv: (accessCode: string) => void;
+};
 
-  const { data: hasValidAccessCode } = useGetAccessCode(accessCode);
-
-  const validateAccess = (accessCode: { access_code: string }) => {
-    setAccessCode(accessCode['access_code']);
+const AccessForm: FC<AccessFormProps> = ({ accessCv }) => {
+  const onSubmit = (values: { accessCode: string }) => {
+    accessCv(values.accessCode);
   };
 
   return (
@@ -34,13 +33,13 @@ const AccessForm: FC = () => {
     >
       <h2>Experiences</h2>
 
-      {hasValidAccessCode?.access_allowed ? (
+      {/* {hasValidAccessCode?.access_allowed ? (
         <p>Access Granted</p>
       ) : (
         <p>Access Denied</p>
-      )}
+      )} */}
 
-      <Form onSubmit={validateAccess} formValues={accessForm}></Form>
+      <Form onSubmit={onSubmit} formValues={accessForm}></Form>
     </Flex>
   );
 };

@@ -7,9 +7,28 @@ import agnes_light_cutout from '../../../../assets/agnes-light-cutout.png';
 import agnes_light_blur from '../../../../assets/agnes-light-blur.jpg';
 import agnes_dark_cutout from '../../../../assets/agnes-dark-cutout.png';
 import agnes_dark_blur from '../../../../assets/agnes-dark-blur.jpg';
+import { CV } from '../../hooks/use-get-cv';
 
-const CVHeader: FC = () => {
+type CVHeaderProps = {
+  cv?: Omit<CV, 'experiences'>;
+};
+
+const CVHeader: FC<CVHeaderProps> = ({ cv }) => {
   const { currentThemeVariant } = useTheme();
+
+  if (!cv) {
+    return null;
+  }
+
+  const {
+    name,
+    date_of_birth,
+    email,
+    phone_number,
+    address_street,
+    address_city,
+    address_zip,
+  } = cv;
 
   const agnesCutout =
     currentThemeVariant === 'dark' ? agnes_dark_cutout : agnes_light_cutout;
@@ -40,18 +59,20 @@ const CVHeader: FC = () => {
         <List>
           <li>
             <span>Name and surname:</span>
-            <span>Jana Mácová</span>
+            <span>{name}</span>
           </li>
           <li>
             <span>Date of birth:</span>
-            <span>✶✶.&nbsp;&nbsp;✶✶.&nbsp;&nbsp;✶✶✶✶</span>
+            <span>{date_of_birth}</span>
           </li>
           <li>
             <span>Address:</span>
             <span>
-              ✶✶✶✶✶✶✶✶✶&nbsp;&nbsp;✶✶✶✶ <br />
-              ✶✶✶✶✶✶✶✶✶✶&nbsp;&nbsp;✶✶✶&nbsp;&nbsp;✶✶✶✶✶✶ <br />
-              ✶✶✶&nbsp;&nbsp;✶✶ <br />
+              {address_street}
+              <br />
+              {address_city}
+              <br />
+              {address_zip}
             </span>
           </li>
         </List>
@@ -59,11 +80,11 @@ const CVHeader: FC = () => {
         <List>
           <li>
             <span>Phone number:</span>
-            <span>✶✶✶&nbsp;&nbsp;✶✶✶&nbsp;&nbsp;✶✶✶&nbsp;&nbsp;✶✶✶</span>
+            <span>{phone_number}</span>
           </li>
           <li>
             <span>E-mail:</span>
-            <span>✶✶✶✶@✶✶✶✶✶✶.✶✶✶✶</span>
+            <span>{email}</span>
           </li>
         </List>
       </ListContainer>
