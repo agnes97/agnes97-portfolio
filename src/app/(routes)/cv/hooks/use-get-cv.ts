@@ -2,7 +2,7 @@
 
 import { useQuery } from '@tanstack/react-query';
 
-type Experience = {
+export type Experience = {
   company_name: string;
   employment_start: string;
   employment_end: string | null;

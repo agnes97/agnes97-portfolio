@@ -10,12 +10,6 @@ export const CVHeaderContainer = styled(Flex)`
   }
 `;
 
-export const ListContainer = styled(Flex)`
-  @media (width >= ${BREAKPOINTS.desktop}) {
-    max-width: 50%;
-  }
-`;
-
 export const List = styled.ul`
   list-style-type: none;
   margin-block: 0;
