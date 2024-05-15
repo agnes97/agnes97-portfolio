@@ -10,6 +10,7 @@ import { isCVLocked } from './utils/update-starred-options';
 import Experiences from './components/experiences/Experiences';
 import Flex from '@/app/components/flex/Flex';
 import { CVContainer } from './page.styled';
+import Loading from '@/app/loading';
 
 export default function Cv() {
   const [accessCode, setAccessCode] = useState<string>();
@@ -28,30 +29,38 @@ export default function Cv() {
 
   return (
     <>
-      <CVContainer>{cv && <CVHeader cv={cv} />}</CVContainer>
-
-      <Divider />
-
-      <Flex
-        flexDirection='column'
-        justifyContent='center'
-        alignItems='center'
-        minHeight='10rem'
-        flexGrow={1}
-        gap='1rem'
-      >
-        <h2>Experiences</h2>
-
-        {isCVLocked(cv) ? (
-          <AccessForm accessCv={accessCv} />
-        ) : (
+      {!cv ? (
+        <Loading />
+      ) : (
+        <>
           <CVContainer>
-            <Experiences experiences={cv?.experiences ?? []} />
+            <CVHeader cv={cv} />
           </CVContainer>
-        )}
-      </Flex>
 
-      <Divider />
+          <Divider />
+
+          <Flex
+            flexDirection='column'
+            justifyContent='center'
+            alignItems='center'
+            minHeight='10rem'
+            flexGrow={1}
+            gap='1rem'
+          >
+            <h2>Experiences</h2>
+
+            {isCVLocked(cv) ? (
+              <AccessForm accessCv={accessCv} />
+            ) : (
+              <CVContainer>
+                <Experiences experiences={cv.experiences} />
+              </CVContainer>
+            )}
+          </Flex>
+
+          <Divider />
+        </>
+      )}
 
       <ContactMe />
     </>

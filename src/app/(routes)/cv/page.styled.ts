@@ -6,6 +6,6 @@ export const CVContainer = styled.section`
   width: 100%;
 
   @media (width >= ${BREAKPOINTS.desktop}) {
-    max-width: 70%;
+    max-width: 75%;
   }
 `;

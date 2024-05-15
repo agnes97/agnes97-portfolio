@@ -175,7 +175,16 @@ const ProjectCard: FC<ProjectCardProps> = ({
 
         {vimeoVideoId && (
           <Back backgroundColor={backBackgroundColor ?? 'transparent'}>
-            <Vimeo video={vimeoVideoId} autoplay muted loop controls={false} />
+            {hasAnimation && (
+              <Vimeo
+                video={vimeoVideoId}
+                autoplay
+                muted
+                loop
+                controls={false}
+                unsafe-inline
+              />
+            )}
           </Back>
         )}
       </Content>
