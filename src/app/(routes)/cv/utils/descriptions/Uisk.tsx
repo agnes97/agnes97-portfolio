@@ -8,7 +8,7 @@ import uisk2 from '@/app/assets/cv/uisk2.jpeg';
 import uisk3 from '@/app/assets/cv/uisk3.jpeg';
 import uisk4 from '@/app/assets/cv/uisk4.jpeg';
 
-const images = [uisk1.src, uisk2.src, uisk4.src, uisk3.src];
+const images = [uisk1, uisk2, uisk4, uisk3];
 
 const Uisk: FC<DescriptionProps> = ({ company_name }) => {
   return (
@@ -43,7 +43,7 @@ const Uisk: FC<DescriptionProps> = ({ company_name }) => {
         tools such as Doodle, Trello and others.
       </p>
 
-      <DescriptionImages companyName={company_name} imagesSrcs={images} />
+      <DescriptionImages companyName={company_name} images={images} />
     </Flex>
   );
 };

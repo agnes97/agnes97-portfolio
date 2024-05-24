@@ -53,8 +53,8 @@ export const Experience = styled.article<ExperienceProps>`
 
   &:hover img {
     ${({ isLogoTooDark }) => css`
-      filter: invert(0)
-        ${isLogoTooDark ? 'brightness(200%)' : 'brightness(100%)'};
+      filter: grayscale(0)
+        ${isLogoTooDark ? 'brightness(200%)' : 'brightness(100%)'} invert(0);
     `}
   }
 `;
@@ -65,7 +65,8 @@ type CompanyLogoProps = {
 
 export const CompanyLogo = styled.img<CompanyLogoProps>`
   object-fit: contain;
-  filter: brightness(0) invert(1);
+  filter: grayscale(0) brightness(0) invert(1);
+  transition: filter 1s;
 `;
 
 type AccentedUppercaseProps = {
@@ -99,23 +100,11 @@ export const PositionInfoWrapper = styled.div`
   }
 `;
 
-export const DescriptionImage = styled.img`
-  object-fit: cover;
-  filter: grayscale(100%);
+export const DescriptionImageContainer = styled.div`
+  padding-top: 1.5rem;
 
-  &:hover {
-    width: auto;
-    filter: grayscale(0);
-  }
-
-  @media (width <= ${BREAKPOINTS.ipad}) {
-    width: 350px;
-    height: 70px;
-
-    &:hover {
-      width: 350px;
-      height: auto;
-      filter: grayscale(0);
-    }
+  & img {
+    transition: filter 0.5s;
+    filter: grayscale(100%) brightness(100%) invert(0);
   }
 `;

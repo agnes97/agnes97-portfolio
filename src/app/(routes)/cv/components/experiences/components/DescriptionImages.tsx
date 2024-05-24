@@ -1,28 +1,31 @@
-import Flex from '@/app/components/flex/Flex';
 import React, { FC } from 'react';
-import { DescriptionImage } from '../Experiences.styled';
+import { DescriptionImageContainer } from '../Experiences.styled';
+import PhotoAlbum from 'react-photo-album';
+import { StaticImageData } from 'next/image';
 
 type DescriptionImagesProps = {
-  companyName: string;
-  imagesSrcs: string[];
+  images: StaticImageData[];
 };
 
-const DescriptionImages: FC<DescriptionImagesProps> = ({
-  companyName,
-  imagesSrcs,
-}) => {
+const DescriptionImages: FC<DescriptionImagesProps> = ({ images }) => {
+  const imagesArray = images.map((image) => ({
+    src: image.src,
+    width: image.width,
+    height: image.height,
+  }));
+
   return (
-    <Flex gap='0.25rem' flexWrap='wrap'>
-      {imagesSrcs.map((src, index) => (
-        <DescriptionImage
-          key={index}
-          width={100}
-          height={100}
-          src={src}
-          alt={companyName}
-        />
-      ))}
-    </Flex>
+    <DescriptionImageContainer>
+      <PhotoAlbum
+        spacing={10}
+        layout='columns'
+        columns={(containerWidth) => {
+          if (containerWidth < 400) return 2;
+          return 3;
+        }}
+        photos={imagesArray}
+      />
+    </DescriptionImageContainer>
   );
 };
 
