@@ -67,10 +67,10 @@ const ContactMe: FC = () => {
         }}
       >
         <SocialsLink
-          id='instagram'
-          name='Instagram'
-          link='https://www.instagram.com/agnes.and.life/'
-          icon={SiInstagram}
+          id='linkedin'
+          name='LinkedIn'
+          link='https://www.linkedin.com/in/agnes97/'
+          icon={SiLinkedin}
         />
 
         <SocialsLink
@@ -81,10 +81,10 @@ const ContactMe: FC = () => {
         />
 
         <SocialsLink
-          id='linkedin'
-          name='LinkedIn'
-          link='https://www.linkedin.com/in/agnes97/'
-          icon={SiLinkedin}
+          id='instagram'
+          name='Instagram'
+          link='https://www.instagram.com/agnes.and.life/'
+          icon={SiInstagram}
         />
       </Flex>
     </Flex>
