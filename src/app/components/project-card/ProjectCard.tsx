@@ -18,13 +18,14 @@ import {
 import { Code, Link, MapPin, MousePointerClick } from 'lucide-react';
 import Vimeo from '@u-wave/react-vimeo';
 import { useTheme } from '@/app/providers/styled-components-provider';
-import TechStack from './components/tech-stack/TechStack';
+import TechStack from '../tech-stack/TechStack';
+import { Tech } from '../tech-stack/tech-stack-map';
 
 export type Project = {
   id: string;
   title: string;
   description: string;
-  techStack: string[];
+  techStack: Tech[];
   url?: string;
   githubRepoUrl: string;
   thumbnailSrc: string;

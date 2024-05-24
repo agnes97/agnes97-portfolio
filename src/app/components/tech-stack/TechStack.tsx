@@ -20,6 +20,7 @@ const TechStack: FC<TechStackProps> = ({ techStack }) => {
 
         return (
           <a
+            key={tech}
             href={techValue.url}
             referrerPolicy='no-referrer'
             target='_blank'

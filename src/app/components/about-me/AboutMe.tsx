@@ -6,14 +6,16 @@ import { AboutMeContainer } from './AboutMe.styled';
 import Link from 'next/link';
 import Button from '../button/Button';
 import GalleryCard from '../gallery-card/GalleryCard';
+import { MousePointerClick } from 'lucide-react';
 
 import agnes_light_cutout from '../../assets/agnes-light-cutout.png';
 import agnes_light_blur from '../../assets/agnes-light-blur.jpg';
 import agnes_dark_cutout from '../../assets/agnes-dark-cutout.png';
 import agnes_dark_blur from '../../assets/agnes-dark-blur.jpg';
+import Flex from '../flex/Flex';
 
 const AboutMe: FC = () => {
-  const { currentThemeVariant } = useTheme();
+  const { currentTheme, currentThemeVariant } = useTheme();
 
   const agnesCutout =
     currentThemeVariant === 'dark' ? agnes_dark_cutout : agnes_light_cutout;
@@ -38,7 +40,10 @@ const AboutMe: FC = () => {
 
         <Link href='/cv' passHref>
           <Button shape='rectangle' size='L'>
-            VIEW CV
+            <Flex alignItems='center' gap='0.5rem'>
+              <MousePointerClick color={currentTheme.color.text_link} />
+              <span>VIEW CV</span>
+            </Flex>
           </Button>
         </Link>
       </div>
