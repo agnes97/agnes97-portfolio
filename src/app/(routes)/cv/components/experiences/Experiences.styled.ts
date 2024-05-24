@@ -37,36 +37,19 @@ export const ExperiencesContainer = styled(Flex)`
   }
 `;
 
-type ExperienceProps = {
-  isLogoTooDark?: boolean;
-};
-
-export const Experience = styled.article<ExperienceProps>`
+export const Experience = styled.article`
   width: 100%;
   display: grid;
   grid-template-columns: 1fr;
   gap: 1rem;
 
+  &:hover img {
+    filter: grayscale(0) invert(0);
+  }
+
   @media (width >= ${BREAKPOINTS.desktop}) {
     grid-template-columns: 1fr 4fr;
   }
-
-  &:hover img {
-    ${({ isLogoTooDark }) => css`
-      filter: grayscale(0)
-        ${isLogoTooDark ? 'brightness(200%)' : 'brightness(100%)'} invert(0);
-    `}
-  }
-`;
-
-type CompanyLogoProps = {
-  currentTheme: ColorTheme;
-};
-
-export const CompanyLogo = styled.img<CompanyLogoProps>`
-  object-fit: contain;
-  filter: grayscale(0) brightness(0) invert(1);
-  transition: filter 1s;
 `;
 
 type AccentedUppercaseProps = {
@@ -90,7 +73,11 @@ export const TechStackTitle = styled.span`
   color: ${({ theme }) => theme.color.accent_light};
 `;
 
-export const PositionInfoWrapper = styled.div`
+type PositionInfoWrapperProps = {
+  isLogoTooDark?: boolean;
+};
+
+export const PositionInfoWrapper = styled.div<PositionInfoWrapperProps>`
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -98,6 +85,23 @@ export const PositionInfoWrapper = styled.div`
   @media (width >= ${BREAKPOINTS.desktop}) {
     align-items: center;
   }
+
+  &:hover img {
+    ${({ isLogoTooDark }) => css`
+      filter: ${isLogoTooDark ? 'brightness(200%)' : 'brightness(100%)'}
+        invert(0);
+    `}
+  }
+`;
+
+type CompanyLogoProps = {
+  currentTheme: ColorTheme;
+};
+
+export const CompanyLogo = styled.img<CompanyLogoProps>`
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  transition: filter 500ms ease-in-out;
 `;
 
 export const DescriptionImageContainer = styled.div`
@@ -105,6 +109,6 @@ export const DescriptionImageContainer = styled.div`
 
   & img {
     transition: filter 0.5s;
-    filter: grayscale(100%) brightness(100%) invert(0);
+    filter: grayscale(100%);
   }
 `;
