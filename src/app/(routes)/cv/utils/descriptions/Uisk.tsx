@@ -10,7 +10,7 @@ import uisk4 from '@/app/assets/cv/uisk4.jpeg';
 
 const images = [uisk1.src, uisk2.src, uisk4.src, uisk3.src];
 
-const UiskDescription: FC<DescriptionProps> = ({ company_name }) => {
+const Uisk: FC<DescriptionProps> = ({ company_name }) => {
   return (
     <Flex flexDirection='column' gap='1rem'>
       <p>
@@ -48,4 +48,4 @@ const UiskDescription: FC<DescriptionProps> = ({ company_name }) => {
   );
 };
 
-export default UiskDescription;
+export default Uisk;

@@ -13,11 +13,7 @@ import DescriptionImages from '../../components/experiences/components/Descripti
 
 const images = [cyrkl1.src, cyrkl2.src, cyrkl3.src, cyrkl4.src];
 
-const CyrklDescription: FC<DescriptionProps> = ({
-  company_name,
-  type,
-  tech_stack,
-}) => (
+const Cyrkl: FC<DescriptionProps> = ({ company_name, type, tech_stack }) => (
   <Flex flexDirection='column' gap='1rem'>
     <p>Hello World</p>
 
@@ -32,4 +28,4 @@ const CyrklDescription: FC<DescriptionProps> = ({
   </Flex>
 );
 
-export default CyrklDescription;
+export default Cyrkl;

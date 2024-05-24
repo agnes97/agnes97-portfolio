@@ -1,6 +1,6 @@
 import Flex from '@/app/components/flex/Flex';
 import React, { FC } from 'react';
-import { DescriptionImage } from '../../../utils/descriptions/descriptions.styled';
+import { DescriptionImage } from '../Experiences.styled';
 
 type DescriptionImagesProps = {
   companyName: string;
