@@ -3,6 +3,7 @@ import StyledComponentsProvider from './providers/styled-components-provider';
 import { CookiesProvider } from 'next-client-cookies/server';
 import { ReactQueryClientProvider } from './providers/react-query-client-provider';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+import AuthProvider from './providers/auth-provider';
 
 export const metadata = {
   title: 'Agnes97',
@@ -15,7 +16,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <CookiesProvider>
         <html lang='en'>
           <StyledComponentsProvider>
-            {children}
+            <AuthProvider>{children}</AuthProvider>
 
             <ReactQueryDevtools
               initialIsOpen={false}
