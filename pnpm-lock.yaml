@@ -41,6 +41,9 @@ importers:
       react-is:
         specifier: ^18.2.0
         version: 18.2.0
+      react-photo-album:
+        specifier: ^2.4.0
+        version: 2.4.0(react@18.2.0)
       styled-components:
         specifier: ^5.3.11
         version: 5.3.11(@babel/core@7.24.3)(react-dom@18.2.0(react@18.2.0))(react-is@18.2.0)(react@18.2.0)
@@ -1682,6 +1685,12 @@ packages:
 
   react-is@18.2.0:
     resolution: {integrity: sha512-xWGDIW6x921xtzPkhiULtthJHoJvBbF3q26fzloPCK0hsvxtPVelvftw3zjbHWSkR2km9Z+4uxbDDK/6Zw9B8w==}
+
+  react-photo-album@2.4.0:
+    resolution: {integrity: sha512-HSTxQKTYK6rLRM0dFlOMf2QgyrwffQHO21JjmffYBw6BQPPijYv3kLL5c+hwhxWhaZwLBY5TmJkb6sBZSy3UGw==}
+    engines: {node: '>=12'}
+    peerDependencies:
+      react: '>=16.8.0'
 
   react@18.2.0:
     resolution: {integrity: sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ==}
@@ -3902,6 +3911,10 @@ snapshots:
   react-is@16.13.1: {}
 
   react-is@18.2.0: {}
+
+  react-photo-album@2.4.0(react@18.2.0):
+    dependencies:
+      react: 18.2.0
 
   react@18.2.0:
     dependencies:
