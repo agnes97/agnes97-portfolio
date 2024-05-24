@@ -1,11 +1,16 @@
 'use client';
 
+import { Tech } from '@/app/components/tech-stack/tech-stack-map';
 import { useQuery } from '@tanstack/react-query';
 
 export type Experience = {
+  type?: 'programming' | 'librarianship';
   company_name: string;
+  company_name_shortcut?: string;
   employment_start: string;
   employment_end: string | null;
+  position: string;
+  tech_stack?: Tech[];
 };
 
 export type CV = {
