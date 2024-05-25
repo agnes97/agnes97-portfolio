@@ -1,7 +1,6 @@
 import Flex from '@/app/components/flex/Flex';
 import React, { FC } from 'react';
 import DescriptionImages from '../../components/experiences/components/DescriptionImages';
-import { DescriptionProps } from '../get-company-description';
 
 import uisk1 from '@/app/assets/cv/uisk1.jpeg';
 import uisk2 from '@/app/assets/cv/uisk2.jpeg';
@@ -10,7 +9,7 @@ import uisk4 from '@/app/assets/cv/uisk4.jpeg';
 
 const images = [uisk1, uisk2, uisk4, uisk3];
 
-const Uisk: FC<DescriptionProps> = ({ company_name }) => {
+const Uisk: FC = () => {
   return (
     <Flex flexDirection='column' gap='1rem'>
       <p>
@@ -43,7 +42,7 @@ const Uisk: FC<DescriptionProps> = ({ company_name }) => {
         tools such as Doodle, Trello and others.
       </p>
 
-      <DescriptionImages companyName={company_name} images={images} />
+      <DescriptionImages images={images} />
     </Flex>
   );
 };

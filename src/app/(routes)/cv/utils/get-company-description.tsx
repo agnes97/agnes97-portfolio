@@ -20,7 +20,7 @@ export const companyDescriptionsMap: DescriptionMap = new Map([
   ['Czechitas', () => <Czechitas />],
   ['ÚČL AV ČR', () => <UclAvCr />],
   ['ÚMV', () => <Umv />],
-  ['ÚISK FF UK', (props) => <Uisk {...props} />],
+  ['ÚISK FF UK', () => <Uisk />],
   ['FF MU', () => <FfMu />],
 ]);
 
