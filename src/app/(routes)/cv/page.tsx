@@ -15,7 +15,9 @@ import Loading from '@/app/loading';
 export default function Cv() {
   const [accessCode, setAccessCode] = useState<string>();
   const { data } = useGetCV(accessCode);
+
   const [cv, setCv] = useState<CV | null>(null);
+  const [error, setError] = useState<string | undefined>();
 
   useEffect(() => {
     if (data) {
@@ -25,6 +27,11 @@ export default function Cv() {
 
   const accessCv = (accessCode: string) => {
     setAccessCode(accessCode);
+
+    if (accessCode.length > 1 && isCVLocked(cv)) {
+      setError('Invalid access code :(');
+      return;
+    }
   };
 
   return (
@@ -50,7 +57,7 @@ export default function Cv() {
             <h2>Experiences</h2>
 
             {isCVLocked(cv) ? (
-              <AccessForm accessCv={accessCv} />
+              <AccessForm accessCv={accessCv} error={error} />
             ) : (
               <CVContainer>
                 <Experiences experiences={cv.experiences} />

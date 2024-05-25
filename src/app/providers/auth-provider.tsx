@@ -24,6 +24,7 @@ type AuthContextType = {
   user: User | null;
   isLoggedIn: boolean;
   isLoading: boolean;
+  error: Error | null;
   login: () => void;
   logout: () => void;
 };
@@ -31,6 +32,7 @@ const AuthContext = createContext<AuthContextType>({
   user: null,
   isLoggedIn: false,
   isLoading: false,
+  error: null,
   login: () => {},
   logout: () => {},
 });
@@ -39,24 +41,30 @@ export const useAuth = () => useContext(AuthContext);
 
 const AuthProvider: FC<PropsWithChildren> = ({ children }) => {
   const accessToken = localStorage.getItem('accessToken');
+
   const {
     data: userData,
     isLoading,
+    isFetching,
+    isError,
+    error,
     refetch,
   } = useGetUserData(accessToken || '');
 
   const [currentUser, setCurrentUser] = useState<User | null>(userData || null);
 
   useEffect(() => {
-    if (userData) {
+    if (userData?.name && !isError) {
       setCurrentUser(userData);
     }
-  }, [userData]);
+  }, [userData, isError]);
 
   const handleLogin = async () => {
     await refetch().then(
       (response) => {
-        setCurrentUser({ ...response.data } as User);
+        isError
+          ? console.log('Error')
+          : setCurrentUser({ ...response.data } as User);
       },
       (error) => {
         console.log(error);
@@ -74,8 +82,9 @@ const AuthProvider: FC<PropsWithChildren> = ({ children }) => {
   const value = useMemo(
     () => ({
       user: currentUser,
-      isLoggedIn: !!accessToken,
-      isLoading,
+      isLoggedIn: currentUser !== null && !!currentUser.name,
+      isLoading: isLoading && isFetching,
+      error,
       login: handleLogin,
       logout: handleLogout,
     }),

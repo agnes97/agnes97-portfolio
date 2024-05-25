@@ -13,6 +13,8 @@ export const useGetUserData = (accessToken: string) => {
         },
       });
 
+      if (response.status !== 200) throw new Error('Failed to fetch user data');
+
       return response.json();
     },
     enabled: !!accessToken,

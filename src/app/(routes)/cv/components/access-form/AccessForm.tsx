@@ -14,14 +14,17 @@ const accessForm = [
 
 type AccessFormProps = {
   accessCv: (accessCode: string) => void;
+  error?: string;
 };
 
-const AccessForm: FC<AccessFormProps> = ({ accessCv }) => {
+const AccessForm: FC<AccessFormProps> = ({ accessCv, error }) => {
   const onSubmit = (values: { accessCode: string }) => {
     accessCv(values.accessCode);
   };
 
-  return <Form onSubmit={onSubmit} formValues={accessForm}></Form>;
+  return (
+    <Form onSubmit={onSubmit} formValues={accessForm} customError={error} />
+  );
 };
 
 export default AccessForm;

@@ -10,9 +10,9 @@ export default function Locked() {
     <>
       <Auth />
 
-      <Divider />
+      {/* <Divider />
 
-      <SecretContent />
+      <SecretContent /> */}
     </>
   );
 }

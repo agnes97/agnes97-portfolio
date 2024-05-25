@@ -24,13 +24,13 @@ const loginForm = [
 
 const LoginForm: FC = () => {
   const { mutateAsync: getAccessToken } = useGetAccessToken();
-  const { login } = useAuth();
+  const { login, error } = useAuth();
 
   const handleSubmit = async (loginBody: AccessTokenBody) => {
     await getAccessToken(loginBody).then(login);
   };
 
-  return <Form onSubmit={handleSubmit} formValues={loginForm} />;
+  return <Form onSubmit={handleSubmit} formValues={loginForm} error={error} />;
 };
 
 export default LoginForm;

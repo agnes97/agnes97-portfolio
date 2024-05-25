@@ -14,9 +14,11 @@ type FormField = {
 type FormProps<T> = {
   formValues: FormField[];
   onSubmit: (body: T) => void | Promise<void>;
+  error?: Error | null;
+  customError?: string;
 };
 
-function Form<T>({ formValues, onSubmit }: FormProps<T>) {
+function Form<T>({ formValues, onSubmit, error, customError }: FormProps<T>) {
   const { currentThemeVariant } = useTheme();
 
   return (
@@ -31,7 +33,7 @@ function Form<T>({ formValues, onSubmit }: FormProps<T>) {
           // eslint-disable-next-line @typescript-eslint/no-misused-promises
           onSubmit={async (event) => {
             event.preventDefault();
-            await submit();
+            await submit().finally(() => {});
           }}
         >
           {formValues.map((field) => (
@@ -42,6 +44,8 @@ function Form<T>({ formValues, onSubmit }: FormProps<T>) {
                     <input
                       // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
                       value={value}
+                      type={field.name === 'password' ? 'password' : 'text'}
+                      autoComplete='off'
                       onBlur={onBlur}
                       onChange={(e) => {
                         setValue(e.target.value);
@@ -53,6 +57,20 @@ function Form<T>({ formValues, onSubmit }: FormProps<T>) {
               </Field>
             </fieldset>
           ))}
+
+          {error && (
+            <>
+              <div style={{ height: '2rem' }}></div>
+              <ErrorContainer>{error.message}</ErrorContainer>
+            </>
+          )}
+
+          {customError && (
+            <>
+              <div style={{ height: '2rem' }}></div>
+              <ErrorContainer>{customError}</ErrorContainer>
+            </>
+          )}
 
           {errors.length > 0 && (
             <>
@@ -79,7 +97,7 @@ function Form<T>({ formValues, onSubmit }: FormProps<T>) {
           <div style={{ height: '2rem' }}></div>
 
           <Button shape='rectangle' size='L' disabled={!isValid} type='submit'>
-            Submit
+            submit
           </Button>
         </StyledForm>
       )}
