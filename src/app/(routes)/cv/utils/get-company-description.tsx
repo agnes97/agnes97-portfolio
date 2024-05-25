@@ -17,7 +17,7 @@ type DescriptionMap = Map<string, (props: DescriptionProps) => JSX.Element>;
 
 export const companyDescriptionsMap: DescriptionMap = new Map([
   ['Cyrkl', (props) => <Cyrkl {...props} />],
-  ['Czechitas', () => <Czechitas />],
+  ['Czechitas', (props) => <Czechitas {...props} />],
   ['ÚČL AV ČR', () => <UclAvCr />],
   ['ÚMV', () => <Umv />],
   ['ÚISK FF UK', () => <Uisk />],

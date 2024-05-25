@@ -112,3 +112,44 @@ export const DescriptionImageContainer = styled.div`
     filter: grayscale(100%);
   }
 `;
+
+export const DescriptionList = styled.ul`
+  padding-inline-start: 1.5rem;
+  margin-block: 0;
+  list-style: none;
+
+  & > li::before {
+    content: '~';
+    color: ${({ theme }) => theme.color.accent_light};
+    font-weight: bolder;
+    display: inline-block;
+    padding-right: 0.75rem;
+  }
+`;
+
+type AdditionalAnimatedImagesProps = {
+  isAnimated: boolean;
+};
+
+export const AdditionalAnimatedImages = styled.div<AdditionalAnimatedImagesProps>`
+  display: grid;
+  grid-template-rows: ${({ isAnimated }) => (isAnimated ? '1fr' : '0fr')};
+  transition: grid-template-rows 2s linear;
+`;
+
+export const AnimationButton = styled.button`
+  all: unset;
+  cursor: pointer;
+  color: ${({ theme }) => theme.color.accent_light};
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: smaller;
+  font-style: italic;
+  padding-top: 1rem;
+
+  &::before,
+  &::after {
+    content: '~';
+    padding: 0 0.5rem;
+  }
+`;

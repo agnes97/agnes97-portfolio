@@ -1,4 +1,4 @@
-import cyrkl from '@/app/assets/cv/cyrkl.webp';
+import cyrkl from '@/app/assets/cv/cyrkl/cyrkl.webp';
 import czechitas from '@/app/assets/cv/czechitas.png';
 import tchibo from '@/app/assets/cv/tchibo.png';
 import uclAvCr from '@/app/assets/cv/ucl-av-cr.png';
