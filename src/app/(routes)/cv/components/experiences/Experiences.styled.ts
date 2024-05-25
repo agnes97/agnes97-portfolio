@@ -105,6 +105,9 @@ export const CompanyLogo = styled.img<CompanyLogoProps>`
 `;
 
 export const DescriptionImageContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
   padding-top: 1.5rem;
 
   & img {
@@ -137,7 +140,11 @@ export const AdditionalAnimatedImages = styled.div<AdditionalAnimatedImagesProps
   transition: grid-template-rows 2s linear;
 `;
 
-export const AnimationButton = styled.button`
+type AnimationButtonProps = {
+  areAllImagesVisible: boolean;
+};
+
+export const AnimationButton = styled.button<AnimationButtonProps>`
   all: unset;
   cursor: pointer;
   color: ${({ theme }) => theme.color.accent_light};
@@ -145,10 +152,13 @@ export const AnimationButton = styled.button`
   text-transform: uppercase;
   font-size: smaller;
   font-style: italic;
-  padding-top: 1rem;
+  ${({ areAllImagesVisible }) =>
+    areAllImagesVisible &&
+    css`
+      padding-top: 1rem;
+    `}
 
-  &::before,
-  &::after {
+  &::before, &::after {
     content: '~';
     padding: 0 0.5rem;
   }

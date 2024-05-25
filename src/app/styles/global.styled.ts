@@ -4,7 +4,10 @@ import styled, { createGlobalStyle, css } from 'styled-components';
 import { BREAKPOINTS } from './breakpoints';
 
 export const GlobalStyle = createGlobalStyle`
-  html, & * { box-sizing: border-box }
+  html, & * { 
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+ }
 
   body {
     margin: 0;
