@@ -1,12 +1,10 @@
 import GalleryCard from '@/app/components/gallery-card/GalleryCard';
 import React, { FC, useEffect, useState } from 'react';
 import { CVHeaderContainer, List } from './CVHeader.styled';
-import { useTheme } from '@/app/providers/styled-components-provider';
 
-import agnes_light_cutout from '../../../../assets/agnes-light-cutout.png';
-import agnes_light_blur from '../../../../assets/agnes-light-blur.jpg';
-import agnes_dark_cutout from '../../../../assets/agnes-dark-cutout.png';
-import agnes_dark_blur from '../../../../assets/agnes-dark-blur.jpg';
+import cutout from '../../../../assets/sanov-cutout.png';
+import blur from '../../../../assets/bg.jpg';
+
 import { CV } from '../../hooks/use-get-cv';
 import { replaceChars } from '../../utils/replace-chars';
 import { updateStarOptions } from '../../utils/update-starred-options';
@@ -21,17 +19,7 @@ type CVHeaderProps = {
 
 const CVHeader: FC<CVHeaderProps> = ({ cv }) => {
   // GalleryCard
-  const { currentThemeVariant } = useTheme();
-
-  const agnesCutout =
-    currentThemeVariant === 'dark' ? agnes_dark_cutout : agnes_light_cutout;
-  const agnesBlur =
-    currentThemeVariant === 'dark' ? agnes_dark_blur : agnes_light_blur;
-
-  const borderColors =
-    currentThemeVariant === 'light'
-      ? ['#dd7db7', '#87c8fd']
-      : ['#27282c', '#22462f'];
+  const borderColors = ['#feb551', '#90082a'];
 
   // CV animation logic
   const [currentCvState, setCurrentCvState] = useState<HeaderCV>(cv);
@@ -119,10 +107,10 @@ const CVHeader: FC<CVHeaderProps> = ({ cv }) => {
       </Flex>
 
       <GalleryCard
-        cuttoutImageSrc={agnesCutout.src}
-        blurImageSrc={agnesBlur.src}
+        cuttoutImageSrc={cutout.src}
+        blurImageSrc={blur.src}
         borderColors={borderColors}
-        transparentBorderSides={['left', 'top']}
+        transparentBorderSides={['left']}
       />
     </CVHeaderContainer>
   );
