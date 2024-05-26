@@ -46,7 +46,7 @@ const Header: FC = () => {
       </ButtonContainer>
 
       <Link href='/'>
-        {pathname === '/cv' ? (
+        {pathname !== '/' ? (
           <Home size={50} strokeWidth={1.5} />
         ) : (
           <h2>Jana Mácová</h2>
