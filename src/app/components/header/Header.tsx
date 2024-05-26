@@ -4,7 +4,7 @@ import { useTheme } from '@/app/providers/styled-components-provider';
 import React, { FC } from 'react';
 import { StyledHeader, HeaderButton, ButtonContainer } from './Header.styled';
 import Link from 'next/link';
-import { Key, Moon, Sun } from 'lucide-react';
+import { Home, Key, Moon, Sun } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 
 const iconSize = 32;
@@ -46,7 +46,11 @@ const Header: FC = () => {
       </ButtonContainer>
 
       <Link href='/'>
-        <h2>Jana Mácová</h2>
+        {pathname === '/cv' ? (
+          <Home size={50} strokeWidth={1.5} />
+        ) : (
+          <h2>Jana Mácová</h2>
+        )}
       </Link>
 
       {/* <Rope /> */}

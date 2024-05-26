@@ -29,7 +29,10 @@ export default function Cv() {
     setAccessCode(accessCode);
 
     if (accessCode.length > 1 && isCVLocked(cv)) {
-      setError('Invalid access code :(');
+      setTimeout(() => {
+        setError('Invalid access code :(');
+      }, 1000);
+
       return;
     }
   };
@@ -41,6 +44,8 @@ export default function Cv() {
       ) : (
         <>
           <CVContainer>
+            <h2>Jana Mácová</h2>
+
             <CVHeader cv={cv} />
           </CVContainer>
 

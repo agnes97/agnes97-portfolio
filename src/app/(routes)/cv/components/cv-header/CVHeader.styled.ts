@@ -3,6 +3,9 @@ import { BREAKPOINTS } from '@/app/styles/breakpoints';
 import styled from 'styled-components';
 
 export const CVHeaderContainer = styled(Flex)`
+  max-width: 40rem;
+  margin: 0 auto;
+
   @media (width <= ${BREAKPOINTS.ipad}) {
     & > div:last-child {
       order: -1;
