@@ -217,8 +217,13 @@ export const CardInfo = styled(Flex)<CardInfoProps>`
 
 export const CardDescription = styled.p`
   max-height: 150px;
-  overflow: scroll;
   padding: 0 1rem;
+  overflow: scroll;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 
   @media (width > ${BREAKPOINTS.mobile}) {
     padding: 0 4rem;
