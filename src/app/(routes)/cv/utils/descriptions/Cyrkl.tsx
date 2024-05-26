@@ -79,7 +79,7 @@ const Cyrkl: FC<DescriptionProps> = ({ type, tech_stack }) => (
       <li>a rescue ranger</li>
       <li>chief quality officer</li>
       <li>component comittee member</li>
-      <li>front-end guidlines owner</li>
+      <li>front-end guidelines owner</li>
       <li>dev conf organiser</li>
     </DescriptionList>
 
