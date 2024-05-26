@@ -18,6 +18,7 @@ const Auth: FC = () => {
         alignItems='center'
         justifyContent='center'
         rowGap='0.25rem'
+        paddingTop='2rem'
       >
         <h2>Auth</h2>
         <span
