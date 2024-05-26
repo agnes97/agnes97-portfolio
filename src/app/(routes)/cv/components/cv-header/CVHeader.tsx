@@ -2,13 +2,14 @@ import GalleryCard from '@/app/components/gallery-card/GalleryCard';
 import React, { FC, useEffect, useState } from 'react';
 import { CVHeaderContainer, List } from './CVHeader.styled';
 
-import cutout from '../../../../assets/sanov-cutout.png';
-import blur from '../../../../assets/bg.jpg';
+import cutout from '../../../../assets/agnes-light-cutout.png';
+import blur from '../../../../assets/agnes-light-blur.jpg';
 
 import { CV } from '../../hooks/use-get-cv';
 import { replaceChars } from '../../utils/replace-chars';
 import { updateStarOptions } from '../../utils/update-starred-options';
 import Flex from '@/app/components/flex/Flex';
+import { useTheme } from '@/app/providers/styled-components-provider';
 
 export type HeaderCV = Omit<CV, 'experiences'>;
 export type CVHeaderProperty = keyof HeaderCV;
@@ -18,8 +19,12 @@ type CVHeaderProps = {
 };
 
 const CVHeader: FC<CVHeaderProps> = ({ cv }) => {
+  const { currentTheme } = useTheme();
   // GalleryCard
-  const borderColors = ['#feb551', '#90082a'];
+  const borderColors = [
+    currentTheme.color.background_secondary,
+    currentTheme.color.background_primary,
+  ];
 
   // CV animation logic
   const [currentCvState, setCurrentCvState] = useState<HeaderCV>(cv);
@@ -110,7 +115,7 @@ const CVHeader: FC<CVHeaderProps> = ({ cv }) => {
         cuttoutImageSrc={cutout.src}
         blurImageSrc={blur.src}
         borderColors={borderColors}
-        transparentBorderSides={['left']}
+        transparentBorderSides={['right']}
       />
     </CVHeaderContainer>
   );
