@@ -4,6 +4,7 @@ import { CookiesProvider } from 'next-client-cookies/server';
 import { ReactQueryClientProvider } from './providers/react-query-client-provider';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import AuthProvider from './providers/auth-provider';
+import ModalProvider from './providers/modal-provider';
 
 export const metadata = {
   title: 'Agnes97',
@@ -16,7 +17,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <CookiesProvider>
         <html lang='en'>
           <StyledComponentsProvider>
-            <AuthProvider>{children}</AuthProvider>
+            <ModalProvider>
+              <AuthProvider>{children}</AuthProvider>
+            </ModalProvider>
 
             <ReactQueryDevtools
               initialIsOpen={false}
