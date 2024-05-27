@@ -67,7 +67,8 @@ export const FlexRow = css`
 `;
 
 export const Main = styled.main`
-  width: 100%;
+  width: 100vw;
+  overflow-x: clip;
   min-height: 100vh;
   ${FlexColumn}
   background: ${({ theme }) => theme.color.background_primary};

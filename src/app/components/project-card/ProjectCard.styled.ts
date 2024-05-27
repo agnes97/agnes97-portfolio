@@ -128,12 +128,12 @@ export const Thumbnail = styled.div<ThumbnailProps>`
   & > img {
     @media (width <= ${BREAKPOINTS.mobile}) {
       border-radius: 50%;
-      width: 50%;
+      width: 35%;
     }
 
     @media (width <= ${BREAKPOINTS.ipad}) {
       border-radius: 50%;
-      width: 35%;
+      width: 50%;
     }
 
     border-radius: none;
@@ -226,7 +226,7 @@ export const CardDescription = styled.p`
   }
 
   @media (width > ${BREAKPOINTS.mobile}) {
-    padding: 0 4rem;
+    padding: 0 2rem;
   }
 
   @media (width >= ${BREAKPOINTS.ipad}) {

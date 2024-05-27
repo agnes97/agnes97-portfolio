@@ -1,9 +1,12 @@
 'use client';
 
 import React, { FC, useEffect, useState } from 'react';
-import { AnimatedHeading, PetProjectsGrid } from './PetProjects.styled';
+import {
+  AnimatedHeading,
+  PetProjectsContainer,
+  PetProjectsGrid,
+} from './PetProjects.styled';
 import { PawPrint } from 'lucide-react';
-import Flex from '../flex/Flex';
 import ProjectCard from '../project-card/ProjectCard';
 import { projects } from './projects';
 
@@ -24,13 +27,7 @@ const PetProjects: FC = () => {
   }, [hasAnimation]);
 
   return (
-    <Flex
-      flexDirection='column'
-      justifyContent='start'
-      alignItems='center'
-      gap='4rem'
-      padding='5rem 0'
-    >
+    <PetProjectsContainer>
       <AnimatedHeading hasAnimation={hasAnimation}>
         <PawPrint size={48} />
         <PawPrint size={48} />
@@ -49,7 +46,7 @@ const PetProjects: FC = () => {
           />
         ))}
       </PetProjectsGrid>
-    </Flex>
+    </PetProjectsContainer>
   );
 };
 

@@ -68,15 +68,28 @@ export const AnimatedHeading = styled.div<AnimatedHeadingProps>`
     `}
 `;
 
+export const PetProjectsContainer = styled.section`
+  /* This is done via grid to fix a bug on Safari
+  where grid parent is needed */
+  display: grid;
+  justify-content: center;
+  place-items: center;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+  padding: 5rem 0;
+`;
+
 export const PetProjectsGrid = styled.div`
-  width: 100%;
+  width: 90%;
   display: grid;
   gap: 1.5rem;
   grid-template-columns: 1fr;
-  grid-auto-rows: minmax(350px, 550px);
+  padding: 0 1rem;
+  grid-auto-rows: 600px;
 
   @media (width >= ${BREAKPOINTS.ipad}) {
     grid-auto-rows: 350px;
+    padding: 0;
   }
 
   @media (width >= ${BREAKPOINTS.desktop}) {

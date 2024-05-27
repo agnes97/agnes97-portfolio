@@ -84,11 +84,11 @@ const ProjectCard: FC<ProjectCardProps> = ({
         <Front>
           <Flex
             justifyContent={alignBasedOnOrder}
-            style={{ height: 'inherit' }}
             mobile={{
               flexDirection: order === 0 ? 'column' : 'column-reverse',
             }}
             ipad={{ flexDirection: 'row' }}
+            style={{ height: '100%', overflow: 'hidden' }}
           >
             <Thumbnail isThumbnailTransparent={Boolean(isThumbnailTransparent)}>
               <img src={thumbnailSrc} alt={title} />
