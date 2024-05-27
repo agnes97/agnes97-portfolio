@@ -5,6 +5,7 @@ export const TechStackContainer = styled.div`
   align-items: center;
   justify-content: center;
   gap: 0.2rem;
+  flex-wrap: wrap;
 
   & svg {
     fill: ${({ theme }) => theme.color.line_light};

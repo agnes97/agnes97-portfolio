@@ -162,4 +162,13 @@ export const AnimationButton = styled.button<AnimationButtonProps>`
     content: '~';
     padding: 0 0.5rem;
   }
+
+  @media (width <= ${BREAKPOINTS.ipad}) {
+    max-width: 50%;
+    text-align: center;
+  }
+
+  @media (width <= ${BREAKPOINTS.mobile}) {
+    max-width: 90%;
+  }
 `;
