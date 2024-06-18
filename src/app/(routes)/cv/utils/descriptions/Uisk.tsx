@@ -2,10 +2,10 @@ import Flex from '@/app/components/flex/Flex';
 import React, { FC } from 'react';
 import DescriptionImages from '../../components/experiences/components/DescriptionImages';
 
-import uisk1 from '@/app/assets/cv/uisk1.jpeg';
-import uisk2 from '@/app/assets/cv/uisk2.jpeg';
-import uisk3 from '@/app/assets/cv/uisk3.jpeg';
-import uisk4 from '@/app/assets/cv/uisk4.jpeg';
+import uisk1 from '@/app/assets/cv/uisk/uisk1.webp';
+import uisk2 from '@/app/assets/cv/uisk/uisk2.webp';
+import uisk3 from '@/app/assets/cv/uisk/uisk3.webp';
+import uisk4 from '@/app/assets/cv/uisk/uisk4.webp';
 
 const images = [uisk1, uisk2, uisk4, uisk3];
 

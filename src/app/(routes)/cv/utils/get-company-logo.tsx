@@ -1,13 +1,14 @@
-import cyrkl from '@/app/assets/cv/cyrkl/cyrkl.webp';
-import czechitas from '@/app/assets/cv/czechitas.png';
-import tchibo from '@/app/assets/cv/tchibo.png';
-import uclAvCr from '@/app/assets/cv/ucl-av-cr.png';
-import umv from '@/app/assets/cv/umv.png';
-import uisk from '@/app/assets/cv/uisk.png';
-import muni from '@/app/assets/cv/muni.png';
 import { CompanyLogo } from '../components/experiences/Experiences.styled';
 import { Building2 } from 'lucide-react';
 import { useTheme } from '@/app/providers/styled-components-provider';
+
+import cyrkl from '@/app/assets/cv/cyrkl/cyrkl.webp';
+import czechitas from '@/app/assets/cv/czechitas.webp';
+import tchibo from '@/app/assets/cv/tchibo.webp';
+import uclAvCr from '@/app/assets/cv/ucl-av-cr.webp';
+import umv from '@/app/assets/cv/umv.webp';
+import uisk from '@/app/assets/cv/uisk/uisk.webp';
+import muni from '@/app/assets/cv/muni.webp';
 
 export type CompanyImage = {
   company: string;

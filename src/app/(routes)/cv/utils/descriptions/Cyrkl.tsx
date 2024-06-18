@@ -9,28 +9,29 @@ import {
 import TechStack from '@/app/components/tech-stack/TechStack';
 import DescriptionImages from '../../components/experiences/components/DescriptionImages';
 
-import cyrkl1 from '@/app/assets/cv/cyrkl/cyrkl1.jpeg';
-import cyrkl2 from '@/app/assets/cv/cyrkl/cyrkl2.jpeg';
-import cyrkl3 from '@/app/assets/cv/cyrkl/cyrkl3.jpeg';
-import cyrkl4 from '@/app/assets/cv/cyrkl/cyrkl4.jpeg';
-import cyrkl5 from '@/app/assets/cv/cyrkl/cyrkl5.jpg';
-import cyrkl6 from '@/app/assets/cv/cyrkl/cyrkl6.jpg';
-import cyrkl7 from '@/app/assets/cv/cyrkl/cyrkl7.png';
-import cyrkl8 from '@/app/assets/cv/cyrkl/cyrkl8.jpeg';
-import cyrkl9 from '@/app/assets/cv/cyrkl/cyrkl9.jpg';
-import cyrkl10 from '@/app/assets/cv/cyrkl/cyrkl10.jpeg';
-import cyrkl11 from '@/app/assets/cv/cyrkl/cyrkl11.jpg';
-import cyrkl12 from '@/app/assets/cv/cyrkl/cyrkl12.jpg';
-import cyrkl13 from '@/app/assets/cv/cyrkl/cyrkl13.jpeg';
-import cyrkl14 from '@/app/assets/cv/cyrkl/cyrkl14.jpeg';
-import cyrkl15 from '@/app/assets/cv/cyrkl/cyrkl15.jpg';
-import cyrkl16 from '@/app/assets/cv/cyrkl/cyrkl16.png';
-import cyrkl17 from '@/app/assets/cv/cyrkl/cyrkl17.jpg';
-import cyrkl18 from '@/app/assets/cv/cyrkl/cyrkl18.png';
-import cyrkl19 from '@/app/assets/cv/cyrkl/cyrkl19.jpg';
-import cyrkl20 from '@/app/assets/cv/cyrkl/cyrkl20.jpg';
-import cyrkl21 from '@/app/assets/cv/cyrkl/cyrkl21.jpg';
-import cyrkl22 from '@/app/assets/cv/cyrkl/cyrkl22.jpg';
+import cyrkl1 from '@/app/assets/cv/cyrkl/cyrkl1.webp';
+import cyrkl2 from '@/app/assets/cv/cyrkl/cyrkl2.webp';
+import cyrkl3 from '@/app/assets/cv/cyrkl/cyrkl3.webp';
+import cyrkl4 from '@/app/assets/cv/cyrkl/cyrkl4.webp';
+import cyrkl5 from '@/app/assets/cv/cyrkl/cyrkl5.webp';
+import cyrkl6 from '@/app/assets/cv/cyrkl/cyrkl6.webp';
+import cyrkl7 from '@/app/assets/cv/cyrkl/cyrkl7.webp';
+import cyrkl8 from '@/app/assets/cv/cyrkl/cyrkl8.webp';
+import cyrkl9 from '@/app/assets/cv/cyrkl/cyrkl9.webp';
+import cyrkl10 from '@/app/assets/cv/cyrkl/cyrkl10.webp';
+import cyrkl11 from '@/app/assets/cv/cyrkl/cyrkl11.webp';
+import cyrkl12 from '@/app/assets/cv/cyrkl/cyrkl12.webp';
+import cyrkl13 from '@/app/assets/cv/cyrkl/cyrkl13.webp';
+import cyrkl14 from '@/app/assets/cv/cyrkl/cyrkl14.webp';
+import cyrkl15 from '@/app/assets/cv/cyrkl/cyrkl15.webp';
+import cyrkl16 from '@/app/assets/cv/cyrkl/cyrkl16.webp';
+import cyrkl17 from '@/app/assets/cv/cyrkl/cyrkl17.webp';
+import cyrkl18 from '@/app/assets/cv/cyrkl/cyrkl18.webp';
+import cyrkl19 from '@/app/assets/cv/cyrkl/cyrkl19.webp';
+import cyrkl20 from '@/app/assets/cv/cyrkl/cyrkl20.webp';
+import cyrkl21 from '@/app/assets/cv/cyrkl/cyrkl21.webp';
+import cyrkl22 from '@/app/assets/cv/cyrkl/cyrkl22.webp';
+import cyrkl23 from '@/app/assets/cv/cyrkl/cyrkl23.webp';
 
 const imagesFirstPart = [cyrkl1, cyrkl2, cyrkl3, cyrkl4];
 
@@ -53,6 +54,7 @@ const images = [
   cyrkl20,
   cyrkl21,
   cyrkl22,
+  cyrkl23,
 ];
 
 const Cyrkl: FC<DescriptionProps> = ({ type, tech_stack }) => (

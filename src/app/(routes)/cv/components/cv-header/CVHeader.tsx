@@ -2,8 +2,8 @@ import GalleryCard from '@/app/components/gallery-card/GalleryCard';
 import React, { FC, useEffect, useState } from 'react';
 import { CVHeaderContainer, List } from './CVHeader.styled';
 
-import cutout from '../../../../assets/gallery-cards/cv-cutout.png';
-import blur from '../../../../assets/gallery-cards/cv-blur.jpg';
+import cutout from '../../../../assets/gallery-cards/cv-cutout.webp';
+import blur from '../../../../assets/gallery-cards/cv-blur.webp';
 
 import { CV } from '../../hooks/use-get-cv';
 import { replaceChars } from '../../utils/replace-chars';

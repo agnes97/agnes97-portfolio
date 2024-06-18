@@ -1,10 +1,10 @@
 import { Project } from '../project-card/ProjectCard';
 
-import birthday_boi from '../../assets/projects/birthday-boi.png';
-import budget_budgie_cutout from '../../assets/projects/budget-budgie.png';
-import portfolio from '../../assets/projects/portfolio.png';
-import prismify from '../../assets/projects/prismify.png';
-import wedding from '../../assets/projects/wedding.jpg';
+import birthday_boi from '../../assets/projects/birthday-boi.webp';
+import budget_budgie_cutout from '../../assets/projects/budget-budgie.webp';
+import portfolio from '../../assets/projects/portfolio.webp';
+import prismify from '../../assets/projects/prismify.webp';
+import wedding from '../../assets/projects/wedding.webp';
 
 export const projects: Project[] = [
   {

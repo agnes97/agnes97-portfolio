@@ -8,10 +8,10 @@ import Button from '../button/Button';
 import GalleryCard from '../gallery-card/GalleryCard';
 import { MousePointerClick } from 'lucide-react';
 
-import agnes_light_cutout from '../../assets/gallery-cards/agnes-light-cutout.png';
-import agnes_light_blur from '../../assets/gallery-cards/agnes-light-blur.jpg';
-import agnes_dark_cutout from '../../assets/gallery-cards/agnes-dark-cutout.png';
-import agnes_dark_blur from '../../assets/gallery-cards/agnes-dark-blur.jpg';
+import agnes_light_cutout from '../../assets/gallery-cards/agnes-light-cutout.webp';
+import agnes_light_blur from '../../assets/gallery-cards/agnes-light-blur.webp';
+import agnes_dark_cutout from '../../assets/gallery-cards/agnes-dark-cutout.webp';
+import agnes_dark_blur from '../../assets/gallery-cards/agnes-dark-blur.webp';
 import Flex from '../flex/Flex';
 
 const AboutMe: FC = () => {
