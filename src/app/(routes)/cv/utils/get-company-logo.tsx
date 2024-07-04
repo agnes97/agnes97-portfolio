@@ -2,6 +2,7 @@ import { CompanyLogo } from '../components/experiences/Experiences.styled';
 import { Building2 } from 'lucide-react';
 import { useTheme } from '@/app/providers/styled-components-provider';
 
+import make from '@/app/assets/cv/make/make.webp';
 import cyrkl from '@/app/assets/cv/cyrkl/cyrkl.webp';
 import czechitas from '@/app/assets/cv/czechitas.webp';
 import tchibo from '@/app/assets/cv/tchibo.webp';
@@ -17,6 +18,10 @@ export type CompanyImage = {
 };
 
 export const companiesImages: CompanyImage[] = [
+  {
+    company: 'Make',
+    logoSrc: make.src,
+  },
   {
     company: 'Cyrkl',
     logoSrc: cyrkl.src,

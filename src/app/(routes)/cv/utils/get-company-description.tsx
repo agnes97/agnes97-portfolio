@@ -7,6 +7,7 @@ import UclAvCr from './descriptions/UclAvCr';
 import Umv from './descriptions/Umv';
 import FfMu from './descriptions/FfMu';
 import Czechitas from './descriptions/Czechitas';
+import Make from './descriptions/Make';
 
 export type DescriptionProps = Pick<
   Experience,
@@ -16,6 +17,7 @@ export type DescriptionProps = Pick<
 type DescriptionMap = Map<string, (props: DescriptionProps) => JSX.Element>;
 
 export const companyDescriptionsMap: DescriptionMap = new Map([
+  ['Make', (props) => <Make {...props} />],
   ['Cyrkl', (props) => <Cyrkl {...props} />],
   ['Czechitas', (props) => <Czechitas {...props} />],
   ['ÚČL AV ČR', () => <UclAvCr />],

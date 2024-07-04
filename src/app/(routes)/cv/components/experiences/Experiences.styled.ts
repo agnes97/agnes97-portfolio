@@ -3,7 +3,11 @@ import { ColorTheme } from '@/app/providers/styled-components-provider';
 import { BREAKPOINTS } from '@/app/styles/breakpoints';
 import styled, { css } from 'styled-components';
 
-export const ExperiencesContainer = styled(Flex)`
+type ExperiencesContainerProps = {
+  programmingStartIndex: number;
+};
+
+export const ExperiencesContainer = styled(Flex)<ExperiencesContainerProps>`
   padding: 3rem 0;
   width: 100%;
 
@@ -12,7 +16,7 @@ export const ExperiencesContainer = styled(Flex)`
     margin-block: 0;
   }
 
-  & > :nth-child(2) {
+  & > :nth-child(${({ programmingStartIndex }) => programmingStartIndex}) {
     padding-bottom: 7rem;
     margin-bottom: 2.5rem;
     border-bottom: 2px dashed ${({ theme }) => theme.color.line_light};
