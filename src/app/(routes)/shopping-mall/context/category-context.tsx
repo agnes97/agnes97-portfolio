@@ -28,7 +28,7 @@ const allItems = (data as { items: Item[] }).items;
 const lastUpdated = '18. 02. 2024';
 
 const unsoldItems = allItems.filter(
-  (item) => item.item_closing_action !== 'sold' && item.is_reserved !== 1
+  (item) => item.item_closing_action !== 'sold' && !item.is_reserved
 );
 
 export const totalOfItems = unsoldItems.length;

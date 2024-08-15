@@ -23,5 +23,5 @@ export type Item = {
   url: string;
   brand: string;
   item_closing_action: 'sold' | null;
-  is_reserved: 0 | 1;
+  is_reserved: boolean;
 };
