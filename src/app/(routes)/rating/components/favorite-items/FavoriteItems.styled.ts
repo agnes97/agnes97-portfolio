@@ -18,4 +18,8 @@ export const FavoritesInnerWrapper = styled.div`
   align-items: center;
   width: 100%;
   position: relative;
+
+  & > *:not(:last-child) {
+    margin-bottom: -0.25rem;
+  }
 `;

@@ -3,7 +3,7 @@ import { BREAKPOINTS } from '@/app/styles/breakpoints';
 import { GlassEffect } from '@/app/styles/global.styled';
 import styled, { css } from 'styled-components';
 
-export const ItemWrapper = styled.section`
+export const Wrapper = styled.section`
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
@@ -17,11 +17,27 @@ export const ItemWrapper = styled.section`
   }
 `;
 
+export const ItemsWrapper = styled(Flex)`
+  width: 100%;
+
+  & h3 {
+    padding-bottom: 1rem;
+  }
+
+  & button {
+    margin-bottom: 1rem;
+  }
+
+  & > *:not(:last-child) {
+    margin-bottom: -0.25rem;
+  }
+`;
+
 type ItemRowProps = {
   gridTemplateColumns: string;
 };
 
-export const ItemRow = styled.article<ItemRowProps>`
+export const Row = styled.article<ItemRowProps>`
   display: grid;
   grid-template-columns: ${({ gridTemplateColumns }) => gridTemplateColumns};
   align-items: center;

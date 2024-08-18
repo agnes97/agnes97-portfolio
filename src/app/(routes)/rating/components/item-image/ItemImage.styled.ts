@@ -1,3 +1,4 @@
+import { BREAKPOINTS } from '@/app/styles/breakpoints';
 import styled from 'styled-components';
 
 export const ItemImageContainer = styled.div`
@@ -29,4 +30,8 @@ export const StyledImage = styled.img`
   height: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
+
+  @media (width >= ${BREAKPOINTS.desktop}) {
+    border-right: 0.25rem solid ${({ theme }) => theme.color.accent_dark};
+  }
 `;

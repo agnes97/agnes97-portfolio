@@ -35,8 +35,20 @@ const FavoriteItems: FC<Props> = ({ favoriteItems }) => {
           color={currentTheme.color.accent_dark}
           style={{
             position: 'absolute',
-            top: '0.5rem',
+            top: '0.75rem',
             left: '-1.5rem',
+            zIndex: 1,
+          }}
+        />
+
+        <Heart
+          size={48}
+          fill={currentTheme.color.background_secondary}
+          color={currentTheme.color.accent_dark}
+          style={{
+            position: 'absolute',
+            bottom: '0.75rem',
+            right: '-1.5rem',
             zIndex: 1,
           }}
         />

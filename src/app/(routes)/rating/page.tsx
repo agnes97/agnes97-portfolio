@@ -7,6 +7,7 @@ import { useGetRating } from './hooks/use-get-rating';
 import Item from './components/item/Item';
 import { RatingButton } from './page.styled';
 import { Vote, usePutRatingVotes } from './hooks/use-put-rating-votes';
+import { ItemsWrapper } from './components/item/Item.styled';
 
 export default function Rating() {
   const { data: rating } = useGetRating();
@@ -84,12 +85,10 @@ export default function Rating() {
         <FavoriteItems favoriteItems={ratedFavorites} />
 
         {/* RATED ITEMS */}
-        <Flex
+        <ItemsWrapper
           flexDirection='column'
           justifyContent='center'
           alignItems='center'
-          gap='0.25rem'
-          ipad={{ width: '100%' }}
         >
           <h3>
             Following items were rated by all participants and have final
@@ -115,14 +114,13 @@ export default function Rating() {
           ) : (
             <span>There are no items like that yet. :(</span>
           )}
-        </Flex>
+        </ItemsWrapper>
 
         {/* NONRATED ITEMS */}
-        <Flex
+        <ItemsWrapper
           flexDirection='column'
           justifyContent='center'
           alignItems='center'
-          gap='0.25rem'
         >
           <h3>
             Please rate following items by entering EDIT MODE. Click "submit"
@@ -168,7 +166,7 @@ export default function Rating() {
                 />
               )
             )}
-        </Flex>
+        </ItemsWrapper>
       </Flex>
     </Flex>
   );

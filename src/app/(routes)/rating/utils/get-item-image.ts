@@ -2,6 +2,8 @@ import defaultImage from '../../../assets/spiral.jpg';
 
 export const getItemImage = (itemTitle: string): string => {
   switch (itemTitle) {
+    case 'The Cauldron':
+      return 'https://beaumondetraveler.com/wp-content/uploads/2021/10/Cauldron2.jpg';
     case 'Hyde Park picnic with parrots':
       return 'https://assets.londonist.com/uploads/2017/02/i875/perch.jpg';
     case 'Leadenhall Market':
@@ -42,6 +44,8 @@ export const getItemImage = (itemTitle: string): string => {
       return 'https://offloadmedia.feverup.com/secretldn.com/wp-content/uploads/2024/07/04142406/bushy-park-drone-view-1024x767.jpg';
     case 'Incognito Coctail Bar':
       return 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1d/ec/95/36/a-truly-unique-experience.jpg?w=1100&h=-1&s=1';
+    case 'Camden Market':
+      return 'https://camdentownlondon.co.uk/wp-content/uploads/2023/01/Screenshot-2023-01-30-at-12.12.27-1296x700.png';
     default:
       return defaultImage.src;
   }

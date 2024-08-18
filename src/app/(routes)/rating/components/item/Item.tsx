@@ -1,10 +1,10 @@
 import React, { FC, useState } from 'react';
 import {
   FavoriteLetters,
-  ItemRow,
+  Row,
   ItemTitle,
   ItemTitleContainer,
-  ItemWrapper,
+  Wrapper,
   RatingNumber,
 } from './Item.styled';
 import Flex from '@/app/components/flex/Flex';
@@ -65,8 +65,8 @@ const Item: FC<Props> = ({
   );
 
   return (
-    <ItemWrapper>
-      <ItemRow gridTemplateColumns='repeat(2, 1fr) 3fr'>
+    <Wrapper>
+      <Row gridTemplateColumns='repeat(2, 1fr) 3fr'>
         <ItemImage title={title} />
 
         <Flex flexDirection='column' alignItems='center' gap='0.5rem'>
@@ -88,9 +88,9 @@ const Item: FC<Props> = ({
           <ItemTitle>{title}</ItemTitle>
           <span style={{ color: currentTheme.color.line_dark }}>{id}</span>
         </ItemTitleContainer>
-      </ItemRow>
+      </Row>
 
-      <ItemRow gridTemplateColumns='repeat(4, 1fr)'>
+      <Row gridTemplateColumns='repeat(4, 1fr)'>
         <Flex
           flexDirection='column'
           alignItems='center'
@@ -173,8 +173,8 @@ const Item: FC<Props> = ({
 
           <span>Is Favorite?</span>
         </Flex>
-      </ItemRow>
-    </ItemWrapper>
+      </Row>
+    </Wrapper>
   );
 };
 
