@@ -10,3 +10,12 @@ export const EmptyFavoritesWrapper = styled.div`
   align-items: center;
   justify-content: center;
 `;
+
+export const FavoritesInnerWrapper = styled.div`
+  outline: 0.25rem solid ${({ theme }) => theme.color.background_secondary};
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  position: relative;
+`;

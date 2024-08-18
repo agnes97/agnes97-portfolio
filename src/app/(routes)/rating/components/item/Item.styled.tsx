@@ -1,16 +1,59 @@
+import Flex from '@/app/components/flex/Flex';
+import { BREAKPOINTS } from '@/app/styles/breakpoints';
 import { GlassEffect } from '@/app/styles/global.styled';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-export const ItemRow = styled.article`
+export const ItemWrapper = styled.section`
   display: grid;
-  grid-template-columns: repeat(2, 1fr) 3fr repeat(4, 1fr);
-  align-items: end;
+  grid-template-columns: 1fr 1fr;
   gap: 1rem;
   ${GlassEffect}
   border: 0.25rem solid ${({ theme }) => theme.color.accent_dark};
+  align-items: end;
 
-  & > *:not(:first-child) {
-    padding: 1rem 0 1.5rem;
+  @media (width <= ${BREAKPOINTS.desktop}) {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+`;
+
+type ItemRowProps = {
+  gridTemplateColumns: string;
+};
+
+export const ItemRow = styled.article<ItemRowProps>`
+  display: grid;
+  grid-template-columns: ${({ gridTemplateColumns }) => gridTemplateColumns};
+  align-items: center;
+
+  ${({ gridTemplateColumns }) =>
+    gridTemplateColumns === 'repeat(2, 1fr) 3fr' &&
+    css`
+      @media (width <= ${BREAKPOINTS.desktop}) {
+        grid-template-columns: 2fr 1fr;
+        row-gap: 0.5rem;
+
+        & img {
+          max-height: 10rem;
+          aspect-ratio: 3 / 1;
+          margin-right: 0.5rem;
+          overflow: hidden;
+        }
+      }
+
+      @media (width <= ${BREAKPOINTS.mobile}) {
+        grid-template-columns: 1fr 1fr;
+        row-gap: 0.5rem;
+
+        & img {
+          max-height: 10rem;
+          aspect-ratio: 1 / 1;
+        }
+      }
+    `}
+
+  & > *:not(:first-child:has(img)) {
+    padding: 1rem 0.5rem 1.5rem;
   }
 
   & select {
@@ -19,6 +62,13 @@ export const ItemRow = styled.article`
   }
 `;
 
+export const ItemTitleContainer = styled(Flex)`
+  @media (width <= ${BREAKPOINTS.desktop}) {
+    grid-row: 2;
+    grid-column: span 3;
+    text-align: center;
+  }
+`;
 export const ItemTitle = styled.span`
   font-size: 1.5rem;
 `;

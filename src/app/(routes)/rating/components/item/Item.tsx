@@ -3,6 +3,8 @@ import {
   FavoriteLetters,
   ItemRow,
   ItemTitle,
+  ItemTitleContainer,
+  ItemWrapper,
   RatingNumber,
 } from './Item.styled';
 import Flex from '@/app/components/flex/Flex';
@@ -63,112 +65,116 @@ const Item: FC<Props> = ({
   );
 
   return (
-    <ItemRow>
-      <ItemImage title={title} />
+    <ItemWrapper>
+      <ItemRow gridTemplateColumns='repeat(2, 1fr) 3fr'>
+        <ItemImage title={title} />
 
-      <Flex flexDirection='column' alignItems='center' gap='0.5rem'>
-        {finalRating ? (
-          <RatingNumber>{finalRating.toFixed(2)}</RatingNumber>
-        ) : (
-          <QuestionMark />
-        )}
-        <span>Final Rating</span>
-      </Flex>
+        <Flex flexDirection='column' alignItems='center' gap='0.5rem'>
+          {finalRating ? (
+            <RatingNumber>{finalRating.toFixed(2)}</RatingNumber>
+          ) : (
+            <QuestionMark />
+          )}
+          <span>Final Rating</span>
+        </Flex>
 
-      <Flex
-        flexDirection='column'
-        alignItems='center'
-        gap='0.25rem'
-        justifyContent='center'
-        style={{ alignSelf: 'center', marginBottom: '-1.25rem' }}
-      >
-        <ItemTitle>{title}</ItemTitle>
-        <span style={{ color: currentTheme.color.line_dark }}>{id}</span>
-      </Flex>
+        <ItemTitleContainer
+          flexDirection='column'
+          alignItems='center'
+          gap='0.25rem'
+          justifyContent='center'
+          style={{ alignSelf: 'center', marginBottom: '-1.25rem' }}
+        >
+          <ItemTitle>{title}</ItemTitle>
+          <span style={{ color: currentTheme.color.line_dark }}>{id}</span>
+        </ItemTitleContainer>
+      </ItemRow>
 
-      <Flex
-        flexDirection='column'
-        alignItems='center'
-        gap='0.5rem'
-        justifyContent='center'
-      >
-        <span>
-          <QuestionMark />
-        </span>
-        <span>Priciness</span>
-      </Flex>
+      <ItemRow gridTemplateColumns='repeat(4, 1fr)'>
+        <Flex
+          flexDirection='column'
+          alignItems='center'
+          gap='0.5rem'
+          justifyContent='center'
+        >
+          <span>
+            <QuestionMark />
+          </span>
+          <span>Priciness</span>
+        </Flex>
 
-      <Flex
-        flexDirection='column'
-        alignItems='center'
-        gap='0.5rem'
-        justifyContent='center'
-      >
-        <span>
-          <QuestionMark />
-        </span>
-        <span>Distance</span>
-      </Flex>
+        <Flex
+          flexDirection='column'
+          alignItems='center'
+          gap='0.5rem'
+          justifyContent='center'
+        >
+          <span>
+            <QuestionMark />
+          </span>
+          <span>Distance</span>
+        </Flex>
 
-      <Flex
-        flexDirection='column'
-        alignItems='center'
-        gap='0.5rem'
-        justifyContent='center'
-      >
-        {isEditModeOn ? (
-          <select
-            name={id}
-            id={id}
-            onChange={(e) => {
-              setCurrentRatingValue(e.target.value);
-              handleVote(e);
-            }}
-            defaultValue={currentRatingValue}
-          >
-            <option value='' hidden>
-              ?
-            </option>
-            <option value={0}>0</option>
-            <option value={1}>1</option>
-            <option value={2}>2</option>
-            <option value={3}>3</option>
-            <option value={4}>4</option>
-            <option value={5}>5</option>
-          </select>
-        ) : (
-          myRatingDisplay
-        )}
-        <span>My Rating</span>
-      </Flex>
+        <Flex
+          flexDirection='column'
+          alignItems='center'
+          gap='0.5rem'
+          justifyContent='center'
+        >
+          {isEditModeOn ? (
+            <select
+              name={id}
+              id={id}
+              onChange={(e) => {
+                setCurrentRatingValue(e.target.value);
+                handleVote(e);
+              }}
+              defaultValue={currentRatingValue}
+            >
+              <option value='' hidden>
+                ?
+              </option>
+              <option value={0}>0</option>
+              <option value={1}>1</option>
+              <option value={2}>2</option>
+              <option value={3}>3</option>
+              <option value={4}>4</option>
+              <option value={5}>5</option>
+            </select>
+          ) : (
+            myRatingDisplay
+          )}
+          <span>My Rating</span>
+        </Flex>
 
-      <Flex
-        flexDirection='column'
-        alignItems='center'
-        gap='0.5rem'
-        justifyContent='center'
-      >
-        {isFavoriteEditable ? (
-          <select
-            name={id}
-            id={id}
-            onChange={(e) => {
-              setCurrentFavoriteValue(e.target.value);
-              handleFavorite(e);
-            }}
-            defaultValue={currentFavoriteValue}
-            disabled={isAddingFavoriteDisabled}
-          >
-            <option value='yes'>YES</option>
-            <option value='no'>NO</option>
-          </select>
-        ) : (
-          isItemFavorited
-        )}
+        <Flex
+          flexDirection='column'
+          alignItems='center'
+          gap='0.5rem'
+          justifyContent='center'
+        >
+          {isFavoriteEditable ? (
+            <select
+              name={id}
+              id={id}
+              onChange={(e) => {
+                setCurrentFavoriteValue(e.target.value);
+                handleFavorite(e);
+              }}
+              defaultValue={currentFavoriteValue}
+              disabled={isAddingFavoriteDisabled}
+            >
+              <option value='yes'>YES</option>
+              <option value='no'>NO</option>
+            </select>
+          ) : (
+            isItemFavorited
+          )}
 
-        <span>Is Favorite?</span>
-      </Flex>
-    </ItemRow>
+          <span>Is Favorite?</span>
+        </Flex>
+      </ItemRow>
+    </ItemWrapper>
   );
 };
 

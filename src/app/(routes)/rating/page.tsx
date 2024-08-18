@@ -89,6 +89,7 @@ export default function Rating() {
           justifyContent='center'
           alignItems='center'
           gap='0.25rem'
+          ipad={{ width: '100%' }}
         >
           <h3>
             Following items were rated by all participants and have final

@@ -4,7 +4,10 @@ import { useTheme } from '@/app/providers/styled-components-provider';
 import Flex from '@/app/components/flex/Flex';
 import { RatingItem } from '../../hooks/use-get-rating';
 import Item from '../item/Item';
-import { EmptyFavoritesWrapper } from './FavoriteItems.styled';
+import {
+  EmptyFavoritesWrapper,
+  FavoritesInnerWrapper,
+} from './FavoriteItems.styled';
 
 type Props = {
   favoriteItems: RatingItem[];
@@ -25,12 +28,7 @@ const FavoriteItems: FC<Props> = ({ favoriteItems }) => {
         You'll find them here after all participants vote.
       </h3>
 
-      <Flex
-        flexDirection='column'
-        alignItems='center'
-        width='100%'
-        style={{ position: 'relative' }}
-      >
+      <FavoritesInnerWrapper>
         <Heart
           size={48}
           fill={currentTheme.color.background_secondary}
@@ -65,7 +63,7 @@ const FavoriteItems: FC<Props> = ({ favoriteItems }) => {
             )
           )
         )}
-      </Flex>
+      </FavoritesInnerWrapper>
     </Flex>
   );
 };
