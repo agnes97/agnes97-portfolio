@@ -68,7 +68,7 @@ const Item: FC<Props> = ({
 
       <Flex flexDirection='column' alignItems='center' gap='0.5rem'>
         {finalRating ? (
-          <RatingNumber>{finalRating}</RatingNumber>
+          <RatingNumber>{finalRating.toFixed(2)}</RatingNumber>
         ) : (
           <QuestionMark />
         )}
