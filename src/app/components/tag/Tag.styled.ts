@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Tag = styled.div`
+export const StyledTag = styled.div`
   display: inline-block;
   width: auto;
   height: 2rem;
