@@ -4,6 +4,8 @@ export const countryFlag: { [key: string]: string } = {
   cz: '🇨🇿',
   pl: '🇵🇱',
   sk: '🇸🇰',
+  uk: '🇬🇧',
+  sc: '🏴󠁧󠁢󠁳󠁣󠁴󠁿',
 };
 
 export const categoryEmojis = new Map<keyof Categories, string>([
