@@ -19,14 +19,14 @@ type Rating = {
   unratedItems: RatingItem[];
 };
 
-export const useGetRating = () => {
+export const useGetRating = (ratingId: string) => {
   const accessToken = localStorage.getItem('accessToken');
 
   return useQuery<Rating>({
     queryKey: ['rating', accessToken],
     queryFn: async () => {
       const response = await fetch(
-        'https://prismify.macovi.space/rating/london-2024',
+        `https://prismify.macovi.space/rating/${ratingId}`,
         {
           headers: {
             Authorization: `Bearer ${accessToken}`,
