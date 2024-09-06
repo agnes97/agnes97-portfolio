@@ -5,6 +5,7 @@ import Flex from '@/app/components/flex/Flex';
 import { useGetRatings } from './hooks/use-get-ratings';
 import { CardWithLink } from '@/app/components/card/Card';
 
+import defaultImage from '../../assets/spiral.jpg';
 import london2024 from '@/app/assets/ratings/london-2024.webp';
 
 type RatingsImages = {
@@ -32,7 +33,8 @@ export default function Rating() {
           title={`${rating.emoji} ${rating.title}`}
           countryCode={rating.countryCode}
           thumbnailSrc={
-            ratingsImages.find((image) => image.id === rating.id)?.logoSrc ?? '' // TODO: default image
+            ratingsImages.find((image) => image.id === rating.id)?.logoSrc ??
+            defaultImage.src
           }
           date={rating.startDate}
           customCardWidth='300px'

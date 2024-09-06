@@ -9,6 +9,7 @@ import FavoriteItems from '../components/favorite-items/FavoriteItems';
 import { ItemsWrapper } from '../components/item/Item.styled';
 import Item from '../components/item/Item';
 import { RatingButton } from '../page.styled';
+import Participants from '../components/participants/Participants';
 
 type Props = {
   params: {
@@ -82,7 +83,21 @@ const CurrentRating: FC<Props> = ({ params: { slug } }) => {
 
   return (
     <Flex flexDirection='column' gap='2rem' padding={'4rem 0'}>
-      <h2>{rating?.title}</h2>
+      <Flex
+        justifyContent='space-between'
+        alignItems='center'
+        flexDirection='column'
+        style={{ position: 'relative' }}
+        desktop={{ flexDirection: 'row', gap: '2rem' }}
+      >
+        <h2>
+          {rating?.emoji} {rating?.title}
+        </h2>
+
+        {rating?.participants && (
+          <Participants participants={rating.participants} />
+        )}
+      </Flex>
 
       <Flex
         flexDirection='column'
