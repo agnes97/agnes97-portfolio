@@ -2,9 +2,20 @@
 
 import { useQuery } from '@tanstack/react-query';
 
-type Rating = {
+export type Participant = {
+  id: string;
+  name: string;
+  avatar: string | null;
+};
+
+export type Rating = {
   id: string;
   title: string;
+  countryCode: string;
+  startDate: string;
+  endDate: string | null;
+  emoji: string | null;
+  participants: Participant[];
 };
 
 export const useGetRatings = () => {

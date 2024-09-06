@@ -29,12 +29,12 @@ export default function Rating() {
           route={{ pathname: `/rating/${rating.id}` }}
           key={rating.id}
           index={index}
-          title={rating.title}
-          countryCode={'uk'} // TODO: from BE
+          title={`${rating.emoji} ${rating.title}`}
+          countryCode={rating.countryCode}
           thumbnailSrc={
             ratingsImages.find((image) => image.id === rating.id)?.logoSrc ?? '' // TODO: default image
           }
-          date={'08/2024'} // TODO: date
+          date={rating.startDate}
           customCardWidth='300px'
           rectangularImages
         />

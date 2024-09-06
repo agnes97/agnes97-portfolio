@@ -1,6 +1,7 @@
 'use client';
 
 import { useQuery } from '@tanstack/react-query';
+import { Rating } from './use-get-ratings';
 
 export type RatingItem = {
   id: string;
@@ -11,10 +12,7 @@ export type RatingItem = {
   data: unknown;
 };
 
-type Rating = {
-  id: string;
-  title: string;
-  participants: Array<{ id: string; name: string }>;
+type RatingWithItems = Rating & {
   ratedItems: RatingItem[];
   unratedItems: RatingItem[];
 };
@@ -22,7 +20,7 @@ type Rating = {
 export const useGetRating = (ratingId: string) => {
   const accessToken = localStorage.getItem('accessToken');
 
-  return useQuery<Rating>({
+  return useQuery<RatingWithItems>({
     queryKey: ['rating', accessToken],
     queryFn: async () => {
       const response = await fetch(
