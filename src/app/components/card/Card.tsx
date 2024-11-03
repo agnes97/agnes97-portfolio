@@ -17,7 +17,7 @@ const CARD_WIDTH = '200px';
 type Props = {
   index: number;
   title: string;
-  countryCode: string;
+  countryCode?: string;
   thumbnailSrc: string;
   date?: string;
   tagText?: string;
@@ -100,7 +100,9 @@ export const Card: FC<Props> = ({
 
       <footer>
         <span>{date ? date : `No. ${index}`}</span>
-        <CountryFlag>{countryFlag[countryCode.toLowerCase()]}</CountryFlag>
+        {countryCode && (
+          <CountryFlag>{countryFlag[countryCode.toLowerCase()]}</CountryFlag>
+        )}
       </footer>
     </StyledCard>
   );
