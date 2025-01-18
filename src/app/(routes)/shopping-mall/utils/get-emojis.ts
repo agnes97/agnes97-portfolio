@@ -21,4 +21,5 @@ export const categoryEmojis = new Map<keyof Categories, string>([
   ['fox', '🦊'],
   ['sunflower', '🌻'],
   ['puzzle', '🧩'],
+  ['larp', '🦇'],
 ]);

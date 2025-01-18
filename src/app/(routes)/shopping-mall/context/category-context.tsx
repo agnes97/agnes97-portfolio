@@ -22,6 +22,7 @@ export const initialCategories: Categories = {
   fox: [],
   sunflower: [],
   puzzle: [],
+  larp: [],
 };
 
 const allItems = (data as { items: Item[] }).items;

@@ -7,7 +7,8 @@ export type Word =
   | 'slytherin'
   | 'fox'
   | 'sunflower'
-  | 'puzzle';
+  | 'puzzle'
+  | 'larp';
 
 const words: Map<Word, string[]> = new Map([
   ['parrot', ['parrot', 'papoušek', 'papoušci', 'papuga', 'papugi', 'ptáků']],
@@ -17,6 +18,20 @@ const words: Map<Word, string[]> = new Map([
   ['fox', ['liška', 'fox', 'lišky', 'liski']],
   ['sunflower', ['sunflower', 'slunečnice', 'słoneczniki']],
   ['puzzle', ['puzzle']],
+  [
+    'larp',
+    [
+      'gorset',
+      'corset',
+      'larp',
+      'goth',
+      'gothic',
+      'medieval',
+      'cosplay',
+      'kostium',
+      'kostým',
+    ],
+  ],
 ]);
 
 const places = ['title', 'description'] as const;
