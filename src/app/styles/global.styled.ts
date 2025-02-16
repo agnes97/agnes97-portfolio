@@ -45,6 +45,11 @@ export const GlobalStyle = createGlobalStyle`
       font-size: 2.5rem;
     }
   }
+
+  h3 {
+    font-size: 1.75;
+    text-align: center;
+  }
 `;
 
 export const GlassEffect = css`

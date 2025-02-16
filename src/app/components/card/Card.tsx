@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { CSSProperties, FC, ReactNode } from 'react';
 import {
   AbsoluteContainer,
   CountryFlag,
@@ -23,7 +23,12 @@ type Props = {
   tagText?: string;
   lastOnlineDate?: Date;
   customCardWidth?: string;
+  customCardHeight?: string;
   rectangularImages?: boolean;
+  customFooterContent?: ReactNode;
+  imgAspectRatio?: string;
+  objectFit?: 'cover' | 'contain' | 'fill';
+  style?: CSSProperties;
 };
 
 const today = new Date();
@@ -37,6 +42,7 @@ export const CardWithAnchor: FC<Props & { url: string }> = (props) => {
       target='_blank'
       style={{
         width: props.customCardWidth ? props.customCardWidth : CARD_WIDTH,
+        ...(props.customCardHeight && { height: props.customCardHeight }),
       }}
     >
       <Card {...props} />
@@ -50,6 +56,7 @@ export const CardWithLink: FC<Props & { route: UrlObject }> = (props) => {
       href={props.route}
       style={{
         width: props.customCardWidth ? props.customCardWidth : CARD_WIDTH,
+        ...(props.customCardHeight && { height: props.customCardHeight }),
       }}
     >
       <Card {...props} />
@@ -66,6 +73,10 @@ export const Card: FC<Props> = ({
   tagText,
   date,
   rectangularImages,
+  customFooterContent,
+  imgAspectRatio,
+  objectFit,
+  customCardHeight,
 }) => {
   const wasLastOnlineTwoWeeksAgo =
     lastOnlineDate && lastOnlineDate.getTime() < twoWeeksAgoDate.getTime();
@@ -73,13 +84,18 @@ export const Card: FC<Props> = ({
   const wasLastOnlineMonthAgo =
     lastOnlineDate && lastOnlineDate.getTime() < monthAgoDate.getTime();
 
+  const CustomFooterContent = customFooterContent;
+
   return (
     <StyledCard>
       <header>
         <Title title={title}>{title}</Title>
       </header>
 
-      <RelativeContainer rectangularImages={rectangularImages}>
+      <RelativeContainer
+        imgAspectRatio={rectangularImages ? '1 / 1' : imgAspectRatio}
+        objectFit={objectFit}
+      >
         {(wasLastOnlineTwoWeeksAgo || wasLastOnlineMonthAgo) && (
           <RedFlag
             severity={wasLastOnlineTwoWeeksAgo ? 'two-weeks' : 'one-month'}
@@ -89,7 +105,11 @@ export const Card: FC<Props> = ({
           </RedFlag>
         )}
 
-        <img src={thumbnailSrc} width={200} />
+        <img
+          src={thumbnailSrc}
+          width={200}
+          style={{ maxHeight: customCardHeight ?? 'auto' }}
+        />
 
         {tagText && (
           <AbsoluteContainer>
@@ -99,9 +119,18 @@ export const Card: FC<Props> = ({
       </RelativeContainer>
 
       <footer>
-        <span>{date ? date : `No. ${index}`}</span>
-        {countryCode && (
-          <CountryFlag>{countryFlag[countryCode.toLowerCase()]}</CountryFlag>
+        {customFooterContent ? (
+          CustomFooterContent
+        ) : (
+          <>
+            <span>{date ? date : `No. ${index}`}</span>
+
+            {countryCode && (
+              <CountryFlag>
+                {countryFlag[countryCode.toLowerCase()]}
+              </CountryFlag>
+            )}
+          </>
         )}
       </footer>
     </StyledCard>

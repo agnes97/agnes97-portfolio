@@ -8,6 +8,7 @@ export const StyledCard = styled.article`
   gap: 0.25rem;
   ${GlassEffect}
   border: 1px solid ${({ theme }) => theme.color.line_light};
+  height: 100%;
 
   @media (width <= ${BREAKPOINTS.mobile}) {
     width: 100%;
@@ -48,22 +49,27 @@ export const Title = styled.span`
 `;
 
 type RelativeContainerProps = {
-  rectangularImages?: boolean;
+  imgAspectRatio?: string;
+  objectFit?: 'cover' | 'contain' | 'fill';
 };
 
 export const RelativeContainer = styled.div<RelativeContainerProps>`
   position: relative;
   display: flex;
   justify-content: center;
+  background-color: white;
+  flex-grow: 1;
 
   & > img {
     width: 100%;
-    object-fit: cover;
-    ${({ rectangularImages }) =>
-      rectangularImages &&
-      css`
-        aspect-ratio: 1 / 1;
-      `}
+
+    ${({ objectFit }) => css`
+      object-fit: ${objectFit ? objectFit : 'cover'};
+    `}
+
+    ${({ imgAspectRatio }) => css`
+      aspect-ratio: ${imgAspectRatio};
+    `}
   }
 `;
 
