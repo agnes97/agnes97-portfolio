@@ -14,6 +14,7 @@ import StyledComponentsRegistry from '@/lib/styled-component-registry';
 import { Palette, darkTheme, lightTheme } from '../styles/theme.styled';
 import PageLayout from '../styles/page-layout';
 import { useCookies } from 'next-client-cookies';
+import { FlexProps } from '../components/flex/Flex';
 
 const COLOR_THEME_OPTIONS = ['light', 'dark'] as const;
 export type ColorTheme = (typeof COLOR_THEME_OPTIONS)[number];
@@ -41,11 +42,13 @@ type ThemeContext = {
   currentTheme: CurrentTheme;
   currentThemeVariant: ColorTheme;
   updateTheme: () => void;
+  updateCustomPageLayout: (value: FlexProps) => void;
 };
 const ThemeContext = createContext<ThemeContext>({
   currentTheme: themes[defaultTheme],
   currentThemeVariant: defaultTheme,
   updateTheme: () => {},
+  updateCustomPageLayout: () => {},
 });
 
 export const useTheme = () => useContext(ThemeContext);
@@ -68,19 +71,27 @@ const StyledComponentsProvider: FC<PropsWithChildren> = ({ children }) => {
 
   const theme = useMemo(() => themes[currentTheme], [currentTheme]);
 
+  const [customPageLayout, setCustomPageLayout] = useState<
+    FlexProps | undefined
+  >(undefined);
+  const updateCustomPageLayout = (value: FlexProps) => {
+    setCustomPageLayout(value);
+  };
+
   return (
     <ThemeContext.Provider
       value={{
         currentTheme: theme,
         currentThemeVariant: currentTheme,
         updateTheme,
+        updateCustomPageLayout,
       }}
     >
       <ThemeProvider theme={theme}>
         <StyledComponentsRegistry>
           <body>
             <GlobalStyle />
-            <PageLayout>{children}</PageLayout>
+            <PageLayout customStyle={customPageLayout}>{children}</PageLayout>
           </body>
         </StyledComponentsRegistry>
       </ThemeProvider>

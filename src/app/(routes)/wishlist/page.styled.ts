@@ -6,6 +6,14 @@ export const Gallery = styled.section`
   flex-wrap: wrap;
   gap: 1rem;
   justify-content: center;
+  max-width: 1150px;
+
+  & > div {
+    @media (width <= ${BREAKPOINTS.mobile}) {
+      max-width: 270px;
+      width: 90% !important;
+    }
+  }
 
   & img {
     width: 268px;
@@ -16,6 +24,7 @@ export const Gallery = styled.section`
   @media (width <= ${BREAKPOINTS.mobile}) {
     flex-flow: column nowrap;
     width: 100%;
+    align-items: center;
   }
 `;
 

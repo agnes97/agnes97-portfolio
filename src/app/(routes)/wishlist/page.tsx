@@ -22,6 +22,7 @@ import { wishlist2019Christmas } from './data/wishlist-2019-christmas';
 import { wishlist2024Birthday } from './data/wishlist-2024-birthday';
 import { wishlist2023Christmas } from './data/wishlist-2023-christmas';
 import { wishlist2023Birthday } from './data/wishlist-2023-birthday';
+import { useTheme } from '@/app/providers/styled-components-provider';
 
 const CARD_WIDTH = 270;
 const CARD_HEIGHT = 340;
@@ -96,6 +97,14 @@ const wishlists: WishlisType[] = [
 
 export default function Wishlist() {
   const { isLoggedIn } = useAuth();
+  const { updateCustomPageLayout } = useTheme();
+
+  useEffect(() => {
+    updateCustomPageLayout({
+      padding: 0,
+      ipad: { width: '90%', padding: '0 1rem' },
+    });
+  }, []);
 
   const [hasAnimation, setHasAnimation] = useState(true);
 
@@ -118,6 +127,7 @@ export default function Wishlist() {
       gap='2rem'
       padding={'4rem 0'}
       alignItems='center'
+      ipad={{ padding: '10rem 0' }}
     >
       <AnimatedHeading isAnimationBW hasAnimation={hasAnimation}>
         <Heart size={48} />
