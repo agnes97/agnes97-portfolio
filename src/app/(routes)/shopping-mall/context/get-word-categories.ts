@@ -3,38 +3,29 @@ import { Item } from '../types';
 export type Word =
   | 'parrot'
   | 'sheep'
-  | 'hourglass'
+  | 'make'
   | 'slytherin'
-  | 'fox'
+  | 'naruto'
   | 'sunflower'
   | 'puzzle'
-  | 'larp';
+  | 'book';
 
 const words: Map<Word, string[]> = new Map([
-  ['parrot', ['parrot', 'papoušek', 'papoušci', 'papuga', 'papugi', 'ptáků']],
-  ['sheep', ['sheep', 'ovce', 'ovečka', 'owieczka', 'owieczki']],
-  ['hourglass', ['klepsydra', 'přesýpací']],
+  ['parrot', ['parrot', 'papouš', 'papug', 'pták']],
+  ['sheep', ['sheep', 'ovc', 'ovečk', 'owieczk']],
+  ['make', ['fialov', 'růžov', 'lila', 'fioletow', 'różow']],
   ['slytherin', ['slytherin', 'zmijozel', 'harry', 'potter', 'wąż']],
-  ['fox', ['liška', 'fox', 'lišky', 'liski']],
-  ['sunflower', ['sunflower', 'slunečnice', 'słoneczniki']],
-  ['puzzle', ['puzzle']],
   [
-    'larp',
-    [
-      'gorset',
-      'corset',
-      'larp',
-      'goth',
-      'gothic',
-      'medieval',
-      'cosplay',
-      'kostium',
-      'kostým',
-    ],
+    'naruto',
+    ['lišk', 'fox', 'liski', 'naruto', 'hinata', 'tsunade', 'anime', 'kyubi'],
   ],
+  ['sunflower', ['sunflower', 'slunečnic', 'słoneczniki', 'sloneczniki']],
+  ['puzzle', ['puzzle']],
+  ['book', ['book', 'fairyloot', 'knih', 'read', 'edycja']],
 ]);
 
-const places = ['title', 'description'] as const;
+// 'description' was removed from endpoint after June 2025
+const places = ['title'] as const;
 
 export const getWordCategories = (item: Item) =>
   Array.from(words.entries()).reduce<Word[]>(

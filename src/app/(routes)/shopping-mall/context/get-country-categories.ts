@@ -1,12 +1,14 @@
 import { Item } from '../types';
+import { getCountryCode } from '../utils/get-country-code';
 
 export type Country = 'czech' | 'polish';
 
-export const getCountryCategories = ({ user: { country_code } }: Item) => {
+export const getCountryCategories = ({ title }: Item) => {
   const categories: Country[] = [];
+  const countryCode = getCountryCode(title);
 
-  if (country_code === 'CZ' || country_code === 'SK') categories.push('czech');
-  if (country_code === 'PL') categories.push('polish');
+  if (countryCode === 'CZ') categories.push('czech');
+  if (countryCode === 'PL') categories.push('polish');
 
   return categories;
 };

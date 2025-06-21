@@ -14,19 +14,18 @@ export const initialCategories: Categories = {
   polish: [],
   parrot: [],
   sheep: [],
-  hourglass: [],
-  skincare: [],
-  rituals: [],
+  make: [],
+  medicine: [],
   parfume: [],
   slytherin: [],
-  fox: [],
+  naruto: [],
   sunflower: [],
   puzzle: [],
-  larp: [],
+  book: [],
 };
 
 const allItems = (data as { items: Item[] }).items;
-const lastUpdated = '18. 02. 2024';
+const lastUpdated = '21. 06. 2025';
 
 const unsoldItems = allItems.filter(
   (item) => item.item_closing_action !== 'sold' && !item.is_reserved

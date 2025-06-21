@@ -5,23 +5,21 @@ export type Thumbnail = {
 
 export type Photo = {
   thumbnails: Thumbnail[];
+  dominant_color: string;
 };
 
-export type User = {
-  country_code: string;
-  last_loged_on_ts: string;
+export type Price = {
+  amount: string;
+  currency_code: string;
 };
 
 export type Item = {
   id: number;
-  photos: Photo[];
+  photo: Photo;
   title: string;
-  description: string;
-  user: User;
-  price_numeric: string;
-  currency: string;
+  price: Price;
   url: string;
-  brand: string;
+  brand_title: string;
   item_closing_action: 'sold' | null;
   is_reserved: boolean;
 };

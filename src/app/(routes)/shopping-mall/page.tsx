@@ -9,6 +9,7 @@ import {
   useCategories,
 } from './context/category-context';
 import { CardWithAnchor } from '@/app/components/card/Card';
+import { getCountryCode } from './utils/get-country-code';
 
 export default function ShoppingMall() {
   const searchParams = useSearchParams();
@@ -32,17 +33,18 @@ export default function ShoppingMall() {
             ? shoppingMallItems
             : categories[activeFilter]
           ).map((item, index) => {
-            const lastOnlineDate = new Date(item.user.last_loged_on_ts);
+            // lastOnlineDate won't work as it was removed from EP during June 2025
+            const lastOnlineDate = new Date();
 
             return (
               <CardWithAnchor
                 key={item.id}
                 index={index}
                 title={item.title}
-                countryCode={item.user.country_code}
-                tagText={`${Math.floor(Number(item.price_numeric))} ${item.currency}`}
+                countryCode={getCountryCode(item.title)}
+                tagText={`${Math.floor(Number(item.price.amount))} ${item.price.currency_code}`}
                 thumbnailSrc={
-                  item.photos[0].thumbnails.find(
+                  item.photo.thumbnails.find(
                     (thumbnail) => thumbnail.type === 'thumb310x430'
                   )?.url ?? ''
                 }

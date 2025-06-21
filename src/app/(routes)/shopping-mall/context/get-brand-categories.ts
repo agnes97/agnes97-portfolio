@@ -1,30 +1,16 @@
 import { Item } from '../types';
 
-export type Brand = 'skincare' | 'rituals' | 'parfume';
+export type Brand = 'medicine' | 'parfume';
 
 const brands: Map<Brand, string[]> = new Map([
-  [
-    'skincare',
-    [
-      'Pai',
-      'Heimish',
-      'Skin1004',
-      'Innisfree',
-      'Korika',
-      'COSRX',
-      'Hada labo',
-      'Pyunkang yul',
-      'Q & A',
-    ],
-  ],
-  ['rituals', ['Rituals']],
-  ['parfume', ['Paco Rabanne', 'Katy Perry']],
+  ['medicine', ['MEDICINE']],
+  ['parfume', ['Paco Rabanne', 'Katy Perry', 'Jean Paul', 'Giorgio Armani']],
 ]);
 
 export const getBrandCategories = (item: Item) =>
   Array.from(brands.entries()).reduce<Brand[]>(
     (categories, [brandCategory, brands]) => {
-      if (brands.some((brand) => item['brand'].includes(brand)))
+      if (brands.some((brand) => item['brand_title'].includes(brand)))
         categories.push(brandCategory);
       return categories;
     },
