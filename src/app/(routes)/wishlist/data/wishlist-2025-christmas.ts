@@ -2,12 +2,12 @@ import { WishlistItem } from '../types';
 
 export const wishlist2025Christmas: WishlistItem[] = [
   {
-    emoji: '🖨️',
-    title: '3D Print Infinite Mirror',
-    price: '???',
+    emoji: '🪄',
+    title: 'Codenames (Hogwarts Edition)',
+    price: '850',
     imageSrc:
-      'https://makerworld.bblmw.com/makerworld/model/US68587a7dc8fc36/design/2024-11-24_431b8ca8f3c1.jpg?x-oss-process=image/resize,w_1920/format,webp',
-    link: 'https://makerworld.com/en/models/817062#profileId-759450',
+      'https://cdn.myshoptet.com/usr/shop.czechgames.com/user/shop/big/750_codenames--back-to-hogwarts.png?684c1caa',
+    link: 'https://shop.czechgames.com/codenames-back-to-hogwarts/',
     received: false,
     hasCoverPhoto: true,
   },
@@ -27,25 +27,6 @@ export const wishlist2025Christmas: WishlistItem[] = [
     imageSrc:
       'https://www.emp-shop.cz/dw/image/v2/BBQV_PRD/on/demandware.static/-/Sites-master-emp/default/dw9d3942d1/images/5/5/8/2/558230a.jpg?sw=1000&sh=800&sm=fit&sfrm=png',
     link: 'https://www.emp-shop.cz/p/honeydukes/558230.html',
-    received: false,
-  },
-  {
-    emoji: '🖨️',
-    title: '3D print motorized Hogwarts Legacy eye',
-    price: '700',
-    imageSrc:
-      'https://fbi.cults3d.com/uploaders/14389286/illustration-file/73fccb5e-efbb-4bf8-8829-56bf86e3a571/01-Hogwarts-legacy-eyeball-chest.jpg',
-    link: 'https://cults3d.com/en/3d-model/various/hogwarts-legacy-inspired-motorized-eye-chest',
-    received: false,
-    hasCoverPhoto: true,
-  },
-  {
-    emoji: '🌶️',
-    title: 'Horrible Therapis (Worst Edition)',
-    price: '700',
-    imageSrc:
-      'https://www.explodingkittens.com/cdn/shop/files/HOTH-CORE_Box_AMZ_Front_17JUN24_1300x.png?v=1727720661',
-    link: 'https://www.explodingkittens.com/products/horrible-therapist-worst-edition',
     received: false,
   },
   {
@@ -75,15 +56,6 @@ export const wishlist2025Christmas: WishlistItem[] = [
     received: false,
   },
   {
-    emoji: '💃',
-    title: '[2XL] Solaris Hell Bunny',
-    price: '2 340',
-    imageSrc:
-      'https://www.emp-shop.cz/dw/image/v2/BBQV_PRD/on/demandware.static/-/Sites-master-emp/default/dw943570bb/images/4/4/4/1/444118a.jpg?sfrm=png',
-    link: 'https://www.hellbunny.com/products/hlb40012-p-solaris-dress',
-    received: false,
-  },
-  {
     emoji: '♣️',
     title: '[EN] Gwent Card Game',
     price: '1 000',
@@ -101,15 +73,46 @@ export const wishlist2025Christmas: WishlistItem[] = [
     link: '',
     received: false,
     hasCoverPhoto: true,
+    isFav: true,
   },
   {
-    emoji: '💍',
-    title: '2x LOTR Podtácky',
-    price: '438',
+    emoji: '🖨️',
+    title: '3D Print Infinite Mirror',
+    price: '???',
     imageSrc:
-      'https://fantasyobchod.gumlet.io/podtacky-pan-prstenu-4-ks-6566b616d5874.jpeg?mode=fill&fill=solid&fill-color=ffffff&w=1000&dpr=2.0',
-    link: 'https://www.imago.cz/podtacky-pan-prstenu-4ks',
+      'https://makerworld.bblmw.com/makerworld/model/US68587a7dc8fc36/design/2024-11-24_431b8ca8f3c1.jpg?x-oss-process=image/resize,w_1920/format,webp',
+    link: 'https://makerworld.com/en/models/817062#profileId-759450',
     received: false,
+    hasCoverPhoto: true,
+  },
+  {
+    emoji: '🐍',
+    title: '[40] Lucius Malfoy Funko Pop',
+    price: '1 000',
+    imageSrc:
+      'https://rihappy.vtexassets.com/arquivos/ids/4001015-800-auto?v=637902973073730000&width=800&height=auto&aspect=true',
+    link: 'https://funkypriceguide.com/collectible/40-lucius-malfoy-holding-prophesy/',
+    received: false,
+  },
+  {
+    emoji: '📚',
+    title: 'EN Temeraire Books',
+    price: '3 000',
+    imageSrc:
+      'https://m.media-amazon.com/images/I/71j3BYzSLpL._AC_UF1000,1000_QL80_.jpg',
+    link: 'https://www.amazon.com/Temeraire-Books-Naomi-Novik-Paperback/dp/B0BLDQ74GY',
+    received: false,
+    isFav: true,
+  },
+  {
+    emoji: '🐍',
+    title: 'Sssssssnake',
+    price: '2000',
+    imageSrc:
+      'https://m.media-amazon.com/images/I/518lG92G7XL._UF1000,1000_QL80_.jpg',
+    link: 'https://www.jedishop.cz/harry-potter-lucius-malfoy-s-walking-stick/?gad_source=1&gad_campaignid=17338827496&gbraid=0AAAAADdqKBEfNW05kJcy9sJSSVd3Ie_sV&gclid=CjwKCAjwkbzEBhAVEiwA4V-yqhVHnnCNdXQhwK_tE8VjpkpMyBRBxpyksrM0OxEuu6dF1686nMXVShoCHnMQAvD_BwE',
+    received: false,
+    hasCoverPhoto: true,
   },
   {
     emoji: '💙',
