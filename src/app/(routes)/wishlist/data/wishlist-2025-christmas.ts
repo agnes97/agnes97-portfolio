@@ -3,11 +3,11 @@ import { WishlistItem } from '../types';
 export const wishlist2025Christmas: WishlistItem[] = [
   {
     emoji: '🪄',
-    title: 'Codenames (Hogwarts Edition)',
-    price: '850',
+    title: '[1986] Frieren',
+    price: '439',
     imageSrc:
-      'https://cdn.myshoptet.com/usr/shop.czechgames.com/user/shop/big/750_codenames--back-to-hogwarts.png?684c1caa',
-    link: 'https://shop.czechgames.com/codenames-back-to-hogwarts/',
+      'https://www.emp-shop.cz/dw/image/v2/BBQV_PRD/on/demandware.static/-/Sites-master-emp/default/dw3ea18705/images/5/8/0/5/580583a.jpg?sfrm=png',
+    link: 'https://www.emp-shop.cz/p/vinylov%C3%A1-figurka-%C4%8D.1986-frieren/580583.html',
     received: false,
     hasCoverPhoto: true,
   },
@@ -148,6 +148,33 @@ export const wishlist2025Christmas: WishlistItem[] = [
     imageSrc:
       'https://cdn.myshoptet.com/usr/www.animerch.cz/user/shop/big/39495_friereen-podtaceck-animerch--11.jpg?65ef1354',
     link: 'https://www.animerch.cz/dalsi-anime/korkovy-podtacek-era-meteor-shower/',
+    received: false,
+  },
+  {
+    emoji: '🐉',
+    title: '[2XL] HOTD pyžamko',
+    price: '949',
+    imageSrc:
+      'https://www.emp-shop.cz/dw/image/v2/BBQV_PRD/on/demandware.static/-/Sites-master-emp/default/dw6e99325e/images/5/8/8/0/588057a.jpg?sfrm=png',
+    link: 'https://www.emp-shop.cz/p/house-of-the-dragon/588057.html',
+    received: false,
+  },
+  {
+    emoji: '👸',
+    title: 'Golden Snitch Earings',
+    price: '789',
+    imageSrc:
+      'https://www.emp-shop.cz/dw/image/v2/BBQV_PRD/on/demandware.static/-/Sites-master-emp/default/dw4fc9b2bb/images/5/9/1/2/591248d.jpg?sfrm=png',
+    link: 'https://www.emp-shop.cz/p/d%C3%A1rkov%C3%BD-box-quidditch/591248.html',
+    received: false,
+  },
+  {
+    emoji: '❤️',
+    title: '[2XL] HP pyžamko',
+    price: '806',
+    imageSrc:
+      'https://www.emp-shop.cz/dw/image/v2/BBQV_PRD/on/demandware.static/-/Sites-master-emp/default/dw2b803267/images/5/7/2/6/572698a.jpg?sfrm=png',
+    link: 'https://www.emp-shop.cz/p/order-of-the-phoenix/572698.html',
     received: false,
   },
 ];
