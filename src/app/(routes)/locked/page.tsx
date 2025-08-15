@@ -1,18 +1,24 @@
 'use client';
 
-// import { Divider } from '@/app/styles/global.styled';
 import React from 'react';
-// import SecretContent from './components/secret-content/SecretContent';
 import Auth from './components/auth/Auth';
+import { Divider } from '@/app/styles/global.styled';
+import SecretContent from './components/secret-content/SecretContent';
+import { useAuth } from '@/app/providers/auth-provider';
 
 export default function Locked() {
+  const { user, isLoggedIn } = useAuth();
+
   return (
     <>
       <Auth />
 
-      {/* <Divider />
-
-      <SecretContent /> */}
+      {isLoggedIn && user && (
+        <>
+          <Divider />
+          <SecretContent />
+        </>
+      )}
     </>
   );
 }

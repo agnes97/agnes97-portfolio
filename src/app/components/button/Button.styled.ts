@@ -34,6 +34,14 @@ export const StyledButton = styled.button<ButtonProps>`
         height: ${getButtonSize(props.size)};
         margin: 0 2rem;
         border-radius: 50%;
+        scale: 1;
+        letter-spacing: 0.1rem;
+
+        &:hover {
+            scale: 1.2;
+            letter-spacing: 0.15rem;
+            color: ${props.theme.color.background_secondary}
+        }
     `}
 
   ${(props) =>
