@@ -12,8 +12,9 @@ import { useAuth } from '@/app/providers/auth-provider';
 import { Wishlist as WishlisType } from './types';
 import OverlayIcon from './components/OverlayIcon';
 
-import { wishlist2025Birthday } from './data/wishlist-2025-birthday';
+import { wishlist2025ChristmasVinted } from './data/wishlist-2025-christmas-vinted';
 import { wishlist2025Christmas } from './data/wishlist-2025-christmas';
+import { wishlist2025Birthday } from './data/wishlist-2025-birthday';
 import { wishlist2021Birthday } from './data/wishlist-2021-birthday';
 import { wishlist2021Christmas } from './data/wishlist-2021-christmas';
 // import { wishlist2022Birthday } from './data/wishlist-2022-birthday';
@@ -32,6 +33,11 @@ const wishlists: WishlisType[] = [
     year: 2025,
     type: 'christmas',
     wishlistedItems: wishlist2025Christmas,
+  },
+  {
+    year: 2025,
+    type: 'christmas_vinted',
+    wishlistedItems: wishlist2025ChristmasVinted,
   },
   {
     year: 2025,
@@ -143,7 +149,7 @@ export default function Wishlist() {
         <>
           {wishlists.map((wishlist, index) => (
             <Flex flexDirection='column' gap='1rem' key={index}>
-              <WishlistTitle>{`${wishlist.type} ${wishlist.year}`}</WishlistTitle>
+              <WishlistTitle>{`${wishlist.type === 'christmas_vinted' ? 'Christmas Vinted Special' : wishlist.type} ${wishlist.year}`}</WishlistTitle>
 
               <Gallery>
                 {wishlist.wishlistedItems.length === 0 ? (
