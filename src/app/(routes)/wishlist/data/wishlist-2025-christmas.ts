@@ -7,26 +7,27 @@ export const wishlist2025Christmas: WishlistItem[] = [
     price: '439',
     imageSrc:
       'https://www.emp-shop.cz/dw/image/v2/BBQV_PRD/on/demandware.static/-/Sites-master-emp/default/dw3ea18705/images/5/8/0/5/580583a.jpg?sfrm=png',
-    link: 'https://www.emp-shop.cz/p/vinylov%C3%A1-figurka-%C4%8D.1986-frieren/580583.html',
+    link: 'https://www.jrc.cz/Funko-POP-1986-Animation-Frieren-Frieren-p252663',
     received: false,
     hasCoverPhoto: true,
   },
   {
-    emoji: '🐦‍🔥',
-    title: 'Fawkes',
-    price: '1 030',
+    emoji: '🔥',
+    title: 'THIS IS BOUNCY!!!',
+    price: '250',
     imageSrc:
-      'https://www.emp-shop.cz/dw/image/v2/BBQV_PRD/on/demandware.static/-/Sites-master-emp/default/dw647ab165/images/5/5/8/7/558715a.jpg?sw=1000&sh=800&sm=fit&sfrm=png',
-    link: 'https://www.emp-shop.cz/p/fawkes/558715.html',
+      'https://harrypottershop.co.uk/cdn/shop/files/2000009711_GOLDENSTITCHTYBOUNCER_A.png?v=1751976689&width=1946',
+    link: 'https://harrypottershop.co.uk/products/golden-snitch-ty-bouncer?variant=45954218426537',
     received: false,
+    isFav: true,
   },
   {
-    emoji: '🪄',
-    title: '[XL] Honeydukes Cardigan',
-    price: '1 112',
+    emoji: '🐉',
+    title: '[2XL] HOTD pyžamko',
+    price: '949',
     imageSrc:
-      'https://www.emp-shop.cz/dw/image/v2/BBQV_PRD/on/demandware.static/-/Sites-master-emp/default/dw9d3942d1/images/5/5/8/2/558230a.jpg?sw=1000&sh=800&sm=fit&sfrm=png',
-    link: 'https://www.emp-shop.cz/p/honeydukes/558230.html',
+      'https://www.emp-shop.cz/dw/image/v2/BBQV_PRD/on/demandware.static/-/Sites-master-emp/default/dw6e99325e/images/5/8/8/0/588057a.jpg?sfrm=png',
+    link: 'https://www.emp-shop.cz/p/house-of-the-dragon/588057.html',
     received: false,
   },
   {
@@ -41,10 +42,10 @@ export const wishlist2025Christmas: WishlistItem[] = [
   {
     emoji: '👸',
     title: 'Golden Snitch Earings',
-    price: '329',
+    price: '789',
     imageSrc:
-      'https://www.emp-shop.cz/dw/image/v2/BBQV_PRD/on/demandware.static/-/Sites-master-emp/default/dwa6100e28/images/5/8/1/3/581338a.jpg?sw=1000&sh=800&sm=fit&sfrm=png',
-    link: 'https://www.emp-shop.cz/p/zlatonka/581338.html',
+      'https://www.emp-shop.cz/dw/image/v2/BBQV_PRD/on/demandware.static/-/Sites-master-emp/default/dw4fc9b2bb/images/5/9/1/2/591248d.jpg?sfrm=png',
+    link: 'https://www.emp-shop.cz/p/d%C3%A1rkov%C3%BD-box-quidditch/591248.html',
     received: false,
   },
   {
@@ -56,6 +57,15 @@ export const wishlist2025Christmas: WishlistItem[] = [
     received: false,
   },
   {
+    emoji: '☠️',
+    title: 'Dark Mark Journal',
+    price: '200',
+    imageSrc:
+      'https://harrypottershop.co.uk/cdn/shop/products/12742541.png?v=1610628820&width=1946',
+    link: 'https://harrypottershop.co.uk/products/dark-mark-journal?variant=38317389840553',
+    received: false,
+  },
+  {
     emoji: '♣️',
     title: '[EN] Gwent Card Game',
     price: '1 000',
@@ -63,17 +73,6 @@ export const wishlist2025Christmas: WishlistItem[] = [
       'https://cf.geekdo-images.com/QTSttauemR3BGl8xuy_qKw__imagepagezoom/img/Fqir92Ta80wEmDiMYXxtMRwDvt4=/fit-in/1200x900/filters:no_upscale():strip_icc()/pic8576952.png',
     link: 'https://boardgamegeek.com/image/8576952/gwent-the-legendary-card-game',
     received: false,
-  },
-  {
-    emoji: '🐄',
-    title: 'Trip to pet highland cows',
-    price: '???',
-    imageSrc:
-      'https://cdn.shopify.com/s/files/1/0377/4808/0684/files/Fun_Facts_About_Highland_Cows_-_Boozy_Fox.jpg?v=1678630458',
-    link: '',
-    received: false,
-    hasCoverPhoto: true,
-    isFav: true,
   },
   {
     emoji: '🖨️',
@@ -148,33 +147,6 @@ export const wishlist2025Christmas: WishlistItem[] = [
     imageSrc:
       'https://cdn.myshoptet.com/usr/www.animerch.cz/user/shop/big/39495_friereen-podtaceck-animerch--11.jpg?65ef1354',
     link: 'https://www.animerch.cz/dalsi-anime/korkovy-podtacek-era-meteor-shower/',
-    received: false,
-  },
-  {
-    emoji: '🐉',
-    title: '[2XL] HOTD pyžamko',
-    price: '949',
-    imageSrc:
-      'https://www.emp-shop.cz/dw/image/v2/BBQV_PRD/on/demandware.static/-/Sites-master-emp/default/dw6e99325e/images/5/8/8/0/588057a.jpg?sfrm=png',
-    link: 'https://www.emp-shop.cz/p/house-of-the-dragon/588057.html',
-    received: false,
-  },
-  {
-    emoji: '👸',
-    title: 'Golden Snitch Earings',
-    price: '789',
-    imageSrc:
-      'https://www.emp-shop.cz/dw/image/v2/BBQV_PRD/on/demandware.static/-/Sites-master-emp/default/dw4fc9b2bb/images/5/9/1/2/591248d.jpg?sfrm=png',
-    link: 'https://www.emp-shop.cz/p/d%C3%A1rkov%C3%BD-box-quidditch/591248.html',
-    received: false,
-  },
-  {
-    emoji: '❤️',
-    title: '[2XL] HP pyžamko',
-    price: '806',
-    imageSrc:
-      'https://www.emp-shop.cz/dw/image/v2/BBQV_PRD/on/demandware.static/-/Sites-master-emp/default/dw2b803267/images/5/7/2/6/572698a.jpg?sfrm=png',
-    link: 'https://www.emp-shop.cz/p/order-of-the-phoenix/572698.html',
     received: false,
   },
 ];

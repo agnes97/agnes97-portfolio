@@ -137,8 +137,7 @@ export const wishlist2022Christmas: WishlistItem[] = [
     emoji: '🐑',
     title: 'Sheep Calendara',
     price: '300',
-    imageSrc:
-      'https://bookshop.vshcdn.net/avonside-publishing-ltd/sheep-calendar-2025-square-farm-animal-wall-calendar-16-month_id7688423.jpg',
+    imageSrc: 'https://cdn.bookshop.cz/img/goods/default/7688423.jpg',
     link: 'https://www.bookshop.cz/avonside-publishing-ltd/sheep-calendar-2025-square-farm-animal-wall-calendar-16-month/',
     received: false,
     hasCoverPhoto: true,

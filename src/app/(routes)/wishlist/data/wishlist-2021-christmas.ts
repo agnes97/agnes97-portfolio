@@ -35,7 +35,7 @@ export const wishlist2021Christmas: WishlistItem[] = [
     title: 'Luna Lovegood Spectre Specs',
     price: '1 390',
     imageSrc:
-      'https://img.kleinanzeigen.de/api/v1/prod-ads/images/6b/6b314390-cacc-4c48-9feb-e7498c2ed438?rule=$_35.AUTO',
+      'https://img.leboncoin.fr/api/v1/lbcpb1/images/c7/b7/2e/c7b72ef8f8b68ea6fd57b0ba47dda78ba06ef95c.jpg?rule=ad-large',
     link: '',
     received: false,
     isNoLongerWanted: true,
@@ -110,7 +110,7 @@ export const wishlist2021Christmas: WishlistItem[] = [
     title: '[130] Ahsoka Glow in the Dark',
     price: '1 500',
     imageSrc:
-      'https://www.funk-o-toy.us/cdn/shop/products/image_355c0541-31e4-4c89-b59f-a6f94ce72cfb.jpg?v=1625948138',
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtgE8eLkgTlFClr_7L4KjUBs6ZJwAnIo8F1fyeJZEiQieQBB91c0pOxinezhK37uTUsiI&usqp=CAU',
     link: 'https://www.funk-o-toy.us/products/star-wars-ahsoka-tano-glow-in-the-dark-special-edition-sticker',
     received: false,
     isFav: true,
