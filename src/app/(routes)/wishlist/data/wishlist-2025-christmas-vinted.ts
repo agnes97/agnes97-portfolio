@@ -2,15 +2,14 @@ import { WishlistItem } from '../types';
 
 export const wishlist2025ChristmasVinted: WishlistItem[] = [
   {
-    emoji: '🐍',
-    title: 'Rituals Intuitia',
-    price: '1500',
+    emoji: '💙',
+    title: 'Modré šaty',
+    price: '250',
     imageSrc:
-      'https://images1.vinted.net/t/04_015c4_cUxeYoJ9Wo5WQsCfRVjQ3xTm/f800/1758308848.jpeg?s=7d42d4b6bb8cb3f4819d2c641c4cf4374bef34e9',
-    link: 'https://www.vinted.cz/items/7123881482-rituals-zestaw-podarunkowy-intuitia-edycja-limitowana',
+      'https://images1.vinted.net/t/02_02323_Q3Kd9o7PXdVZgfw6962UpQCy/f800/1753372607.jpeg?s=a9cff1abc67643abc91f4842f33b24edd885bfcd',
+    link: 'https://www.vinted.cz/items/6743600371-sukienka',
     received: false,
     hasCoverPhoto: true,
-    isFav: true,
   },
   {
     emoji: '💃',
@@ -79,6 +78,47 @@ export const wishlist2025ChristmasVinted: WishlistItem[] = [
     imageSrc:
       'https://images1.vinted.net/t/01_00c11_aX1U5W8V9eKWMNdC1AabHEEz/f800/1758740161.jpeg?s=0623032a72bc45a3cd6229aa789eee67b24467e6',
     link: 'https://www.vinted.cz/items/7161124460-czarna-midi-spodnica-l-40-gina-tricot',
+    received: false,
+    hasCoverPhoto: true,
+  },
+  {
+    emoji: '🐍',
+    title: 'Rituals Intuitia',
+    price: '1500',
+    imageSrc:
+      'https://images1.vinted.net/t/04_015c4_cUxeYoJ9Wo5WQsCfRVjQ3xTm/f800/1758308848.jpeg?s=7d42d4b6bb8cb3f4819d2c641c4cf4374bef34e9',
+    link: 'https://www.vinted.cz/items/7246184247-rituals-zestaw-podarunkowy-intuitia-edycja-limitowana',
+    received: false,
+    hasCoverPhoto: true,
+    isFav: true,
+  },
+  {
+    emoji: '🌸',
+    title: 'Rituals Intuitia',
+    price: '265',
+    imageSrc:
+      'https://images1.vinted.net/t/03_01ba4_JeKYnCr5CisbiX6RybJa6fzB/f800/1759686473.jpeg?s=5616e42bbd73b2b6a9233fbb94293c30907a6611',
+    link: 'https://www.vinted.cz/items/7245808714-pianka-do-kapieli-intuitia-rituals',
+    received: false,
+    hasCoverPhoto: true,
+  },
+  {
+    emoji: '🌃',
+    title: 'Rituals Dream Collection',
+    price: '790',
+    imageSrc:
+      'https://images1.vinted.net/t/02_01301_BqFRwvu3E8W6b16F5Z6aFABh/f800/1759684088.jpeg?s=d88c02cbb2b9526e6ada39503d451c954aee2828',
+    link: 'https://www.vinted.cz/items/7245337947-zestaw-rituals-dream',
+    received: false,
+    hasCoverPhoto: true,
+  },
+  {
+    emoji: '💜',
+    title: 'Rituals Sleep Mask',
+    price: '250',
+    imageSrc:
+      'https://images1.vinted.net/t/01_016bb_HMhrM8U8tRE9YypcH3Mp4USB/f800/1759670600.jpeg?s=dea6a0ca48ada6d98f6e39bc4e58a867a23414cf',
+    link: 'https://www.vinted.cz/items/7241810073-rituals-maska-do-spania-opaska-do-spania-dream',
     received: false,
     hasCoverPhoto: true,
   },

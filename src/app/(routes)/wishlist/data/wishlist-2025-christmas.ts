@@ -149,4 +149,78 @@ export const wishlist2025Christmas: WishlistItem[] = [
     link: 'https://www.animerch.cz/dalsi-anime/korkovy-podtacek-era-meteor-shower/',
     received: false,
   },
+  {
+    emoji: '🦴',
+    title: 'Collagen',
+    price: '565',
+    imageSrc:
+      'https://www.dafit.cz/userfiles/2ccd7673-1797-4da8-960d-98852bec99d6.png',
+    link: 'https://www.fitnessio.cz/biotech-clear-collagen-308-g-strawberry-cranberry',
+    received: false,
+  },
+  {
+    emoji: '💃',
+    title: '.5C (0.5) korektor',
+    price: '700',
+    imageSrc:
+      'https://www.mcelhinneys.com/cdn/shop/files/ESTEE-LAUDER-DOUBLE-WEAR-24HOUR-STAY-IN-PLACE-CONCEALER-SKU-ESTG5HC-24HSTYPL_5_grande.jpg?v=1743779934',
+    link: 'https://www.notino.cz/estee-lauder/double-wear-stay-in-place-dlouhotrvajici-korektor-7052292/p-16303197/',
+    received: false,
+    hasCoverPhoto: true,
+    isFav: true,
+  },
+  {
+    emoji: '☀️',
+    title: 'D3 Vitamin',
+    price: '259',
+    imageSrc:
+      'https://gymbeam.cz/media/catalog/product/cache/bf5a31e851f50f3ed6850cbbf183db11/d/3/d33333.png',
+    link: 'https://www.fitnessio.cz/Pink-Vitamin-D3-BeastPink-120-kaps-d24511.htm',
+    received: false,
+  },
+  {
+    emoji: '🩷',
+    title: 'Pink Omega',
+    price: '339',
+    imageSrc:
+      'https://gymbeam.cz/media/catalog/product/cache/bf5a31e851f50f3ed6850cbbf183db11/o/m/omega.png',
+    link: 'https://www.fitnessio.cz/Pink-Omega-BeastPink-90-kaps-d23447.htm',
+    received: false,
+  },
+  {
+    emoji: '🤯',
+    title: 'Miracle Balm',
+    price: '359',
+    imageSrc:
+      'https://www.almarasoap.com/res/crc-2304323206/products/images/800x800/1106412-di-as-special-care-miracle-balm-produkt-cz.webp',
+    link: 'https://www.almarasoap.com/cs/miracle-balm',
+    received: false,
+  },
+  {
+    emoji: '🍓',
+    title: 'Body Scrub',
+    price: '269',
+    imageSrc:
+      'https://www.almarasoap.com/res/crc-2441281520/products/images/800x800/dv-as-body-scrub-strawberry-cream-produkt-cz.webp',
+    link: 'https://www.almarasoap.com/cs/strawberry-cream',
+    received: false,
+  },
+  {
+    emoji: '🌊',
+    title: 'Bubble Soda',
+    price: '309',
+    imageSrc:
+      'https://www.almarasoap.com/res/crc-731056019/products/images/800x800/631941-6x-img-0227.webp',
+    link: 'https://www.almarasoap.com/cs/bubble-soda',
+    received: false,
+  },
+  {
+    emoji: '🥥',
+    title: 'Lip Scrub',
+    price: '199',
+    imageSrc:
+      'https://www.almarasoap.com/res/crc-12401962/products/images/800x800/2c-as-lip-scrub-coconut-produkt-cz.webp',
+    link: 'https://www.almarasoap.com/cs/lip-scrub-coconut',
+    received: false,
+  },
 ];
