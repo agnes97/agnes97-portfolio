@@ -1,29 +1,32 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
+import { Heart } from 'lucide-react';
+
 import Flex from '@/app/components/flex/Flex';
 import { CardWithAnchor } from '@/app/components/card/Card';
+import { useTheme } from '@/app/providers/styled-components-provider';
+import { AnimatedHeading } from '@/app/components/pet-projects/PetProjects.styled';
+import { useAuth } from '@/app/providers/auth-provider';
 
 import defaultImage from '../../assets/spiral.jpg';
-import { AnimatedHeading } from '@/app/components/pet-projects/PetProjects.styled';
-import { Heart } from 'lucide-react';
-import { Gallery, WishlistTitle } from './page.styled';
-import { useAuth } from '@/app/providers/auth-provider';
-import { Wishlist as WishlisType } from './types';
-import OverlayIcon from './components/OverlayIcon';
 
-import { wishlist2025ChristmasVinted } from './data/wishlist-2025-christmas-vinted';
-import { wishlist2025Christmas } from './data/wishlist-2025-christmas';
-import { wishlist2025Birthday } from './data/wishlist-2025-birthday';
+import OverlayIcon from './components/OverlayIcon';
+import { Wishlist as WishlisType } from './types';
+import { Gallery, WishlistTitle } from './page.styled';
+
+import { wishlist2019Christmas } from './data/wishlist-2019-christmas';
 import { wishlist2021Birthday } from './data/wishlist-2021-birthday';
 import { wishlist2021Christmas } from './data/wishlist-2021-christmas';
 // import { wishlist2022Birthday } from './data/wishlist-2022-birthday';
 import { wishlist2022Christmas } from './data/wishlist-2022-christmas';
-import { wishlist2019Christmas } from './data/wishlist-2019-christmas';
-import { wishlist2024Birthday } from './data/wishlist-2024-birthday';
-import { wishlist2023Christmas } from './data/wishlist-2023-christmas';
 import { wishlist2023Birthday } from './data/wishlist-2023-birthday';
-import { useTheme } from '@/app/providers/styled-components-provider';
+import { wishlist2023Christmas } from './data/wishlist-2023-christmas';
+import { wishlist2024Birthday } from './data/wishlist-2024-birthday';
+import { wishlist2025Birthday } from './data/wishlist-2025-birthday';
+import { wishlist2025ChristmasSlevomat } from './data/wishlist-2025-christmas-slevomat';
+import { wishlist2025ChristmasVinted } from './data/wishlist-2025-christmas-vinted';
+import { wishlist2025Christmas } from './data/wishlist-2025-christmas';
 
 const CARD_WIDTH = 270;
 const CARD_HEIGHT = 340;
@@ -38,6 +41,11 @@ const wishlists: WishlisType[] = [
     year: 2025,
     type: 'christmas_vinted',
     wishlistedItems: wishlist2025ChristmasVinted,
+  },
+  {
+    year: 2025,
+    type: 'christmas_slevomat',
+    wishlistedItems: wishlist2025ChristmasSlevomat,
   },
   {
     year: 2025,
@@ -127,6 +135,18 @@ export default function Wishlist() {
     };
   }, [hasAnimation]);
 
+  const getWishlistTitle = (
+    wishlistType: string,
+    wishlistYear: number
+  ): string => {
+    if (wishlistType.includes('_')) {
+      const newTitle = wishlistType.split('_').join(' ');
+      return `${newTitle} SPECIAL ${wishlistYear}`;
+    }
+
+    return `${wishlistType} ${wishlistYear}`;
+  };
+
   return (
     <Flex
       flexDirection='column'
@@ -149,7 +169,9 @@ export default function Wishlist() {
         <>
           {wishlists.map((wishlist, index) => (
             <Flex flexDirection='column' gap='1rem' key={index}>
-              <WishlistTitle>{`${wishlist.type === 'christmas_vinted' ? 'Christmas Vinted Special' : wishlist.type} ${wishlist.year}`}</WishlistTitle>
+              <WishlistTitle>
+                {getWishlistTitle(wishlist.type, wishlist.year)}
+              </WishlistTitle>
 
               <Gallery>
                 {wishlist.wishlistedItems.length === 0 ? (

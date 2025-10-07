@@ -72,12 +72,12 @@ export const wishlist2025ChristmasVinted: WishlistItem[] = [
     hasCoverPhoto: true,
   },
   {
-    emoji: '🖤',
-    title: 'Daily sukýnka',
-    price: '250',
+    emoji: '🇯🇵',
+    title: 'Uniqlo (Japanese) skirt',
+    price: '500',
     imageSrc:
-      'https://images1.vinted.net/t/01_00c11_aX1U5W8V9eKWMNdC1AabHEEz/f800/1758740161.jpeg?s=0623032a72bc45a3cd6229aa789eee67b24467e6',
-    link: 'https://www.vinted.cz/items/7161124460-czarna-midi-spodnica-l-40-gina-tricot',
+      'https://images1.vinted.net/t/03_01e83_wooXHyxZExhTbV5EdyJrbrt1/f800/1759834172.jpeg?s=d4cc19d56b8c02f2ce3beab211f99113d710f501',
+    link: 'https://www.vinted.cz/items/7257098273-spodnica-uniqlo-l',
     received: false,
     hasCoverPhoto: true,
   },

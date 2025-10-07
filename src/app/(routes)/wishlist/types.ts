@@ -13,6 +13,6 @@ export type WishlistItem = {
 
 export type Wishlist = {
   year: number;
-  type: 'birthday' | 'christmas' | 'christmas_vinted';
+  type: 'birthday' | 'christmas' | 'christmas_vinted' | 'christmas_slevomat';
   wishlistedItems: WishlistItem[];
 };
