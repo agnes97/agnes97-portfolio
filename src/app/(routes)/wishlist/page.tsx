@@ -198,7 +198,9 @@ export default function Wishlist() {
                             index={index}
                             title={`${item.emoji} ${item.title}`}
                             thumbnailSrc={item.imageSrc ?? defaultImage.src}
-                            tagText={`${item.price},-`}
+                            tagText={
+                              item.isHandmade ? 'DIY' : `${item.price},-`
+                            }
                             objectFit={item.hasCoverPhoto ? 'cover' : 'contain'}
                             customCardHeight={`${CARD_HEIGHT}px`}
                           />

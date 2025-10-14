@@ -1,5 +1,7 @@
 import { WishlistItem } from '../types';
 
+import surpriseTrip from '../../../assets/wishlist/surprise-trip.png';
+
 export const wishlist2025Christmas: WishlistItem[] = [
   {
     emoji: '🪄',
@@ -31,13 +33,14 @@ export const wishlist2025Christmas: WishlistItem[] = [
     received: false,
   },
   {
-    emoji: '💙',
-    title: '[1339] Hinata Naruto',
-    price: '549',
+    emoji: '🪼',
+    title: 'Svět medúz',
+    price: '600',
     imageSrc:
-      'https://www.playgosmart.cz/images/data/product/468/pop-animation-hinata-with-twin-lion-fists-naruto-shippuden-special-edition-pop-1339-468056.jpg',
-    link: 'https://www.konzoliste.cz/figurky-funko-pop/funko-pop--1339-animation--naruto-shippuden-hinata-with-twin-lion-fists-special-edition/',
+      'https://www.kdykde.cz/download/untitled-folder-2/svet_meduz_01.jpg',
+    link: 'https://svetmeduz.cz/',
     received: false,
+    hasCoverPhoto: true,
   },
   {
     emoji: '👸',
@@ -66,23 +69,25 @@ export const wishlist2025Christmas: WishlistItem[] = [
     received: false,
   },
   {
-    emoji: '♣️',
-    title: '[EN] Gwent Card Game',
-    price: '1 000',
+    emoji: '🐍',
+    title: 'Rituals Intuitia',
+    price: '1500',
     imageSrc:
-      'https://cf.geekdo-images.com/QTSttauemR3BGl8xuy_qKw__imagepagezoom/img/Fqir92Ta80wEmDiMYXxtMRwDvt4=/fit-in/1200x900/filters:no_upscale():strip_icc()/pic8576952.png',
-    link: 'https://boardgamegeek.com/image/8576952/gwent-the-legendary-card-game',
+      'https://images1.vinted.net/t/04_015c4_cUxeYoJ9Wo5WQsCfRVjQ3xTm/f800/1758308848.jpeg?s=7d42d4b6bb8cb3f4819d2c641c4cf4374bef34e9',
+    link: 'https://www.rituals.cz/intuitia-gift-set-l/',
     received: false,
+    hasCoverPhoto: true,
+    isFav: true,
   },
   {
     emoji: '🖨️',
     title: '3D Print Infinite Mirror',
-    price: '???',
     imageSrc:
       'https://makerworld.bblmw.com/makerworld/model/US68587a7dc8fc36/design/2024-11-24_431b8ca8f3c1.jpg?x-oss-process=image/resize,w_1920/format,webp',
     link: 'https://makerworld.com/en/models/817062#profileId-759450',
     received: false,
     hasCoverPhoto: true,
+    isHandmade: true,
   },
   {
     emoji: '🐍',
@@ -221,6 +226,65 @@ export const wishlist2025Christmas: WishlistItem[] = [
     imageSrc:
       'https://www.almarasoap.com/res/crc-12401962/products/images/800x800/2c-as-lip-scrub-coconut-produkt-cz.webp',
     link: 'https://www.almarasoap.com/cs/lip-scrub-coconut',
+    received: false,
+  },
+  {
+    emoji: '♣️',
+    title: '[EN] Gwent Card Game',
+    price: '1 000',
+    imageSrc:
+      'https://cf.geekdo-images.com/QTSttauemR3BGl8xuy_qKw__imagepagezoom/img/Fqir92Ta80wEmDiMYXxtMRwDvt4=/fit-in/1200x900/filters:no_upscale():strip_icc()/pic8576952.png',
+    link: 'https://boardgamegeek.com/image/8576952/gwent-the-legendary-card-game',
+    received: false,
+  },
+  {
+    emoji: '🪼',
+    title: 'VIDEO rámeček (mp4, bílý)',
+    price: '2000',
+    imageSrc:
+      'https://image.alza.cz/products/KRUfot03/KRUfot03-05.jpg?width=2000&height=2000',
+    link: 'https://www.alza.cz/krugermatz-km1100w-frameo-wifi-10-1-palcu-bily-d13012572.htm#description',
+    received: false,
+  },
+  {
+    emoji: '♥️',
+    title:
+      'plan, organise and take me on a surprise trip like (tell me before noon so I can get ready!)',
+    price: '???',
+    imageSrc: surpriseTrip.src,
+    link: surpriseTrip.src,
+    received: false,
+    isDoubleCard: true,
+    isFav: true,
+  },
+  {
+    emoji: '❤️',
+    title: 'Love Coupons',
+    imageSrc:
+      'https://cookingmydreams.com/wp-content/uploads/2019/01/Printable-Love-Coupons-7.jpg',
+    link: 'https://uk.pinterest.com/pin/1407443629284374/',
+    received: false,
+    isDoubleCard: true,
+    hasCoverPhoto: true,
+    isHandmade: true,
+  },
+  {
+    emoji: '🐍',
+    title: "Death Eater's Bag",
+    price: '300',
+    imageSrc:
+      'https://fantasyobchod.gumlet.io/nakupni-taska-harry-potter-znameni-zla-6684bd860f69a.jpeg?mode=fill&fill=solid&fill-color=ffffff&w=1000&dpr=2.0',
+    link: 'https://www.rituals.cz/intuitia-gift-set-l/',
+    received: false,
+    hasCoverPhoto: true,
+  },
+  {
+    emoji: '💙',
+    title: '[1339] Hinata Naruto',
+    price: '549',
+    imageSrc:
+      'https://www.playgosmart.cz/images/data/product/468/pop-animation-hinata-with-twin-lion-fists-naruto-shippuden-special-edition-pop-1339-468056.jpg',
+    link: 'https://www.konzoliste.cz/figurky-funko-pop/funko-pop--1339-animation--naruto-shippuden-hinata-with-twin-lion-fists-special-edition/',
     received: false,
   },
 ];

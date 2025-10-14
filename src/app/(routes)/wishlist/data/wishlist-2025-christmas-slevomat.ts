@@ -21,4 +21,14 @@ export const wishlist2025ChristmasSlevomat: WishlistItem[] = [
     received: false,
     hasCoverPhoto: true,
   },
+  {
+    emoji: '🥜',
+    title: 'Oříšky v čokoládě',
+    price: '200',
+    imageSrc:
+      'https://slevomat.sgcdn.cz/images/t/1080@2x/17/68/17681376-075704.webp',
+    link: 'https://www.slevomat.cz/akce/2334128-dozy-plne-orechu-a-ovoce-v-mlecne-i-horke-cokolade?filtersHash=dd3b24&matchingVariants=13986762-13986758-13986756-13986760-13986764-13986766-13986772-13986776-13986778-13986782-13986784-13986780-13986770-13986774-13986768-13986786-13986788#13986770',
+    received: false,
+    hasCoverPhoto: true,
+  },
 ];
