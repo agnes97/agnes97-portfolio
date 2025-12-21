@@ -21,6 +21,18 @@ const OverlayIcon: FC<Props> = ({
 
   const Icon = itemReceived ? Check : X;
 
+  const getBackgroundColor = (isHovered: boolean, itemReceived: boolean) => {
+    if (isHovered) {
+      return 'transparent';
+    }
+
+    if (itemReceived) {
+      return currentThemeVariant === 'light'
+        ? 'rgba(255, 255, 255, 0.8)'
+        : 'rgba(0, 0, 0, 0.5)';
+    }
+  };
+
   return (
     <a
       href={itemLink}
@@ -31,13 +43,7 @@ const OverlayIcon: FC<Props> = ({
         alignItems: 'center',
         justifyContent: 'center',
         ...(isFav && { border: '3px solid pink' }),
-        ...(!isFav &&
-          !isHovered && {
-            backgroundColor:
-              currentThemeVariant === 'light'
-                ? 'rgba(255, 255, 255, 0.8)'
-                : 'rgba(0, 0, 0, 0.5)',
-          }),
+        backgroundColor: getBackgroundColor(isHovered, itemReceived ?? false),
         transition: 'background-color 500ms easeinout',
       }}
       onMouseEnter={() => {

@@ -18,7 +18,7 @@ export const wishlist2025ChristmasSlevomat: WishlistItem[] = [
     imageSrc:
       'https://slevomat.sgcdn.cz/images/t/2000/16/49/16496398-6beed5.webp',
     link: 'https://www.slevomat.cz/akce/2338346-plysovy-ptacek-realisticky-design-i-zvuk?filtersHash=190394&matchingVariants=14005794-14005796-14005798-14005800-14005802-14005804-14005806-14005808-14005810-14005812-14005814-14005816-14005818-14005820-14005822-14005824-14005826-14005828-14005830-14005834-14005836-14005838-14005840-14005842-14005844-14005846-14006680-14006682-14006684#14005826',
-    received: false,
+    received: true,
     hasCoverPhoto: true,
   },
   {
@@ -28,7 +28,7 @@ export const wishlist2025ChristmasSlevomat: WishlistItem[] = [
     imageSrc:
       'https://slevomat.sgcdn.cz/images/t/1080@2x/17/68/17681376-075704.webp',
     link: 'https://www.slevomat.cz/akce/2334128-dozy-plne-orechu-a-ovoce-v-mlecne-i-horke-cokolade?filtersHash=dd3b24&matchingVariants=13986762-13986758-13986756-13986760-13986764-13986766-13986772-13986776-13986778-13986782-13986784-13986780-13986770-13986774-13986768-13986786-13986788#13986770',
-    received: false,
+    received: true,
     hasCoverPhoto: true,
   },
 ];
