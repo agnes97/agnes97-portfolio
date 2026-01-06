@@ -96,7 +96,7 @@ export const wishlist2023Christmas: WishlistItem[] = [
     imageSrc:
       'https://www.victoriassecretbeauty.es/on/demandware.static/-/Sites-vs-catalog/default/dw8c209f7b/images_vs/hires/111575394RHY_OF_F.jpg',
     link: 'https://victoriassecret.cz/vs/satenovy-zupan-s-volanem.html',
-    received: false,
+    received: true,
     isFav: true,
   },
   {
