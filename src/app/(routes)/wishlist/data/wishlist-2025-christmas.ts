@@ -105,7 +105,7 @@ export const wishlist2025Christmas: WishlistItem[] = [
     imageSrc:
       'https://m.media-amazon.com/images/I/71j3BYzSLpL._AC_UF1000,1000_QL80_.jpg',
     link: 'https://www.amazon.com/Temeraire-Books-Naomi-Novik-Paperback/dp/B0BLDQ74GY',
-    received: false,
+    received: true,
     isFav: true,
   },
   {
@@ -170,7 +170,7 @@ export const wishlist2025Christmas: WishlistItem[] = [
     imageSrc:
       'https://www.mcelhinneys.com/cdn/shop/files/ESTEE-LAUDER-DOUBLE-WEAR-24HOUR-STAY-IN-PLACE-CONCEALER-SKU-ESTG5HC-24HSTYPL_5_grande.jpg?v=1743779934',
     link: 'https://www.notino.cz/estee-lauder/double-wear-stay-in-place-dlouhotrvajici-korektor-7052292/p-16303197/',
-    received: false,
+    received: true,
     hasCoverPhoto: true,
     isFav: true,
   },
@@ -226,7 +226,7 @@ export const wishlist2025Christmas: WishlistItem[] = [
     imageSrc:
       'https://www.almarasoap.com/res/crc-12401962/products/images/800x800/2c-as-lip-scrub-coconut-produkt-cz.webp',
     link: 'https://www.almarasoap.com/cs/lip-scrub-coconut',
-    received: false,
+    received: true,
   },
   {
     emoji: '♣️',
@@ -275,7 +275,7 @@ export const wishlist2025Christmas: WishlistItem[] = [
     imageSrc:
       'https://fantasyobchod.gumlet.io/nakupni-taska-harry-potter-znameni-zla-6684bd860f69a.jpeg?mode=fill&fill=solid&fill-color=ffffff&w=1000&dpr=2.0',
     link: 'https://www.rituals.cz/intuitia-gift-set-l/',
-    received: false,
+    received: true,
     hasCoverPhoto: true,
   },
   {

@@ -1,0 +1,97 @@
+import React, { useState } from 'react';
+import { Gallery, WishlistTitle } from '../page.styled';
+import Flex from '@/app/components/flex/Flex';
+import { useTheme } from '@/app/providers/styled-components-provider';
+import { hiddenWishlist } from '../data/hidden-wishlist';
+import GalleryItem from './GalleryItem';
+import Button from '@/app/components/button/Button';
+import { ArrowUp, ArrowDown } from 'lucide-react';
+
+const HiddenWishlist = () => {
+  const { currentThemeVariant } = useTheme();
+  const [isHiddenWishlistVisible, setIsHiddenWishlistVisible] = useState(false);
+
+  const dimmedColor =
+    currentThemeVariant === 'light'
+      ? 'rgba(255, 255, 255, 0.2)'
+      : 'rgba(0, 0, 0, 0.2)';
+
+  const handleClick = () => {
+    setIsHiddenWishlistVisible((prev) => !prev);
+  };
+
+  return (
+    <Flex
+      flexDirection='column'
+      gap='1rem'
+      padding='1rem'
+      style={{
+        position: 'relative',
+        minWidth: '100%',
+        border: `3px solid ${dimmedColor}`,
+        paddingBottom: isHiddenWishlistVisible ? 0 : '2rem',
+      }}
+    >
+      <div>
+        <WishlistTitle>Super Secret Hidden Wishlist</WishlistTitle>
+        <span
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            opacity: isHiddenWishlistVisible ? 0 : 1,
+            height: isHiddenWishlistVisible ? 0 : 'auto',
+            transition: 'opacity 250ms linear',
+          }}
+        >
+          ...
+        </span>
+
+        <Button
+          type='button'
+          size={'S'}
+          shape={'rectangle'}
+          onClick={handleClick}
+          style={{
+            position: 'absolute',
+            right: '2rem',
+            top: '2rem',
+          }}
+        >
+          {isHiddenWishlistVisible ? (
+            <>
+              HIDE <ArrowUp />
+            </>
+          ) : (
+            <>
+              SHOW <ArrowDown />
+            </>
+          )}
+        </Button>
+      </div>
+
+      <Gallery
+        style={{
+          maxWidth: 'none',
+          opacity: isHiddenWishlistVisible ? 1 : 0,
+          paddingBottom: isHiddenWishlistVisible ? '2rem' : 0,
+          transform: isHiddenWishlistVisible ? 'scaleY(1)' : 'scaleY(0)',
+          transformOrigin: 'top',
+          position: isHiddenWishlistVisible ? 'relative' : 'absolute',
+          transition: 'transform 250ms 250ms ease',
+        }}
+      >
+        {hiddenWishlist.length === 0 ? (
+          <span>No items. :&#41;</span>
+        ) : (
+          <>
+            {hiddenWishlist.map((item, index) => {
+              return <GalleryItem index={index} item={item} />;
+            })}
+          </>
+        )}
+      </Gallery>
+    </Flex>
+  );
+};
+
+export default HiddenWishlist;

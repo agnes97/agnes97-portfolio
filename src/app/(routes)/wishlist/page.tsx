@@ -4,14 +4,10 @@ import React, { useEffect, useState } from 'react';
 import { Heart } from 'lucide-react';
 
 import Flex from '@/app/components/flex/Flex';
-import { CardWithAnchor } from '@/app/components/card/Card';
 import { useTheme } from '@/app/providers/styled-components-provider';
 import { AnimatedHeading } from '@/app/components/pet-projects/PetProjects.styled';
 import { useAuth } from '@/app/providers/auth-provider';
 
-import defaultImage from '../../assets/spiral.jpg';
-
-import OverlayIcon from './components/OverlayIcon';
 import { Wishlist as WishlisType } from './types';
 import { Gallery, WishlistTitle } from './page.styled';
 
@@ -27,9 +23,8 @@ import { wishlist2025Birthday } from './data/wishlist-2025-birthday';
 import { wishlist2025ChristmasSlevomat } from './data/wishlist-2025-christmas-slevomat';
 import { wishlist2025ChristmasVinted } from './data/wishlist-2025-christmas-vinted';
 import { wishlist2025Christmas } from './data/wishlist-2025-christmas';
-
-const CARD_WIDTH = 270;
-const CARD_HEIGHT = 340;
+import HiddenWishlist from './components/HiddenWishlist';
+import GalleryItem from './components/GalleryItem';
 
 const wishlists: WishlisType[] = [
   {
@@ -110,7 +105,7 @@ const wishlists: WishlisType[] = [
 ];
 
 export default function Wishlist() {
-  const { isLoggedIn } = useAuth();
+  const { isLoggedIn, user } = useAuth();
   const { updateCustomPageLayout } = useTheme();
 
   useEffect(() => {
@@ -167,6 +162,8 @@ export default function Wishlist() {
         <span>This content is only available for logged users.</span>
       ) : (
         <>
+          {user && user.email === 'jana@macovi.space' && <HiddenWishlist />}
+
           {wishlists.map((wishlist, index) => (
             <Flex flexDirection='column' gap='1rem' key={index}>
               <WishlistTitle>
@@ -179,42 +176,7 @@ export default function Wishlist() {
                 ) : (
                   <>
                     {wishlist.wishlistedItems.map((item, index) => {
-                      const isOverlayDisplayed =
-                        item.received || item.isNoLongerWanted || item.isFav;
-
-                      return (
-                        <div
-                          key={index}
-                          style={{
-                            height: `${CARD_HEIGHT}px`,
-                            width: item.isDoubleCard
-                              ? `${CARD_WIDTH * 2 + 16}px`
-                              : `${CARD_WIDTH}px`,
-                            position: 'relative',
-                          }}
-                        >
-                          <CardWithAnchor
-                            url={item.link}
-                            index={index}
-                            title={`${item.emoji} ${item.title}`}
-                            thumbnailSrc={item.imageSrc ?? defaultImage.src}
-                            tagText={
-                              item.isHandmade ? 'DIY' : `${item.price},-`
-                            }
-                            objectFit={item.hasCoverPhoto ? 'cover' : 'contain'}
-                            customCardHeight={`${CARD_HEIGHT}px`}
-                          />
-
-                          {isOverlayDisplayed && (
-                            <OverlayIcon
-                              itemReceived={item.received}
-                              isNoLongerWanted={item.isNoLongerWanted}
-                              isFav={item.isFav}
-                              itemLink={item.link}
-                            />
-                          )}
-                        </div>
-                      );
+                      return <GalleryItem index={index} item={item} />;
                     })}
                   </>
                 )}
