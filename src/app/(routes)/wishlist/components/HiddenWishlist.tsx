@@ -16,7 +16,7 @@ const HiddenWishlist = () => {
       ? 'rgba(255, 255, 255, 0.2)'
       : 'rgba(0, 0, 0, 0.2)';
 
-  const handleClick = () => {
+  const handleHiddenWishlistVisibility = () => {
     setIsHiddenWishlistVisible((prev) => !prev);
   };
 
@@ -50,7 +50,7 @@ const HiddenWishlist = () => {
           type='button'
           size={'S'}
           shape={'rectangle'}
-          onClick={handleClick}
+          onClick={handleHiddenWishlistVisibility}
           style={{
             position: 'absolute',
             right: '2rem',
@@ -84,9 +84,9 @@ const HiddenWishlist = () => {
           <span>No items. :&#41;</span>
         ) : (
           <>
-            {hiddenWishlist.map((item, index) => {
-              return <GalleryItem index={index} item={item} />;
-            })}
+            {hiddenWishlist.map((item, index) => (
+              <GalleryItem key={index} index={index} item={item} />
+            ))}
           </>
         )}
       </Gallery>

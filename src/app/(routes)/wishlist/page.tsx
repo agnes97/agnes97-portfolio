@@ -8,7 +8,7 @@ import { useTheme } from '@/app/providers/styled-components-provider';
 import { AnimatedHeading } from '@/app/components/pet-projects/PetProjects.styled';
 import { useAuth } from '@/app/providers/auth-provider';
 
-import { Wishlist as WishlisType } from './types';
+import { Wishlist as WishlistType } from './types';
 import { Gallery, WishlistTitle } from './page.styled';
 
 import { wishlist2019Christmas } from './data/wishlist-2019-christmas';
@@ -25,8 +25,14 @@ import { wishlist2025ChristmasVinted } from './data/wishlist-2025-christmas-vint
 import { wishlist2025Christmas } from './data/wishlist-2025-christmas';
 import HiddenWishlist from './components/HiddenWishlist';
 import GalleryItem from './components/GalleryItem';
+import Button from '@/app/components/button/Button';
 
-const wishlists: WishlisType[] = [
+const wishlists: WishlistType[] = [
+  {
+    year: 2026,
+    type: 'birthday',
+    wishlistedItems: [],
+  },
   {
     year: 2025,
     type: 'christmas',
@@ -108,6 +114,14 @@ export default function Wishlist() {
   const { isLoggedIn, user } = useAuth();
   const { updateCustomPageLayout } = useTheme();
 
+  const [wishlistVisiblity, setWishlistVisiblity] = useState<
+    'all' | 'upcoming'
+  >('all');
+  const [filteredWishlists, setFilteredWishlists] =
+    useState<WishlistType[]>(wishlists);
+
+  const [areOutdatedItemsVisible, setAreOutdatedItemsVisible] = useState(true);
+
   useEffect(() => {
     updateCustomPageLayout({
       padding: 0,
@@ -142,6 +156,56 @@ export default function Wishlist() {
     return `${wishlistType} ${wishlistYear}`;
   };
 
+  const removeUnwantedItems = (wishlists: WishlistType[]) => {
+    const wishlistsWithoutUnwantedItems = wishlists.map(
+      ({ wishlistedItems, ...rest }) => ({
+        ...rest,
+        wishlistedItems: wishlistedItems.filter(
+          ({ received, isNoLongerWanted }) => !received && !isNoLongerWanted
+        ),
+      })
+    );
+
+    return wishlistsWithoutUnwantedItems;
+  };
+
+  const currentYear = new Date().getFullYear();
+
+  const handleOutdatedItemsVisibility = (showOutdated: boolean) => {
+    setAreOutdatedItemsVisible(showOutdated);
+
+    if (showOutdated) {
+      const upcomingWishlists = wishlists.filter(
+        (wishlist) => wishlist.year >= currentYear
+      );
+
+      setFilteredWishlists(
+        wishlistVisiblity === 'all' ? wishlists : upcomingWishlists
+      );
+    } else {
+      setFilteredWishlists(removeUnwantedItems(filteredWishlists));
+    }
+  };
+
+  const handleCurrentYearClick = (setTo: 'all' | 'upcoming') => {
+    setWishlistVisiblity(setTo);
+
+    if (setTo === 'all') {
+      setFilteredWishlists(
+        areOutdatedItemsVisible ? wishlists : removeUnwantedItems(wishlists)
+      );
+    } else {
+      const upcomingWishlists = wishlists.filter(
+        (wishlist) => wishlist.year >= currentYear
+      );
+      setFilteredWishlists(
+        areOutdatedItemsVisible
+          ? upcomingWishlists
+          : removeUnwantedItems(upcomingWishlists)
+      );
+    }
+  };
+
   return (
     <Flex
       flexDirection='column'
@@ -164,7 +228,36 @@ export default function Wishlist() {
         <>
           {user && user.email === 'jana@macovi.space' && <HiddenWishlist />}
 
-          {wishlists.map((wishlist, index) => (
+          <Flex flexDirection='row' gap='1rem'>
+            <Button
+              type='button'
+              size={'S'}
+              shape={'rectangle'}
+              onClick={() => {
+                handleOutdatedItemsVisibility(!areOutdatedItemsVisible);
+              }}
+            >
+              {areOutdatedItemsVisible
+                ? 'REMOVE RECEIVED AND UNWANTED ITEMS'
+                : 'SHOW ALL ITEMS'}
+            </Button>
+            <Button
+              type='button'
+              size={'S'}
+              shape={'rectangle'}
+              onClick={() => {
+                handleCurrentYearClick(
+                  wishlistVisiblity === 'all' ? 'upcoming' : 'all'
+                );
+              }}
+            >
+              {wishlistVisiblity === 'all'
+                ? 'SHOW ONLY UPCOMMING WISHLISTS'
+                : 'SHOW ALL WISHLISTS'}
+            </Button>
+          </Flex>
+
+          {filteredWishlists.map((wishlist, index) => (
             <Flex flexDirection='column' gap='1rem' key={index}>
               <WishlistTitle>
                 {getWishlistTitle(wishlist.type, wishlist.year)}
@@ -175,9 +268,9 @@ export default function Wishlist() {
                   <span>No items. :&#41;</span>
                 ) : (
                   <>
-                    {wishlist.wishlistedItems.map((item, index) => {
-                      return <GalleryItem index={index} item={item} />;
-                    })}
+                    {wishlist.wishlistedItems.map((item, index) => (
+                      <GalleryItem key={index} index={index} item={item} />
+                    ))}
                   </>
                 )}
               </Gallery>
