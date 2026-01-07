@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import { Heart } from 'lucide-react';
+import { Heart, CalendarClockIcon, GiftIcon } from 'lucide-react';
 
 import Flex from '@/app/components/flex/Flex';
 import { useTheme } from '@/app/providers/styled-components-provider';
@@ -114,12 +114,14 @@ export default function Wishlist() {
   const { isLoggedIn, user } = useAuth();
   const { updateCustomPageLayout } = useTheme();
 
-  const [wishlistVisiblity, setWishlistVisiblity] = useState<
+  const [wishlistVisiblityPerYear, setWishlistVisiblityPerYear] = useState<
     'all' | 'upcoming'
   >('all');
+
   const [filteredWishlists, setFilteredWishlists] =
     useState<WishlistType[]>(wishlists);
 
+  // outdated items are those that were received or are no longer wanted
   const [areOutdatedItemsVisible, setAreOutdatedItemsVisible] = useState(true);
 
   useEffect(() => {
@@ -180,7 +182,7 @@ export default function Wishlist() {
       );
 
       setFilteredWishlists(
-        wishlistVisiblity === 'all' ? wishlists : upcomingWishlists
+        wishlistVisiblityPerYear === 'all' ? wishlists : upcomingWishlists
       );
     } else {
       setFilteredWishlists(removeUnwantedItems(filteredWishlists));
@@ -188,7 +190,7 @@ export default function Wishlist() {
   };
 
   const handleCurrentYearClick = (setTo: 'all' | 'upcoming') => {
-    setWishlistVisiblity(setTo);
+    setWishlistVisiblityPerYear(setTo);
 
     if (setTo === 'all') {
       setFilteredWishlists(
@@ -229,6 +231,14 @@ export default function Wishlist() {
           {user && user.email === 'jana@macovi.space' && <HiddenWishlist />}
 
           <Flex flexDirection='row' gap='1rem'>
+            <span
+              style={{
+                fontWeight: 'bold',
+                alignContent: 'center',
+              }}
+            >
+              FILTERS:
+            </span>
             <Button
               type='button'
               size={'S'}
@@ -237,9 +247,17 @@ export default function Wishlist() {
                 handleOutdatedItemsVisibility(!areOutdatedItemsVisible);
               }}
             >
-              {areOutdatedItemsVisible
-                ? 'REMOVE RECEIVED AND UNWANTED ITEMS'
-                : 'SHOW ALL ITEMS'}
+              {areOutdatedItemsVisible ? (
+                <>
+                  <GiftIcon />
+                  &nbsp;SHOW ONLY DESIRED
+                </>
+              ) : (
+                <>
+                  <GiftIcon />
+                  &nbsp;SHOW ALL ITEMS
+                </>
+              )}
             </Button>
             <Button
               type='button'
@@ -247,13 +265,21 @@ export default function Wishlist() {
               shape={'rectangle'}
               onClick={() => {
                 handleCurrentYearClick(
-                  wishlistVisiblity === 'all' ? 'upcoming' : 'all'
+                  wishlistVisiblityPerYear === 'all' ? 'upcoming' : 'all'
                 );
               }}
             >
-              {wishlistVisiblity === 'all'
-                ? 'SHOW ONLY UPCOMMING WISHLISTS'
-                : 'SHOW ALL WISHLISTS'}
+              {wishlistVisiblityPerYear === 'all' ? (
+                <>
+                  <CalendarClockIcon />
+                  &nbsp;SHOW ONLY UPCOMMING
+                </>
+              ) : (
+                <>
+                  <CalendarClockIcon />
+                  &nbsp; SHOW ALL
+                </>
+              )}
             </Button>
           </Flex>
 
