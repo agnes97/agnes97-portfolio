@@ -32,7 +32,7 @@ const HiddenWishlist = () => {
         paddingBottom: isHiddenWishlistVisible ? 0 : '2rem',
       }}
     >
-      <div>
+      <div style={{ position: 'relative' }}>
         <WishlistTitle>Super Secret Hidden Wishlist</WishlistTitle>
         <span
           style={{
@@ -53,8 +53,8 @@ const HiddenWishlist = () => {
           onClick={handleHiddenWishlistVisibility}
           style={{
             position: 'absolute',
-            right: '2rem',
-            top: '2rem',
+            right: '0.25rem',
+            top: '0.25rem',
           }}
         >
           {isHiddenWishlistVisible ? (
@@ -71,7 +71,7 @@ const HiddenWishlist = () => {
 
       <Gallery
         style={{
-          maxWidth: 'none',
+          alignSelf: 'center',
           opacity: isHiddenWishlistVisible ? 1 : 0,
           paddingBottom: isHiddenWishlistVisible ? '2rem' : 0,
           transform: isHiddenWishlistVisible ? 'scaleY(1)' : 'scaleY(0)',
