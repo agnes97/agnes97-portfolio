@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Gallery, WishlistTitle } from '../page.styled';
 import Flex from '@/app/components/flex/Flex';
 import { useTheme } from '@/app/providers/styled-components-provider';
-import { hiddenWishlist } from '../data/hidden-wishlist';
+import { hiddenWishlist2026 } from '../data/hidden-wishlist-2026';
 import GalleryItem from './GalleryItem';
 import Button from '@/app/components/button/Button';
 import { ArrowUp, ArrowDown } from 'lucide-react';
@@ -80,11 +80,11 @@ const HiddenWishlist = () => {
           transition: 'transform 250ms 250ms ease',
         }}
       >
-        {hiddenWishlist.length === 0 ? (
+        {hiddenWishlist2026.length === 0 ? (
           <span>No items. :&#41;</span>
         ) : (
           <>
-            {hiddenWishlist.map((item, index) => (
+            {hiddenWishlist2026.map((item, index) => (
               <GalleryItem key={index} index={index} item={item} />
             ))}
           </>

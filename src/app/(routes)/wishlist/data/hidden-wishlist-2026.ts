@@ -1,6 +1,6 @@
 import { WishlistItem } from '../types';
 
-export const hiddenWishlist: WishlistItem[] = [
+export const hiddenWishlist2026: WishlistItem[] = [
   {
     emoji: '💺',
     title: 'New chair',
@@ -8,7 +8,7 @@ export const hiddenWishlist: WishlistItem[] = [
     imageSrc:
       'https://media.cdn.kaufland.de/product-images/2048x2048/4fa776aa3c6a4d0d720e639d0073b92d.webp',
     link: 'https://www.kaufland.cz/product/530930564/',
-    received: false,
+    received: true,
   },
   {
     emoji: '⚙️',
@@ -16,7 +16,7 @@ export const hiddenWishlist: WishlistItem[] = [
     price: '1000',
     imageSrc: 'https://m.media-amazon.com/images/I/61zj651+CbL._SL1500_.jpg',
     link: 'https://www.amazon.com/dp/B0D79PZXFF?ref=ppx_yo2ov_dt_b_fed_asin_title&th=1',
-    received: false,
+    received: true,
   },
 
   {
@@ -26,7 +26,7 @@ export const hiddenWishlist: WishlistItem[] = [
     imageSrc:
       'https://cdn.megapixel.cz/images/product-w1440h1440/5/444485.webp?v=1723449115',
     link: 'https://www.megapixel.cz/benq-screenbar-pro-stribrna?utm_source=google&utm_medium=cpc&utm_campaign=PMax%20-%20Zpracov%C3%A1n%C3%AD%20foto%20a%20video%20(PNO%208%20%25)&utm_id=20276669741&gad_source=1&gad_campaignid=20271945021&gbraid=0AAAAADiCjr-p4pJ1oCvnarvxbFRf8bREI&gclid=Cj0KCQiA9t3KBhCQARIsAJOcR7zQHhil-FfHtEKC69dV3myLZGyaZs1ZlR75wALZi3Nj2dERsHhCrEgaAosgEALw_wcB',
-    received: false,
+    received: true,
   },
   {
     emoji: '🎬',
@@ -36,7 +36,7 @@ export const hiddenWishlist: WishlistItem[] = [
       'https://i5.walmartimages.com/seo/XGIMI-Elfin-Flip-Portable-Projector-1080P-FHD-DLP-Projector-Licensed-Netflix-400-ISO-Lumens-150-Adjustable-Stand_a301cd06-a5c1-4222-8f7c-7cf9c7abde76.ca380a7cfdc6a8980881e15de72ac2f5.jpeg',
     link: 'https://www.alza.cz/xgimi-elfin-flip-d12539401.htm#description',
     hasCoverPhoto: true,
-    received: false,
+    received: true,
   },
   {
     emoji: '📚',
@@ -74,11 +74,10 @@ export const hiddenWishlist: WishlistItem[] = [
   },
   {
     emoji: '🌸',
-    title: 'Stolní lampa',
-    price: '1800',
-    imageSrc:
-      'https://www.svet-svitidel.cz/onli-stolni-lampa-botton-doro-3xe14-6w-230v-img-ol0015-fd-3.jpg',
-    link: 'https://www.svet-svitidel.cz/onli-stolni-lampa-botton-doro-3xe14-6w-230v/',
+    title: 'White Vintage Lotus Lamp',
+    price: '???',
+    imageSrc: 'https://i.ebayimg.com/images/g/~e0AAOSwGfdi4TQd/s-l1600.webp',
+    link: 'https://www.ebay.com/itm/385029326272',
     received: false,
   },
   {
@@ -118,7 +117,7 @@ export const hiddenWishlist: WishlistItem[] = [
     imageSrc:
       'https://media.libris.to/jacket/48203448_love-between-fairy-and-devil-novel-vol-2.jpg',
     link: 'https://www.nejlevnejsi-knihy.cz/kniha/love-between-fairy-and-devil-novel-vol-2_48203448.html',
-    received: false,
+    received: true,
     hasCoverPhoto: true,
   },
 ];
