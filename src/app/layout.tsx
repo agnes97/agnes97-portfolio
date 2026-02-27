@@ -1,4 +1,5 @@
-import React, { ReactNode } from 'react';
+import { ReactNode } from 'react';
+import { Analytics } from '@vercel/analytics/next';
 import StyledComponentsProvider from './providers/styled-components-provider';
 import { CookiesProvider } from 'next-client-cookies/server';
 import { ReactQueryClientProvider } from './providers/react-query-client-provider';
@@ -25,6 +26,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               initialIsOpen={false}
               buttonPosition='bottom-left'
             />
+            <Analytics />
           </StyledComponentsProvider>
         </html>
       </CookiesProvider>
