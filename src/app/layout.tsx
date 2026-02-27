@@ -6,6 +6,7 @@ import { ReactQueryClientProvider } from './providers/react-query-client-provide
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import AuthProvider from './providers/auth-provider';
 import ModalProvider from './providers/modal-provider';
+import VitalsProxy from './providers/vitals-proxy';
 
 export const metadata = {
   title: 'Agnes97',
@@ -26,7 +27,15 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               initialIsOpen={false}
               buttonPosition='bottom-left'
             />
-            <Analytics />
+            {process.env.NODE_ENV === 'production' && (
+              <>
+                <VitalsProxy />
+                <Analytics
+                  scriptSrc='/api/va-script'
+                  endpoint='/_metrics'
+                />
+              </>
+            )}
           </StyledComponentsProvider>
         </html>
       </CookiesProvider>

@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/_metrics/:match*",
+      "destination": "https://jana.macovi.space/_vercel/insights/:match*"
+    },
+    {
+      "source": "/_vitals/:match*",
+      "destination": "https://vitals.vercel-insights.com/:match*"
+    }
+  ]
+}
