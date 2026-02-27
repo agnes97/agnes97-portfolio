@@ -20,18 +20,18 @@ export type User = {
   avatar?: string;
 };
 
+export type AuthStatus = 'initializing' | 'loading' | 'authenticated' | 'unauthenticated';
+
 type AuthContextType = {
   user: User | null;
-  isLoggedIn: boolean;
-  isLoading: boolean;
+  status: AuthStatus;
   error: Error | null;
   login: () => void;
   logout: () => void;
 };
 const AuthContext = createContext<AuthContextType>({
   user: null,
-  isLoggedIn: false,
-  isLoading: false,
+  status: 'initializing',
   error: null,
   login: () => {},
   logout: () => {},
@@ -40,15 +40,19 @@ const AuthContext = createContext<AuthContextType>({
 export const useAuth = () => useContext(AuthContext);
 
 const AuthProvider: FC<PropsWithChildren> = ({ children }) => {
-  const accessToken = localStorage.getItem('accessToken');
+  const [accessToken, setAccessToken] = useState<string | null>(null);
+  const [isInitializing, setIsInitializing] = useState(true);
+
+  useEffect(() => {
+    setAccessToken(localStorage.getItem('accessToken'));
+    setIsInitializing(false);
+  }, []);
 
   const {
     data: userData,
     isLoading,
-    isFetching,
     isError,
     error,
-    refetch,
   } = useGetUserData(accessToken || '');
 
   const [currentUser, setCurrentUser] = useState<User | null>(userData || null);
@@ -59,36 +63,33 @@ const AuthProvider: FC<PropsWithChildren> = ({ children }) => {
     }
   }, [userData, isError]);
 
-  const handleLogin = async () => {
-    await refetch().then(
-      (response) => {
-        isError
-          ? console.log('Error')
-          : setCurrentUser({ ...response.data } as User);
-      },
-      (error) => {
-        console.log(error);
-      }
-    );
+  const handleLogin = () => {
+    setAccessToken(localStorage.getItem('accessToken'));
   };
 
-  const handleLogout = async () => {
+  const handleLogout = () => {
     localStorage.removeItem('accessToken');
-    await refetch().then(() => {
-      setCurrentUser(null);
-    });
+    setAccessToken(null);
+    setCurrentUser(null);
   };
+
+  const status: AuthStatus = isInitializing
+    ? 'initializing'
+    : isLoading
+      ? 'loading'
+      : currentUser !== null && !!currentUser.name
+        ? 'authenticated'
+        : 'unauthenticated';
 
   const value = useMemo(
     () => ({
       user: currentUser,
-      isLoggedIn: currentUser !== null && !!currentUser.name,
-      isLoading: isLoading && isFetching,
+      status,
       error,
       login: handleLogin,
       logout: handleLogout,
     }),
-    [userData, currentUser, accessToken]
+    [currentUser, status, error]
   );
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

@@ -113,7 +113,7 @@ const wishlists: WishlistType[] = [
 ];
 
 export default function Wishlist() {
-  const { isLoggedIn, user } = useAuth();
+  const { status, user } = useAuth();
   const { updateCustomPageLayout } = useTheme();
 
   const [wishlistVisiblityPerYear, setWishlistVisiblityPerYear] = useState<
@@ -210,6 +210,8 @@ export default function Wishlist() {
     }
   };
 
+  if (status === 'initializing' || status === 'loading') return null;
+
   return (
     <Flex
       flexDirection='column'
@@ -226,7 +228,7 @@ export default function Wishlist() {
         <Heart size={48} />
       </AnimatedHeading>
 
-      {!isLoggedIn ? (
+      {status !== 'authenticated' ? (
         <span>This content is only available for logged users.</span>
       ) : (
         <>

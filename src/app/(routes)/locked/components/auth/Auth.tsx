@@ -2,14 +2,16 @@
 
 import Button from '@/app/components/button/Button';
 import { useAuth } from '@/app/providers/auth-provider';
-import React, { FC } from 'react';
+import { FC } from 'react';
 import LoginForm from '../login-form/LoginForm';
 import Flex from '@/app/components/flex/Flex';
 import { useTheme } from '@/app/providers/styled-components-provider';
 
 const Auth: FC = () => {
-  const { user, isLoggedIn, logout } = useAuth();
+  const { user, status, logout } = useAuth();
   const { currentTheme, currentThemeVariant } = useTheme();
+
+  if (status === 'initializing' || status === 'loading') return null;
 
   return (
     <>
@@ -31,7 +33,7 @@ const Auth: FC = () => {
         </span>
       </Flex>
 
-      {isLoggedIn && user ? (
+      {status === 'authenticated' && user ? (
         <Flex
           justifyContent='center'
           alignItems='center'
