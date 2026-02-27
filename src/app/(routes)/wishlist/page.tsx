@@ -7,6 +7,10 @@ import Flex from '@/app/components/flex/Flex';
 import { useTheme } from '@/app/providers/styled-components-provider';
 import { AnimatedHeading } from '@/app/components/pet-projects/PetProjects.styled';
 import { useAuth } from '@/app/providers/auth-provider';
+import Button from '@/app/components/button/Button';
+
+import HiddenWishlist from './components/HiddenWishlist';
+import GalleryItem from './components/GalleryItem';
 
 import { Wishlist as WishlistType } from './types';
 import { Gallery, WishlistTitle } from './page.styled';
@@ -23,15 +27,13 @@ import { wishlist2025Birthday } from './data/wishlist-2025-birthday';
 import { wishlist2025ChristmasSlevomat } from './data/wishlist-2025-christmas-slevomat';
 import { wishlist2025ChristmasVinted } from './data/wishlist-2025-christmas-vinted';
 import { wishlist2025Christmas } from './data/wishlist-2025-christmas';
-import HiddenWishlist from './components/HiddenWishlist';
-import GalleryItem from './components/GalleryItem';
-import Button from '@/app/components/button/Button';
+import { wishlist2026Birthday } from './data/wishlist-2026-birthday';
 
 const wishlists: WishlistType[] = [
   {
     year: 2026,
     type: 'birthday',
-    wishlistedItems: [],
+    wishlistedItems: wishlist2026Birthday,
   },
   {
     year: 2025,
