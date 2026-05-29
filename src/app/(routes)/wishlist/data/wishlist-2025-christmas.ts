@@ -96,7 +96,7 @@ export const wishlist2025Christmas: WishlistItem[] = [
     imageSrc:
       'https://rihappy.vtexassets.com/arquivos/ids/4001015-800-auto?v=637902973073730000&width=800&height=auto&aspect=true',
     link: 'https://funkypriceguide.com/collectible/40-lucius-malfoy-holding-prophesy/',
-    received: false,
+    received: true,
   },
   {
     emoji: '📚',

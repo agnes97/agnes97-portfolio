@@ -84,9 +84,11 @@ const HiddenWishlist = () => {
           <span>No items. :&#41;</span>
         ) : (
           <>
-            {hiddenWishlist2026.map((item, index) => (
-              <GalleryItem key={index} index={index} item={item} />
-            ))}
+            {[...hiddenWishlist2026]
+              .sort((a, b) => Number(a.received) - Number(b.received))
+              .map((item, index) => (
+                <GalleryItem key={index} index={index} item={item} />
+              ))}
           </>
         )}
       </Gallery>

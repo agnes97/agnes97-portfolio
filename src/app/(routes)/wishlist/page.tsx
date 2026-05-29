@@ -25,11 +25,16 @@ import { wishlist2023Christmas } from './data/wishlist-2023-christmas';
 import { wishlist2024Birthday } from './data/wishlist-2024-birthday';
 import { wishlist2025Birthday } from './data/wishlist-2025-birthday';
 import { wishlist2025ChristmasSlevomat } from './data/wishlist-2025-christmas-slevomat';
-import { wishlist2025ChristmasVinted } from './data/wishlist-2025-christmas-vinted';
 import { wishlist2025Christmas } from './data/wishlist-2025-christmas';
 import { wishlist2026Birthday } from './data/wishlist-2026-birthday';
+import { wishlist2026Christmas } from './data/wishlist-2026-christmas';
 
 const wishlists: WishlistType[] = [
+  {
+    year: 2026,
+    type: 'christmas',
+    wishlistedItems: wishlist2026Christmas,
+  },
   {
     year: 2026,
     type: 'birthday',
@@ -39,11 +44,6 @@ const wishlists: WishlistType[] = [
     year: 2025,
     type: 'christmas',
     wishlistedItems: wishlist2025Christmas,
-  },
-  {
-    year: 2025,
-    type: 'christmas_vinted',
-    wishlistedItems: wishlist2025ChristmasVinted,
   },
   {
     year: 2025,

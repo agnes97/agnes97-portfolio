@@ -39,14 +39,6 @@ export const hiddenWishlist2026: WishlistItem[] = [
     received: true,
   },
   {
-    emoji: '📚',
-    title: 'Way to scan photobooks',
-    price: '???',
-    imageSrc: 'https://m.media-amazon.com/images/I/71B+25+tpwL.jpg',
-    link: '',
-    received: false,
-  },
-  {
     emoji: '✂️',
     title: '"Lawn" Mower',
     price: '2000',
