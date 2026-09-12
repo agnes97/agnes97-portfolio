@@ -28,8 +28,14 @@ import { wishlist2025ChristmasSlevomat } from './data/wishlist-2025-christmas-sl
 import { wishlist2025Christmas } from './data/wishlist-2025-christmas';
 import { wishlist2026Birthday } from './data/wishlist-2026-birthday';
 import { wishlist2026Christmas } from './data/wishlist-2026-christmas';
+import { wishlist2027Birthdays } from './data/wishlist-2027-birthdays';
 
 const wishlists: WishlistType[] = [
+  {
+    year: 2027,
+    type: 'birthday',
+    wishlistedItems: wishlist2027Birthdays,
+  },
   {
     year: 2026,
     type: 'christmas',

@@ -1,6 +1,8 @@
 import { WishlistItem } from '../types';
 
 import surpriseTrip from '../../../assets/wishlist/surprise-trip.png';
+import hinata from '../../../assets/wishlist/hinata.webp';
+import inuita from '../../../assets/wishlist/inuita.jpeg';
 
 export const wishlist2025Christmas: WishlistItem[] = [
   {
@@ -72,8 +74,7 @@ export const wishlist2025Christmas: WishlistItem[] = [
     emoji: '🐍',
     title: 'Rituals Intuitia',
     price: '1500',
-    imageSrc:
-      'https://images1.vinted.net/t/04_015c4_cUxeYoJ9Wo5WQsCfRVjQ3xTm/f800/1758308848.jpeg?s=7d42d4b6bb8cb3f4819d2c641c4cf4374bef34e9',
+    imageSrc: inuita.src,
     link: 'https://www.rituals.cz/intuitia-gift-set-l/',
     received: true,
     hasCoverPhoto: true,
@@ -115,7 +116,7 @@ export const wishlist2025Christmas: WishlistItem[] = [
     imageSrc:
       'https://m.media-amazon.com/images/I/518lG92G7XL._UF1000,1000_QL80_.jpg',
     link: 'https://www.jedishop.cz/harry-potter-lucius-malfoy-s-walking-stick/?gad_source=1&gad_campaignid=17338827496&gbraid=0AAAAADdqKBEfNW05kJcy9sJSSVd3Ie_sV&gclid=CjwKCAjwkbzEBhAVEiwA4V-yqhVHnnCNdXQhwK_tE8VjpkpMyBRBxpyksrM0OxEuu6dF1686nMXVShoCHnMQAvD_BwE',
-    received: false,
+    received: true,
     hasCoverPhoto: true,
   },
   {
@@ -282,8 +283,7 @@ export const wishlist2025Christmas: WishlistItem[] = [
     emoji: '💙',
     title: '[1339] Hinata Naruto',
     price: '549',
-    imageSrc:
-      'https://www.playgosmart.cz/images/data/product/468/pop-animation-hinata-with-twin-lion-fists-naruto-shippuden-special-edition-pop-1339-468056.jpg',
+    imageSrc: hinata.src,
     link: 'https://www.konzoliste.cz/figurky-funko-pop/funko-pop--1339-animation--naruto-shippuden-hinata-with-twin-lion-fists-special-edition/',
     received: true,
   },

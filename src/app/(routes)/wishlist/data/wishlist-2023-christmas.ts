@@ -2,6 +2,7 @@ import { WishlistItem } from '../types';
 
 import japanDiary from '../../../assets/wishlist/japan-diary.png';
 import escapeShirt from '../../../assets/wishlist/escape-shirt.png';
+import zupan from '../../../assets/wishlist/vs-stripes.jpg';
 
 export const wishlist2023Christmas: WishlistItem[] = [
   {
@@ -93,8 +94,7 @@ export const wishlist2023Christmas: WishlistItem[] = [
     emoji: '🎀',
     title: 'Victoria’s Secret very fancy bathrobe',
     price: '2 400',
-    imageSrc:
-      'https://www.victoriassecretbeauty.es/on/demandware.static/-/Sites-vs-catalog/default/dw8c209f7b/images_vs/hires/111575394RHY_OF_F.jpg',
+    imageSrc: zupan.src,
     link: 'https://victoriassecret.cz/vs/satenovy-zupan-s-volanem.html',
     received: true,
     isFav: true,
@@ -116,16 +116,6 @@ export const wishlist2023Christmas: WishlistItem[] = [
       'https://m.media-amazon.com/images/I/61f5qt8LhhL._AC_UF1000,1000_QL80_.jpg',
     link: 'https://www.amazon.com/Hobbit-Lord-Rings-Deluxe-Pocket/dp/0544445783',
     received: true,
-  },
-  {
-    emoji: '🛍️',
-    title: 'nebesky modrá sukýnka',
-    price: '200',
-    imageSrc:
-      'https://images1.vinted.net/t/03_01161_Du7VZuEHopiz2aCfUbV2ufZo/f800/1664016803.jpeg?s=705d9f8da3df81b036f8b21e32ace27f3a41b5a7',
-    link: 'https://www.vinted.cz/items/2234273132-niebieska-spodnia-plisowana',
-    received: false,
-    isNoLongerWanted: true,
   },
   {
     emoji: '🛍️',

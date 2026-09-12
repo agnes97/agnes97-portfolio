@@ -5,17 +5,9 @@ import dressMramorGreen from '../../../assets/wishlist/dress-mramor-green.png';
 import dressMramorPink from '../../../assets/wishlist/dress-mramor-pink.png';
 import scottishSkirt from '../../../assets/wishlist/scottish-skirt.png';
 import beigeSkirt from '../../../assets/wishlist/beige-skirt.png';
+import parrot from '../../../assets/wishlist/parrot.webp';
 
 export const wishlist2023Birthday: WishlistItem[] = [
-  {
-    emoji: '🦜',
-    title: 'Puzzle 1000ks papoušci s 3D efektem',
-    price: '200',
-    imageSrc:
-      'https://media.puzzlelink.co.uk/images/puzzle-products/22539/6e7405f7-2c3f-42bf-bd62-dcb47a802c78/clementoni-39188-the-parrots-1000-pieces-puzzle.jpg?width=600&maxheight=600&bgcolor=ffffff',
-    link: 'https://www.vinted.cz/zabava/hry-a-puzzle/puzzle/2105796638-puzzle-3d-clementoni-1000-papugi',
-    received: true,
-  },
   {
     emoji: '🦜',
     title: 'Puzzle 1000ks papoušci',
@@ -83,8 +75,7 @@ export const wishlist2023Birthday: WishlistItem[] = [
     emoji: '🦜',
     title: 'nafukovací papoušek 2,03m x 1,32m',
     price: '400',
-    imageSrc:
-      'https://www.balabim.cz/sub/balabim.sk/shop/product/nafukovacka-papagaj-230-x-180-cm-bestway-4290.jpg',
+    imageSrc: parrot.src,
     link: '',
     received: true,
     hasCoverPhoto: true,

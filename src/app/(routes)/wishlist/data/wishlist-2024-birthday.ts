@@ -4,6 +4,9 @@ import phoneCase from '../../../assets/wishlist/phone-case.png';
 import dndDouble from '../../../assets/wishlist/dnd-double.png';
 import tulips from '../../../assets/wishlist/tulips.png';
 import surpriseTrip from '../../../assets/wishlist/surprise-trip.png';
+import sauna from '../../../assets/wishlist/sauna.webp';
+import zupan from '../../../assets/wishlist/vs-stripes.jpg';
+import tropicana from '../../../assets/wishlist/tropicana.jpeg';
 
 export const wishlist2024Birthday: WishlistItem[] = [
   {
@@ -27,8 +30,7 @@ export const wishlist2024Birthday: WishlistItem[] = [
     emoji: '🪼',
     title: 'hot tub + sauna a room with jellyfish',
     price: '3 000',
-    imageSrc:
-      'https://slevomat.sgcdn.cz/images/t/1080@2x/99/89/9989120-721c07.webp',
+    imageSrc: sauna.src,
     link: 'https://www.slevomat.cz/akce/2141320-cas-pro-vas-2-privatni-wellness-s-moznosti-obcerstveni',
     received: false,
     hasCoverPhoto: true,
@@ -85,8 +87,7 @@ export const wishlist2024Birthday: WishlistItem[] = [
     emoji: '🔥',
     title: 'try Sauna Tropicana in Hradec (even if I’m very afraid of people)',
     price: '???',
-    imageSrc:
-      'https://saunatropicana.cz/wp-content/uploads/2021/06/IMG_3808-1024x682.jpg',
+    imageSrc: tropicana.src,
     link: '',
     received: true,
     hasCoverPhoto: true,
@@ -95,8 +96,7 @@ export const wishlist2024Birthday: WishlistItem[] = [
     emoji: '🎀',
     title: 'Victoria’s Secret very fancy bathrobe',
     price: '2 400',
-    imageSrc:
-      'https://www.victoriassecretbeauty.es/on/demandware.static/-/Sites-vs-catalog/default/dw8c209f7b/images_vs/hires/111575394RHY_OF_F.jpg',
+    imageSrc: zupan.src,
     link: 'https://victoriassecret.cz/vs/satenovy-zupan-s-volanem.html',
     received: true,
     isFav: true,

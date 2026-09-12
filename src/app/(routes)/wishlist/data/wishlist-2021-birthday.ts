@@ -82,7 +82,7 @@ export const wishlist2021Birthday: WishlistItem[] = [
     imageSrc:
       'https://m.media-amazon.com/images/I/71j3BYzSLpL._AC_UF1000,1000_QL80_.jpg',
     link: 'https://www.amazon.com/Temeraire-Books-Naomi-Novik-Paperback/dp/B0BLDQ74GY',
-    received: false,
+    received: true,
     isFav: true,
   },
   {

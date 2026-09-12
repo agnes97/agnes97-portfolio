@@ -41,9 +41,9 @@ export const hiddenWishlist2026: WishlistItem[] = [
   {
     emoji: '✂️',
     title: '"Lawn" Mower',
-    price: '2000',
+    price: '2700',
     imageSrc: 'https://m.media-amazon.com/images/I/71ZVM6T5i0L._AC_SL1500_.jpg',
-    link: 'https://www.amazon.com/gp/product/B0DKYYYMLZ/ref=ox_sc_act_image_1?smid=ABJDQQBYFGOJI&th=1',
+    link: 'https://eu.manscaped.com/products/lawn-mower-5?srsltid=AfmBOoo8Y9WVHJrxF6TfgO6yzL6fWuBPiewbaHM5t2PX2OvUwGa98-0L',
     received: false,
   },
   {
@@ -51,7 +51,7 @@ export const hiddenWishlist2026: WishlistItem[] = [
     title: 'Yoyo',
     price: '1000',
     imageSrc:
-      'https://yyf.s23.cdn-upgates.com/_cache/8/a/8af0741b7e18c93cc0cb9f17a39d0d96-yyf-godspeed-violet-blue-1.jpeg',
+      'https://yyf.s23.cdn-upgates.com/_cache/4/e/4e553219f191e6a7e70ba7154ba2779e-yyf-godspeed-violet-blue-1.jpeg',
     link: 'https://www.slusny.net/p/yoyofactory-godspeed-yoyo#5494',
     received: false,
   },
@@ -63,6 +63,7 @@ export const hiddenWishlist2026: WishlistItem[] = [
       'https://cdnbeta.imageserver.cz/packway/product/zoom/10/4939/2469400.jpg',
     link: 'https://www.astoreo.cz/p/drzak-na-kuchynske-role-bila-p15433-we?sznaiid=7529143439429192746&utm_source=seznam&utm_medium=cpc&utm_campaign=new+Zbo%c5%be%c3%ad.cz&utm_content=3Pagen+Dr%c5%be%c3%a1k+na+kuchy%c5%88sk%c3%a9+role+b%c3%adl%c3%a1&utm_term=',
     received: false,
+    isNoLongerWanted: true,
   },
   {
     emoji: '🌸',
@@ -73,23 +74,13 @@ export const hiddenWishlist2026: WishlistItem[] = [
     received: false,
   },
   {
-    emoji: '💨',
-    title: 'Závěsná žehlící podložka',
-    price: '1200',
-    imageSrc:
-      'https://1.bonami.cz/images/fit-crop-fill/ca/6f/ca6fd398cb92f2016f6e94688657e35ebd753715-1000x1000.webp',
-    link: 'https://www.bonami.cz/p/naparovaci-podlozka-na-zehleni-linn-brabantia-6?utm_source=google&utm_medium=cpc&utm_campaign=PLA%20-%20Standard&utm_id=22108397699&gad_source=1&gad_campaignid=22108397699&gbraid=0AAAAAD1J7wISXbxGke9vPDNXbwnbjaa69&gclid=Cj0KCQiA9t3KBhCQARIsAJOcR7wp8jh9pDqKjmXwaVoVOR-8EifjM0jt_VXSVLwbyGFJsgrCFeu5W4gaAvM0EALw_wcB',
-    received: false,
-  },
-
-  {
     emoji: '📘',
     title: 'Frieren 14 (february)',
     price: '200',
     imageSrc:
       'https://media.libris.to/jacket/49082518_frieren-beyond-journey-s-end-vol-14.jpg',
     link: 'https://www.nejlevnejsi-knihy.cz/kniha/frieren-beyond-journey-s-end-vol-14_49082518.html?gad_source=1&gad_campaignid=864730554&gbraid=0AAAAADs5Kv3wLlw6bzWAtQ5m-VSPEMZdd&gclid=CjwKCAiAw9vIBhBBEiwAraSATi_XWsxsuc0BWKukSFFk7hd6-Y6tRZauXT5v2O0oTfqshRulpG5pHRoChhEQAvD_BwE',
-    received: false,
+    received: true,
     hasCoverPhoto: true,
   },
   {
@@ -99,7 +90,7 @@ export const hiddenWishlist2026: WishlistItem[] = [
     imageSrc:
       'https://media.libris.to/jacket/49789437_frieren-beyond-journey-s-end-prelude-light-novel.jpg',
     link: 'https://www.nejlevnejsi-knihy.cz/kniha/frieren-beyond-journey-s-end-prelude-light-novel_49789437.html?gad_source=1&gad_campaignid=864730554&gbraid=0AAAAADs5Kv3wLlw6bzWAtQ5m-VSPEMZdd&gclid=CjwKCAiAw9vIBhBBEiwAraSATjIi3X7stJoocOZnfATjau4oTVTGtfdnBLmlbeLsRRTNnRYA_fURARoCddkQAvD_BwE',
-    received: false,
+    received: true,
     hasCoverPhoto: true,
   },
   {

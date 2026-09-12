@@ -19,6 +19,8 @@ const GalleryItem: FC<Props> = ({ index, item }) => {
   const isOverlayDisplayed =
     item.received || item.isNoLongerWanted || item.isFav;
 
+  const price = item.price ? `${item.price},-` : 'FREE';
+
   return (
     <div
       key={index}
@@ -35,7 +37,7 @@ const GalleryItem: FC<Props> = ({ index, item }) => {
         index={index}
         title={`${item.emoji} ${item.title}`}
         thumbnailSrc={item.imageSrc ?? defaultImage.src}
-        tagText={item.isHandmade ? 'DIY' : `${item.price},-`}
+        tagText={item.isHandmade ? 'DIY' : price}
         objectFit={item.hasCoverPhoto ? 'cover' : 'contain'}
         customCardHeight={`${CARD_HEIGHT}px`}
       />
