@@ -2,6 +2,24 @@ import { WishlistItem } from '../types';
 
 export const hiddenWishlist2026: WishlistItem[] = [
   {
+    emoji: '💨',
+    title: 'Závěsná žehlící podložka',
+    price: '4000',
+    imageSrc:
+      'https://img.imago.cz/presypaci-hodiny-profesora-kriklana-69e1f40e379e9/presypaci-hodiny-profesora-kriklana-69e1f40e379e9-1000x1000.webp',
+    link: 'https://www.imago.cz/presypaci-hodiny-profesora-kriklana',
+    received: false,
+  },
+  {
+    emoji: '💨',
+    title: 'Závěsná žehlící podložka',
+    price: '1200',
+    imageSrc:
+      'https://1.bonami.cz/images/fit-crop-fill/ca/6f/ca6fd398cb92f2016f6e94688657e35ebd753715-1000x1000.webp',
+    link: 'https://www.bonami.cz/p/naparovaci-podlozka-na-zehleni-linn-brabantia-6',
+    received: false,
+  },
+  {
     emoji: '💺',
     title: 'New chair',
     price: '4000',
@@ -47,15 +65,6 @@ export const hiddenWishlist2026: WishlistItem[] = [
     received: false,
   },
   {
-    emoji: '🪀',
-    title: 'Yoyo',
-    price: '1000',
-    imageSrc:
-      'https://yyf.s23.cdn-upgates.com/_cache/4/e/4e553219f191e6a7e70ba7154ba2779e-yyf-godspeed-violet-blue-1.jpeg',
-    link: 'https://www.slusny.net/p/yoyofactory-godspeed-yoyo#5494',
-    received: false,
-  },
-  {
     emoji: '🧻',
     title: 'Organizér nad koš',
     price: '1000',
@@ -72,6 +81,7 @@ export const hiddenWishlist2026: WishlistItem[] = [
     imageSrc: 'https://i.ebayimg.com/images/g/~e0AAOSwGfdi4TQd/s-l1600.webp',
     link: 'https://www.ebay.com/itm/385029326272',
     received: false,
+    isNoLongerWanted: true,
   },
   {
     emoji: '📘',

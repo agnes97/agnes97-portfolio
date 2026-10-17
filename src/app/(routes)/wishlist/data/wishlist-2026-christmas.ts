@@ -53,8 +53,8 @@ export const wishlist2026Christmas: WishlistItem[] = [
   },
   {
     emoji: '👑',
-    title: 'Visit Charm Bar',
-    price: '???',
+    title: '5 charms in Charm Bar',
+    price: '1000',
     imageSrc: charmBar.src,
     link: 'https://www.instagram.com/tvuj.sperk/?hl=cs',
     received: false,
@@ -71,16 +71,6 @@ export const wishlist2026Christmas: WishlistItem[] = [
     hasCoverPhoto: true,
   },
   {
-    emoji: '🕯️',
-    title: 'Harry Potter Candle',
-    price: '849',
-    imageSrc:
-      'https://img.imago.cz/duftkerze-harry-potter-golden-egg-320g-6a560872883cf/duftkerze-harry-potter-golden-egg-320g-6a560872883cf-1000x1000.webp',
-    link: 'https://www.imago.cz/vonna-svicka-harry-potter-zlate-vejce',
-    received: false,
-    hasCoverPhoto: true,
-  },
-  {
     emoji: '🏡',
     title: 'LOTR Rohožka',
     price: '500',
@@ -91,6 +81,16 @@ export const wishlist2026Christmas: WishlistItem[] = [
     hasCoverPhoto: true,
   },
   {
+    emoji: '✨',
+    title: "Arwen's bag",
+    price: '300',
+    imageSrc:
+      'https://www.emp-shop.cz/dw/image/v2/BBQV_PRD/on/demandware.static/-/Sites-master-emp/default/dw23ea9379/images/6/0/7/8/607832a.jpg?sfrm=png',
+    link: 'https://www.emp-shop.cz/p/arvenina-vecernice/607832.html',
+    received: false,
+    hasCoverPhoto: false,
+  },
+  {
     emoji: '🪄',
     title: 'Plan HP maraton',
     imageSrc: maraton.src,
@@ -99,12 +99,21 @@ export const wishlist2026Christmas: WishlistItem[] = [
     hasCoverPhoto: true,
   },
   {
-    emoji: '💨',
-    title: 'Závěsná žehlící podložka',
-    price: '1200',
+    emoji: '🪀',
+    title: 'Yoyo',
+    price: '1000',
     imageSrc:
-      'https://1.bonami.cz/images/fit-crop-fill/ca/6f/ca6fd398cb92f2016f6e94688657e35ebd753715-1000x1000.webp',
-    link: 'https://www.bonami.cz/p/naparovaci-podlozka-na-zehleni-linn-brabantia-6',
+      'https://yyf.s23.cdn-upgates.com/_cache/4/e/4e553219f191e6a7e70ba7154ba2779e-yyf-godspeed-violet-blue-1.jpeg',
+    link: 'https://www.slusny.net/p/yoyofactory-godspeed-yoyo#5494',
+    received: false,
+  },
+  {
+    emoji: '❤️',
+    title: 'HP jewellry box',
+    price: '500',
+    imageSrc:
+      'https://img.imago.cz/sperkovnice-harry-potter-obracec-casu-698ef887d0772/sperkovnice-harry-potter-obracec-casu-698ef887d0772-1000x1000.webp',
+    link: 'https://www.imago.cz/sperkovnice-harry-potter-obracec-casu',
     received: false,
   },
 ];

@@ -11,4 +11,14 @@ export const wishlist2027Birthdays: WishlistItem[] = [
     received: false,
     hasCoverPhoto: false,
   },
+  {
+    emoji: '🐍',
+    title: 'Chamber of Secrets Coin',
+    price: '600',
+    imageSrc:
+      '  https://img.imago.cz/sberatelska-mince-harry-potter-tajemna-komnata-70134104-acc7-426b-8741-4173df6f282e/sberatelska-mince-harry-potter-tajemna-komnata-70134104-acc7-426b-8741-4173df6f282e-1000x1000.webp',
+    link: 'https://www.luxor.cz/v/2207423/frieren-beyond-journeys-end-vol-15',
+    received: false,
+    hasCoverPhoto: false,
+  },
 ];
