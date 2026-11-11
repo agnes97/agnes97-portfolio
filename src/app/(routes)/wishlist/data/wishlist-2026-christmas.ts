@@ -33,14 +33,14 @@ export const wishlist2026Christmas: WishlistItem[] = [
     hasCoverPhoto: false,
   },
   {
-    emoji: '🗺️',
-    title: 'Marauders Map Pants',
-    price: '1100',
+    emoji: '🐦',
+    title: 'Espresso Pidgeons',
+    price: '800',
     imageSrc:
-      'https://www.emp-shop.cz/dw/image/v2/BBQV_PRD/on/demandware.static/-/Sites-master-emp/default/dw9c4c6216/images/5/9/8/9/598981a.jpg?sfrm=png',
-    link: 'https://www.emp-shop.cz/p/marauder%27s-map/598981.html',
+      'https://img2.ans-media.com/i/1400x2100/RW26-KBU811-00A_F2.avif?v=1790835792',
+    link: 'https://wearmedicine.cz/p/sada-salku-na-espresso-z-porcelanu-rw26-kbu811-53297',
     received: false,
-    hasCoverPhoto: false,
+    hasCoverPhoto: true,
   },
   {
     emoji: '🌈',
@@ -82,13 +82,13 @@ export const wishlist2026Christmas: WishlistItem[] = [
   },
   {
     emoji: '✨',
-    title: "Arwen's bag",
+    title: 'Red shirt [L]',
     price: '300',
     imageSrc:
-      'https://www.emp-shop.cz/dw/image/v2/BBQV_PRD/on/demandware.static/-/Sites-master-emp/default/dw23ea9379/images/6/0/7/8/607832a.jpg?sfrm=png',
-    link: 'https://www.emp-shop.cz/p/arvenina-vecernice/607832.html',
+      'https://img2.ans-media.com/i/1400x2100/RW26-TSD011-83X_F3.avif?v=1781680147',
+    link: 'https://wearmedicine.cz/p/tricko-damske-bavlnene-s-vybledlym-efektem-fialove-rw26-tsd011-49845',
     received: false,
-    hasCoverPhoto: false,
+    hasCoverPhoto: true,
   },
   {
     emoji: '🪄',
@@ -109,11 +109,12 @@ export const wishlist2026Christmas: WishlistItem[] = [
   },
   {
     emoji: '❤️',
-    title: 'HP jewellry box',
-    price: '500',
+    title: 'Socks',
+    price: '329',
     imageSrc:
-      'https://img.imago.cz/sperkovnice-harry-potter-obracec-casu-698ef887d0772/sperkovnice-harry-potter-obracec-casu-698ef887d0772-1000x1000.webp',
-    link: 'https://www.imago.cz/sperkovnice-harry-potter-obracec-casu',
+      'https://img2.ans-media.com/i/1400x2100/RW26-LGD700-99X_F4.avif?v=1788843429',
+    link: 'https://wearmedicine.cz/p/ponozky-damske-2-pack-cerne-rw26-lgd700-52824',
     received: false,
+    hasCoverPhoto: false,
   },
 ];
