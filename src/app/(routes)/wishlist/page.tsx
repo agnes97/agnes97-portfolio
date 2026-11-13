@@ -1,7 +1,12 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import { Heart, CalendarClockIcon, GiftIcon } from 'lucide-react';
+import {
+  Heart,
+  CalendarClockIcon,
+  GiftIcon,
+  BadgePercentIcon,
+} from 'lucide-react';
 
 import Flex from '@/app/components/flex/Flex';
 import { useTheme } from '@/app/providers/styled-components-provider';
@@ -13,7 +18,7 @@ import HiddenWishlist from './components/HiddenWishlist';
 import GalleryItem from './components/GalleryItem';
 
 import { Wishlist as WishlistType } from './types';
-import { Gallery, WishlistTitle } from './page.styled';
+import { Gallery, WishlistBanner, WishlistTitle } from './page.styled';
 
 import { wishlist2019Christmas } from './data/wishlist-2019-christmas';
 import { wishlist2021Birthday } from './data/wishlist-2021-birthday';
@@ -40,6 +45,14 @@ const wishlists: WishlistType[] = [
     year: 2026,
     type: 'christmas',
     wishlistedItems: wishlist2026Christmas,
+    banner: (
+      <>
+        <strong>Medicine</strong> items are <mark>20% off</mark> with a discount
+        code in the AirBank app.
+        <br />
+        <strong>Imago</strong> has a discount code <mark>imagoloot</mark>.
+      </>
+    ),
   },
   {
     year: 2026,
@@ -298,6 +311,13 @@ export default function Wishlist() {
               <WishlistTitle>
                 {getWishlistTitle(wishlist.type, wishlist.year)}
               </WishlistTitle>
+
+              {wishlist.banner && (
+                <WishlistBanner>
+                  <BadgePercentIcon size={44} strokeWidth={1} />
+                  <span>{wishlist.banner}</span>
+                </WishlistBanner>
+              )}
 
               <Gallery>
                 {wishlist.wishlistedItems.length === 0 ? (

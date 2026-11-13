@@ -12,7 +12,6 @@ export const wishlist2026Christmas: WishlistItem[] = [
     imageSrc: 'https://www.oxalis.cz/files/products_images/xlarge/0/60014.jpg',
     link: 'https://www.oxalis.cz/nana-mata-list-250-g.html',
     received: false,
-    isFav: true,
   },
   {
     emoji: '📘',

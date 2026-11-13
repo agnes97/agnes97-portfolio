@@ -1,3 +1,5 @@
+import type { ReactNode } from 'react';
+
 export type WishlistItem = {
   emoji: string;
   title: string;
@@ -16,4 +18,5 @@ export type Wishlist = {
   year: number;
   type: 'birthday' | 'christmas' | 'christmas_vinted' | 'christmas_slevomat';
   wishlistedItems: WishlistItem[];
+  banner?: ReactNode;
 };
